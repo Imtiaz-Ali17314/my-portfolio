@@ -1,19 +1,28 @@
-// src/data/skills.js
-export const skills = {
-  frontend: [
-    { name: "React", level: 90 },
-    { name: "Vue.js", level: 85 },
-    { name: "JavaScript", level: 92 },
-    { name: "HTML/CSS", level: 95 }
-  ],
-  backend: [
-    { name: "Node.js", level: 80 },
-    { name: "Laravel", level: 75 },
-    { name: "PHP", level: 78 }
-  ],
-  tools: [
-    { name: "Git", level: 88 },
-    { name: "Docker", level: 70 },
-    { name: "Electron.js", level: 75 }
-  ]
-};
+const skills = [
+  {
+    category: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React", "Vue", "Bootstrap", "Tailwind"],
+  },
+
+  {
+    category: "Backend",
+    items: ["Laravel", "PHP", "REST API", "Node.js basics"],
+  },
+
+  {
+    category: "Database",
+    items: ["MySQL", "MongoDB basics"],
+  },
+
+  {
+    category: "Desktop",
+    items: ["Electron.js"],
+  },
+
+  {
+    category: "Tools",
+    items: ["Git", "GitHub", "Postman", "VS Code"],
+  },
+];
+
+export default skills;
