@@ -2,7 +2,7 @@ import projects from "../../data/projects";
 
 const Projects = () => {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold mb-10">Projects</h2>
 
       <div className="grid md:grid-cols-3 gap-6">
