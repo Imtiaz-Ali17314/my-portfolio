@@ -51,7 +51,7 @@ const Footer = () => {
 
             <div className="flex gap-4 text-xl">
               <a
-                href="https://github.com/"
+                href="https://github.com/Imtiaz-Ali17314"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-black dark:hover:text-white transition"
@@ -60,7 +60,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/imtiaz-ali-79476a385/"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-blue-600 transition"
@@ -69,7 +69,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="mailto:example@gmail.com"
+                href="mailto:imtiazali80102@gmail.com"
                 className="hover:text-red-500 transition"
               >
                 <FaEnvelope />
