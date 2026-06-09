@@ -3,7 +3,7 @@ const projects = [
     id: 1,
     title: "Flexbox Project Layout",
     category: "Frontend",
-    stack: ["HTML", "CSS",],
+    stack: ["HTML", "CSS"],
     description:
       "This is a responsive web page layout built primarily to demonstrate the power and flexibility of CSS Flexbox. It features a clean, modern structure that gracefully adapts to different screen sizes.",
     features: [
@@ -21,7 +21,7 @@ const projects = [
     id: 2,
     title: "Amazon Homepage Clone",
     category: "Frontend",
-    stack: ["HTML", "CSS",],
+    stack: ["HTML", "CSS"],
     description:
       "A static, front-end clone of the Amazon homepage built to demonstrate layout structuring using HTML and CSS. This project focuses on recreating the iconic Amazon navigation bar, hero banner, product grid, and the comprehensive footer section.",
     features: [
@@ -32,7 +32,8 @@ const projects = [
       "Comprehensive Footer",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Amazon-Homepage-Clone-css-project",
+    github:
+      "https://github.com/Imtiaz-Ali17314/Amazon-Homepage-Clone-css-project",
     image: "/images/projects/Amazon Homepage Clone.png",
   },
 
@@ -55,7 +56,7 @@ const projects = [
     image: "/images/projects/Tic-Tac-Toe Game.png",
   },
 
-   {
+  {
     id: 4,
     title: "Rock Paper Scissors Premium",
     category: "Frontend",
@@ -74,7 +75,7 @@ const projects = [
     image: "/images/projects/Rock Paper Scissors Premium.png",
   },
 
-   {
+  {
     id: 5,
     title: "🕰️ Digital Clock Pro",
     category: "Frontend",
@@ -94,7 +95,7 @@ const projects = [
     image: "/images/projects/Digital Clock Pro.png",
   },
 
-   {
+  {
     id: 6,
     title: "⏱️ ChronosAnalytics — Precision Age Analytics Dashboard",
     category: "Frontend",
@@ -110,11 +111,12 @@ const projects = [
       "Micro-Animations & Count-up Effects",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/ChronosAnalytics-Precision-Age-Analytics-Dashboard",
+    github:
+      "https://github.com/Imtiaz-Ali17314/ChronosAnalytics-Precision-Age-Analytics-Dashboard",
     image: "/images/projects/ChronosAnalytics.png",
   },
 
-   {
+  {
     id: 7,
     title: "🧮 QuantumCalc: 3D Immersive Calculator",
     category: "Frontend",
@@ -129,11 +131,12 @@ const projects = [
       " Fully Responsive",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/QuantumCalc-3D-Immersive-Calculator-React-Project",
+    github:
+      "https://github.com/Imtiaz-Ali17314/QuantumCalc-3D-Immersive-Calculator-React-Project",
     image: "/images/projects/QuantumCalc.png",
   },
 
-   {
+  {
     id: 8,
     title: "🌌 Chronos Nebula",
     category: "Frontend",
@@ -155,7 +158,7 @@ const projects = [
     image: "/images/projects/Chronos Nebula.png",
   },
 
-   {
+  {
     id: 9,
     title: "🔐 CIPHER VAULT",
     category: "Frontend",
@@ -171,11 +174,12 @@ const projects = [
       "Futuristic UI Aesthetics",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/CIPHER-VAULT-random-password-generator",
+    github:
+      "https://github.com/Imtiaz-Ali17314/CIPHER-VAULT-random-password-generator",
     image: "/images/projects/CIPHER VAULT.png",
   },
 
-   {
+  {
     id: 10,
     title: "✨ Stellar Tasks",
     category: "Frontend",
@@ -195,7 +199,7 @@ const projects = [
     image: "/images/projects/Stellar Tasks.png",
   },
 
-   {
+  {
     id: 11,
     title: "🌌 Zenith Mission Control",
     category: "Frontend",
@@ -215,7 +219,7 @@ const projects = [
     image: "/images/projects/Zenith Mission Control.png",
   },
 
-   {
+  {
     id: 12,
     title: "🌤️ AtmosLux",
     category: "Frontend",
@@ -235,7 +239,72 @@ const projects = [
     image: "/images/projects/AtmosLux.png",
   },
 
-   {
+  {
+    id: 13,
+    title: "⚡ FLUX | Pro Currency Intelligence",
+    category: "Frontend",
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Chart.js 4.0",
+      "Fawaz Ahmed's Currency API",
+      "FlagsAPI",
+    ],
+    description:
+      "FLUX is a high-performance, professional-grade currency intelligence dashboard designed for modern traders and financial analysts. It combines real-time institutional exchange rates with advanced data visualization and a premium 'Glassmorphism' aesthetic.",
+    features: [
+      "Intelligence Converter",
+      "Historical Trend Analysis",
+      "Market Watch (Global Performance)",
+      "Premium UI/UX",
+      ,
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/FLUX-currency-converter",
+    image: "/images/projects/FLUX.png",
+  },
+
+  {
+    id: 14,
+    title: "Lumina-Image-Workspace",
+    category: "Frontend",
+    stack: [" HTML5", "CSS3", "JavaScript"],
+    description:
+      "Lumina is a premium, client-side developer utility that bridges the gap between stock photography search and active front-end asset pipelines. It elevates standard stock search engines into an interactive design-to-development workspace.",
+    features: [
+      "Intelligent Search & Composition Filters",
+      "Canvas-Based Palette Harvester",
+      "WCAG 2.1 Accessibility Evaluator",
+      "Brand-Harmonizer Duotone Filters",
+      "Web Asset Code Generator",
+      "Live Social Banner Studio",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Lumina-Developers-Smart-Image-Workspace-and-Live-Asset-Studio",
+    image: "/images/projects/Lumina.JPG",
+  },
+
+  {
+    id: 15,
+    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "An advanced, distraction-free document reader, auto-scrolling teleprompter, and pronunciation trainer powered by modern Web Speech & Audio APIs.",
+    features: [
+      "Document Manager & Telemetry",
+      "Auto-Scrolling Teleprompter Mode",
+      "Speech Engine Settings",
+      "Pronunciation Studio (Listen & Repeat)",
+      "Canvas Waveform Monitor",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
+    image: "/images/projects/SpeakFlow.png",
+  },
+
+  {
     id: 3,
     title: "Tic-Tac-Toe Game",
     category: "Frontend",
@@ -254,7 +323,7 @@ const projects = [
     image: "/images/projects/Tic-Tac-Toe Game.png",
   },
 
-   {
+  {
     id: 3,
     title: "Tic-Tac-Toe Game",
     category: "Frontend",
@@ -272,65 +341,6 @@ const projects = [
     github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
     image: "/images/projects/Tic-Tac-Toe Game.png",
   },
-
-   {
-    id: 3,
-    title: "Tic-Tac-Toe Game",
-    category: "Frontend",
-    stack: ["HTML", "CSS", "JavaScript"],
-    description:
-      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
-    features: [
-      "Interactive Gameplay",
-      "Win Detection",
-      "Dynamic Styling",
-      "Reset and New Game Capabilities",
-      "Responsive Design Unit",
-    ],
-    live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
-    image: "/images/projects/Tic-Tac-Toe Game.png",
-  },
-
-   {
-    id: 3,
-    title: "Tic-Tac-Toe Game",
-    category: "Frontend",
-    stack: ["HTML", "CSS", "JavaScript"],
-    description:
-      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
-    features: [
-      "Interactive Gameplay",
-      "Win Detection",
-      "Dynamic Styling",
-      "Reset and New Game Capabilities",
-      "Responsive Design Unit",
-    ],
-    live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
-    image: "/images/projects/Tic-Tac-Toe Game.png",
-  },
-
-   {
-    id: 3,
-    title: "Tic-Tac-Toe Game",
-    category: "Frontend",
-    stack: ["HTML", "CSS", "JavaScript"],
-    description:
-      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
-    features: [
-      "Interactive Gameplay",
-      "Win Detection",
-      "Dynamic Styling",
-      "Reset and New Game Capabilities",
-      "Responsive Design Unit",
-    ],
-    live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
-    image: "/images/projects/Tic-Tac-Toe Game.png",
-  },
-
-  
 ];
 
 export default projects;
