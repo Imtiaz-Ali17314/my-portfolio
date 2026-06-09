@@ -1,7 +1,15 @@
 const skills = [
   {
     category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React", "Vue", "Bootstrap", "Tailwind"],
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Vue",
+      "Bootstrap",
+      "Tailwind",
+    ],
   },
 
   {
@@ -12,6 +20,11 @@ const skills = [
   {
     category: "Database",
     items: ["MySQL", "MongoDB basics"],
+  },
+
+  {
+    category: "QA Automation",
+    items: ["Playwright"],
   },
 
   {
