@@ -1,57 +1,327 @@
 const projects = [
   {
     id: 1,
-    title: "Laravel + Vue File Manager",
-    category: "Full Stack",
-    stack: ["Laravel", "Vue", "MySQL", "REST API"],
+    title: "Flexbox Project Layout",
+    category: "Frontend",
+    stack: ["HTML", "CSS",],
     description:
-      "A full-featured file management system with upload, categorization, and role-based access control.",
+      "This is a responsive web page layout built primarily to demonstrate the power and flexibility of CSS Flexbox. It features a clean, modern structure that gracefully adapts to different screen sizes.",
     features: [
-      "File upload & preview",
-      "Role-based authentication",
-      "Folder structure system",
-      "API-driven frontend",
+      "Flexbox-Driven Layout",
+      "Responsive Design",
+      "Service Cards",
+      "FontAwesome Integration",
     ],
     live: "#",
-    github: "#",
-    image: "/images/projects/project-1.png",
+    github: "https://github.com/Imtiaz-Ali17314/flexbox-project-css",
+    image: "/images/projects/Flexbox Project Layout.JPG",
   },
 
   {
     id: 2,
-    title: "React Portfolio Website",
+    title: "Amazon Homepage Clone",
     category: "Frontend",
-    stack: ["React", "Tailwind", "Framer Motion"],
+    stack: ["HTML", "CSS",],
     description:
-      "Modern animated portfolio website with reusable components and smooth UI transitions.",
+      "A static, front-end clone of the Amazon homepage built to demonstrate layout structuring using HTML and CSS. This project focuses on recreating the iconic Amazon navigation bar, hero banner, product grid, and the comprehensive footer section.",
     features: [
-      "Smooth animations",
-      "Dark mode support",
-      "Reusable components",
-      "Responsive design",
+      "Complex Navigation Bar",
+      "Secondary Panel",
+      "Dynamic Grid Layout",
+      "Hero Banner",
+      "Comprehensive Footer",
     ],
     live: "#",
-    github: "#",
-    image: "/images/projects/project-2.png",
+    github: "https://github.com/Imtiaz-Ali17314/Amazon-Homepage-Clone-css-project",
+    image: "/images/projects/Amazon Homepage Clone.png",
   },
 
   {
     id: 3,
-    title: "Electron Desktop Notes App",
-    category: "Desktop App",
-    stack: ["Electron.js", "JavaScript", "LocalStorage"],
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
     description:
-      "Cross-platform desktop notes application with offline storage support.",
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
     features: [
-      "Offline functionality",
-      "Auto-save notes",
-      "Search system",
-      "Minimal UI",
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
     ],
     live: "#",
-    github: "#",
-    image: "/images/projects/project-3.png",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
   },
+
+   {
+    id: 4,
+    title: "Rock Paper Scissors Premium",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "A modern, high-performance web experience of the classic game, crafted with exceptional UI/UX standards, glassmorphic design, and smooth micro-interactions.",
+    features: [
+      "Sleek Glassmorphism UI",
+      "Engaging Visual Feedback",
+      "Optimized Game Logic",
+      "Score Tracking & State Management",
+      "Fully Responsive Architecture",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Rock-Paper-Scissors-Game",
+    image: "/images/projects/Rock Paper Scissors Premium.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+   {
+    id: 3,
+    title: "Tic-Tac-Toe Game",
+    category: "Frontend",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description:
+      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+    features: [
+      "Interactive Gameplay",
+      "Win Detection",
+      "Dynamic Styling",
+      "Reset and New Game Capabilities",
+      "Responsive Design Unit",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
+    image: "/images/projects/Tic-Tac-Toe Game.png",
+  },
+
+  
 ];
 
 export default projects;
