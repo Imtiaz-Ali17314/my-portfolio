@@ -305,42 +305,158 @@ const projects = [
   },
 
   {
-    id: 3,
-    title: "Tic-Tac-Toe Game",
+    id: 16,
+    title: "📚 Quiz‑Mind: AI‑Powered Study Hub",
     category: "Frontend",
-    stack: ["HTML", "CSS", "JavaScript"],
+    stack: ["HTML5", "CSS3", "JavaScript"],
     description:
-      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+      "Quiz‑Mind turns raw study notes into an interactive, gamified quiz experience. Paste a paragraph of text, and the built‑in NLP engine extracts up‑to‑10 fill‑in‑the‑blank questions with smart distractors.",
     features: [
-      "Interactive Gameplay",
-      "Win Detection",
-      "Dynamic Styling",
-      "Reset and New Game Capabilities",
-      "Responsive Design Unit",
+      "Intelligent note‑to‑quiz parsing",
+      "Gamified scoring, streaks, and lifelines (50/50, freeze time)",
+      "Real‑time response‑time telemetry on an HTML5 canvas",
+      "Leaderboard with local persistence",
+      "Responsive UI with dark mode and smooth micro‑animations",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
-    image: "/images/projects/Tic-Tac-Toe Game.png",
+    github: "https://github.com/Imtiaz-Ali17314/QuizMind-Study-Hub",
+    image: "/images/projects/Quiz‑Mind.png",
   },
 
   {
-    id: 3,
-    title: "Tic-Tac-Toe Game",
+    id: 17,
+    title: "DevPortfolio Ranker 🚀",
     category: "Frontend",
-    stack: ["HTML", "CSS", "JavaScript"],
+    stack: ["HTML5", "CSS3", "JavaScript"],
     description:
-      "A classic, interactive Tic-Tac-Toe game built from scratch using HTML, CSS, and Vanilla JavaScript. This project showcases DOM manipulation, event handling, and implementing game core logic in JavaScript.",
+      "DevPortfolio Ranker is a premium, interactive web application that helps developers visually organize, rank, and track their personal projects to optimize their portfolios and CVs. Built using a modern glassmorphic interface and vanilla CSS, it allows developers to drag, drop, and structure projects into logical pipeline columns.",
     features: [
-      "Interactive Gameplay",
-      "Win Detection",
-      "Dynamic Styling",
-      "Reset and New Game Capabilities",
-      "Responsive Design Unit",
+      "Stateful HTML5 Drag-and-Drop",
+      "Persistent Layouts",
+      "Search & Stack Filtering",
+      "Dynamic Modals",
+      "Markdown Generator",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
-    image: "/images/projects/Tic-Tac-Toe Game.png",
+    github: "https://github.com/Imtiaz-Ali17314/DevPortfolio-Ranker",
+    image: "/images/projects/DevPortfolio-Ranker.png",
   },
+  
+  {
+    id: 18,
+    title: "Imtiaz.dev, Personal Developer Portfolio 🚀",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "A premium, fully animated personal portfolio website built entirely with pure HTML5, CSS3, and Vanilla JavaScript. Designed with a glassmorphic cyber-noir aesthetic, scroll-triggered animations, and a mobile-responsive layout to create a powerful first impression on recruiters, clients, and fellow developers.",
+    features: [
+      "Skills, Bento Grid Layout",
+      "Experience, Interactive Vertical Timeline",
+      "Featured Projects, Showcase Grid",
+      "Contact Form",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/Portfolio-Website",
+    image: "/images/projects/Portfolio-Website.png",
+  },
+
+  {
+    id: 19,
+    title: "My Portfolio Website 🌐",
+    category: "Frontend",
+    stack: ["HTML5", "Bootstrap 5", "JavaScript"],
+    description:
+      "A fully responsive, feature-rich personal portfolio website built with Bootstrap 5, JavaScript, and custom CSS. It showcases developer projects, technical skills, an integrated task manager with localStorage persistence, and a validated contact form,all in a single-page application with smooth-scroll navigation.",
+    features: [
+      "Hero Section & Personal Branding",
+      "About Me & Skills Grid",
+      "Project Showcase Gallery",
+      "Integrated Task Manager",
+      "Contact Form with Validation",
+      "Fixed Navigation Bar",
+      "Footer with Social Links",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/My-Portfolio-Website",
+    image: "/images/projects/My Portfolio Website.png",
+  },
+
+  {
+    id: 15,
+    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "An advanced, distraction-free document reader, auto-scrolling teleprompter, and pronunciation trainer powered by modern Web Speech & Audio APIs.",
+    features: [
+      "Document Manager & Telemetry",
+      "Auto-Scrolling Teleprompter Mode",
+      "Speech Engine Settings",
+      "Pronunciation Studio (Listen & Repeat)",
+      "Canvas Waveform Monitor",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
+    image: "/images/projects/SpeakFlow.png",
+  },
+
+  {
+    id: 15,
+    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "An advanced, distraction-free document reader, auto-scrolling teleprompter, and pronunciation trainer powered by modern Web Speech & Audio APIs.",
+    features: [
+      "Document Manager & Telemetry",
+      "Auto-Scrolling Teleprompter Mode",
+      "Speech Engine Settings",
+      "Pronunciation Studio (Listen & Repeat)",
+      "Canvas Waveform Monitor",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
+    image: "/images/projects/SpeakFlow.png",
+  },
+
+  {
+    id: 15,
+    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "An advanced, distraction-free document reader, auto-scrolling teleprompter, and pronunciation trainer powered by modern Web Speech & Audio APIs.",
+    features: [
+      "Document Manager & Telemetry",
+      "Auto-Scrolling Teleprompter Mode",
+      "Speech Engine Settings",
+      "Pronunciation Studio (Listen & Repeat)",
+      "Canvas Waveform Monitor",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
+    image: "/images/projects/SpeakFlow.png",
+  },
+
+  {
+    id: 15,
+    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    category: "Frontend",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    description:
+      "An advanced, distraction-free document reader, auto-scrolling teleprompter, and pronunciation trainer powered by modern Web Speech & Audio APIs.",
+    features: [
+      "Document Manager & Telemetry",
+      "Auto-Scrolling Teleprompter Mode",
+      "Speech Engine Settings",
+      "Pronunciation Studio (Listen & Repeat)",
+      "Canvas Waveform Monitor",
+    ],
+    live: "#",
+    github: "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
+    image: "/images/projects/SpeakFlow.png",
+  },
+
 ];
 
 export default projects;
