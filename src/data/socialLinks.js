@@ -16,12 +16,6 @@ const socialLinks = [
     url: "mailto:imtiazali80102@gmail.com",
     icon: "mail",
   },
-
-  // {
-  //   name: "Twitter",
-  //   url: "https://twitter.com/Imtiaz_Ali17314",
-  //   icon: "twitter",
-  // },
 ];
 
 export default socialLinks;
