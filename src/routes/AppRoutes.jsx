@@ -9,10 +9,12 @@ import Resume from "../pages/Resume";
 import NotFound from "../pages/NotFound";
 
 import { ROUTES } from "../constants/routes";
+import ScrollToTop from "../components/common/ScrollToTop";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
           <Route
