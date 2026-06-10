@@ -4,25 +4,26 @@ import ProjectCard from "../components/ui/ProjectCard";
 import FilterButton from "../components/ui/FilterButton";
 import SearchBar from "../components/ui/SearchBar";
 import SectionTitle from "../components/common/SectionTitle";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
-const categories = [
-  "all",
-  "html",
-  "css",
-  "javascript",
-  "typescript",
-  "vue",
-  "react",
-  "laravel",
-  "node",
-  "tailwind",
-  "bootstrap",
-  "electron"
-];
+  const categories = [
+    "all",
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "vue",
+    "react",
+    "laravel",
+    "node",
+    "tailwind",
+    "bootstrap",
+    "electron",
+  ];
 
   const filteredProjects = projects.filter((project) => {
     const searchText = search.toLowerCase().trim();
@@ -60,10 +61,15 @@ const categories = [
         ))}
       </div>
 
-      {/* Projects Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <Link
+            key={project.id}
+            to={`/projects/${project.id}`}
+            className="block"
+          >
+            <ProjectCard project={project} />
+          </Link>
         ))}
       </div>
     </div>
