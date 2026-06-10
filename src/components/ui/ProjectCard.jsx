@@ -25,12 +25,12 @@ const ProjectCard = ({ project }) => {
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mt-2">
-          {project.tech?.map((tech, index) => (
+          {project.stack?.map((stack, index) => (
             <span
               key={index}
               className="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
             >
-              {tech}
+              {stack}
             </span>
           ))}
         </div>

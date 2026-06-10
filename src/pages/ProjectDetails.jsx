@@ -31,7 +31,7 @@ const ProjectDetails = () => {
       <div className="mt-8 space-y-4">
         <div>
           <h2 className="text-xl font-semibold">Tech Stack</h2>
-          <p>{project.tech.join(", ")}</p>
+          <p>{project.stack.join(", ")}</p>
         </div>
 
         <div>

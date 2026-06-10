@@ -14,12 +14,12 @@ const skills = [
 
   {
     category: "Backend",
-    items: ["Laravel", "PHP", "REST API", "Node.js basics"],
+    items: ["Laravel", "PHP", "REST API", "Node.js"],
   },
 
   {
     category: "Database",
-    items: ["MySQL", "MongoDB basics"],
+    items: ["MySQL", "PostgreSQL"],
   },
 
   {
