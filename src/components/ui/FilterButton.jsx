@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilterButton = ({ label, active, onClick }) => {
+const FilterButton = ({ children, active, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -11,7 +11,7 @@ const FilterButton = ({ label, active, onClick }) => {
             : "bg-transparent text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-700"
         }`}
     >
-      {label}
+      {children}
     </button>
   );
 };

@@ -9,20 +9,39 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
-  const categories = ["all", "html", "bootstrap", "laravel", "vue", "react", "electron"];
+const categories = [
+  "all",
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "vue",
+  "react",
+  "laravel",
+  "node",
+  "tailwind",
+  "bootstrap",
+  "electron"
+];
 
   const filteredProjects = projects.filter((project) => {
+    const searchText = search.toLowerCase().trim();
+
+    // SEARCH
+    const matchSearch = project.title?.toLowerCase().includes(searchText);
+
+    // CATEGORY = NOW MATCH AGAINST STACK (NOT category field)
     const matchCategory =
-      filter === "all" || project.category === filter;
+      filter === "all" ||
+      project.stack?.some((tech) =>
+        tech.toLowerCase().includes(filter.toLowerCase()),
+      );
 
-    const matchSearch =
-      project.title.toLowerCase().includes(search.toLowerCase());
-
-    return matchCategory && matchSearch;
+    return matchSearch && matchCategory;
   });
 
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto px-4 py-10 pt-24">
       <SectionTitle title="All Projects" subtitle="Showcasing my work" />
 
       {/* Search */}
