@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import projects from "../../data/projects";
+import ProjectCard from "../ui/ProjectCard";
 
 const Projects = () => {
   return (
@@ -7,23 +9,13 @@ const Projects = () => {
 
       <div className="grid md:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="border border-gray-700 rounded-lg overflow-hidden"
+          <Link
+            key={project.id}
+            to={`/projects/${project.id}`}
+            className="block"
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="h-40 w-full object-cover"
-            />
-
-            <div className="p-4">
-              <h3 className="font-semibold">{project.title}</h3>
-              <p className="text-sm text-gray-500 mt-2">
-                {project.description}
-              </p>
-            </div>
-          </div>
+            <ProjectCard project={project} />
+          </Link>
         ))}
       </div>
     </section>

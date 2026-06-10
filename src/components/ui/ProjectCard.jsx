@@ -3,7 +3,6 @@ import React from "react";
 const ProjectCard = ({ project }) => {
   return (
     <div className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800">
-      
       {/* Image */}
       <div className="overflow-hidden">
         <img
@@ -19,7 +18,7 @@ const ProjectCard = ({ project }) => {
           {project.title}
         </h3>
 
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
           {project.description}
         </p>
 

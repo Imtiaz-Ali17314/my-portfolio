@@ -97,7 +97,7 @@ const projects = [
 
   {
     id: 6,
-    title: "⏱️ ChronosAnalytics — Precision Age Analytics Dashboard",
+    title: "⏱️ ChronosAnalytics",
     category: "Frontend",
     stack: ["HTML", "CSS", "JavaScript"],
     description:
@@ -118,7 +118,7 @@ const projects = [
 
   {
     id: 7,
-    title: "🧮 QuantumCalc: 3D Immersive Calculator",
+    title: "🧮 QuantumCalc",
     category: "Frontend",
     stack: ["React 19", "Vite", "Bootstrap 5", "Interactivity"],
     description:
@@ -241,7 +241,7 @@ const projects = [
 
   {
     id: 13,
-    title: "⚡ FLUX | Pro Currency Intelligence",
+    title: "⚡ FLUX",
     category: "Frontend",
     stack: [
       "HTML5",
@@ -249,7 +249,6 @@ const projects = [
       "JavaScript",
       "Chart.js 4.0",
       "Fawaz Ahmed's Currency API",
-      "FlagsAPI",
     ],
     description:
       "FLUX is a high-performance, professional-grade currency intelligence dashboard designed for modern traders and financial analysts. It combines real-time institutional exchange rates with advanced data visualization and a premium 'Glassmorphism' aesthetic.",
@@ -289,7 +288,7 @@ const projects = [
   {
     id: 15,
     title:
-      "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+      "🎙️ SpeakFlow",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -308,7 +307,7 @@ const projects = [
 
   {
     id: 16,
-    title: "📚 Quiz‑Mind: AI‑Powered Study Hub",
+    title: "📚 Quiz Mind",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -346,7 +345,7 @@ const projects = [
 
   {
     id: 18,
-    title: "Imtiaz.dev, Personal Developer Portfolio 🚀",
+    title: "Personal Developer Portfolio 🚀",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -537,7 +536,7 @@ const projects = [
   
   {
     id: 27,
-    title: "CampaignOS - Smart Campaign Management System",
+    title: "CampaignOS",
     category: "Full Stack",
     stack: ["Node.js", "React.js", "Tailwind", "WebSockets", "PostgreSQL", "Docker"],
     description:
