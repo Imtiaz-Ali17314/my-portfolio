@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -17,21 +18,27 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const handleScroll = (e, href) => {
+  const navigate = useNavigate();
+
+  const handleScroll = (e, id) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
+
+    // always go to home first
+    navigate("/");
+
+    // wait for page render then scroll
+    setTimeout(() => {
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 dark:bg-black/60 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="flex justify-between items-center h-16">
-          
           {/* Logo */}
           <a
             href="#home"
