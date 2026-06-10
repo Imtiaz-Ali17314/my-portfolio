@@ -281,13 +281,15 @@ const projects = [
       "Live Social Banner Studio",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/Lumina-Developers-Smart-Image-Workspace-and-Live-Asset-Studio",
+    github:
+      "https://github.com/Imtiaz-Ali17314/Lumina-Developers-Smart-Image-Workspace-and-Live-Asset-Studio",
     image: "/images/projects/Lumina.JPG",
   },
 
   {
     id: 15,
-    title: "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
+    title:
+      "🎙️ SpeakFlow: Professional Text-to-Speech Reader & Teleprompter Studio",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -341,7 +343,7 @@ const projects = [
     github: "https://github.com/Imtiaz-Ali17314/DevPortfolio-Ranker",
     image: "/images/projects/DevPortfolio-Ranker.png",
   },
-  
+
   {
     id: 18,
     title: "Imtiaz.dev, Personal Developer Portfolio 🚀",
@@ -385,7 +387,13 @@ const projects = [
     id: 20,
     title: "ApexCrypt OS 🌌",
     category: "Frontend",
-    stack: ["HTML5", "CSS3", "JavaScript", "Binance Public WebSockets", "Charting"],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Binance Public WebSockets",
+      "Charting",
+    ],
     description:
       "ApexCrypt OS is a premium, professional-grade cryptocurrency trading terminal built entirely with pure HTML, CSS, and Vanilla JavaScript. It transforms a standard price-tracking website into a high-fidelity, interactive dashboard equipped with real-time market data, advanced charting, and automated trading workflows.",
     features: [
@@ -464,7 +472,12 @@ const projects = [
     id: 24,
     title: "شعبہ نظم - Shoba Nazam v2",
     category: "Full Stack",
-    stack: ["Laravel 12", "Vue.js 3 (Composition API)", "Tailwind CSS", "MySQL"],
+    stack: [
+      "Laravel 12",
+      "Vue.js 3 (Composition API)",
+      "Tailwind CSS",
+      "MySQL",
+    ],
     description:
       "A modern, full-stack web application built to digitize and streamline the discipline management workflow of Islamic educational institutions (Madaris). Designed with a clean RTL-first Urdu interface, role-based access control, and real-time analytics.",
     features: [
@@ -498,8 +511,51 @@ const projects = [
       "Real-Time Sync",
     ],
     live: "#",
-    github: "https://github.com/Imtiaz-Ali17314/FileFusion-Multi-Cloud-Storage-App",
+    github:
+      "https://github.com/Imtiaz-Ali17314/FileFusion-Multi-Cloud-Storage-App",
     image: "/images/projects/FileFusion.png",
+  },
+
+  {
+    id: 26,
+    title: "💻 Computer Performance Tracker",
+    category: "Desktop App",
+    stack: ["Electron.js", "React.js", "TypeScript", "Vite"],
+    description:
+      "The Computer Performance Tracker is a lightweight, responsive desktop application that provides real-time monitoring of your system's critical resources. Built using modern web technologies packaged into a native desktop experience, it allows users to easily visualize CPU utilization, memory consumption, and other system-level metrics at a glance.",
+    features: [
+      "Real-Time Monitoring",
+      "Data Visualization",
+      "Native Feel",
+      "Type-Safe",
+    ],
+    live: "#",
+    github:
+      "https://github.com/Imtiaz-Ali17314/Computer-Performance-Tracker-Electron-Js-Desktop-App",
+    image: "/images/projects/Computer Performance Tracker.png",
+  },
+  
+  {
+    id: 27,
+    title: "CampaignOS - Smart Campaign Management System",
+    category: "Full Stack",
+    stack: ["Node.js", "React.js", "Tailwind", "WebSockets", "PostgreSQL", "Docker"],
+    description:
+      "CampaignOS is a comprehensive, modern, AI-integrated management dashboard designed specifically for advertising agencies. It provides strategists with real-time campaign performance analytics, AI-assisted creative brief generation, centralized RESTful API backend, and instant Websocket-based condition alerts.",
+    features: [
+      "Campaign Dashboard (React + Tailwind)",
+      "AI-Assisted Creative Brief Builder",
+      "Campaign Management REST API (Node/Express)",
+      "AI Content Generation Microservice",
+      "Real-Time Notification System (WebSockets)",
+      "PostgreSQL Database",
+      "Containerization (Docker Compose)",
+      "Speed Tasks (Algorithms, Debugging, Optimization)",
+    ],
+    live: "#",
+    github:
+      "https://github.com/Imtiaz-Ali17314/CampaignOS-Smart-Campaign-Management-System",
+    image: "/images/projects/CampaignOS.png",
   },
 ];
 
