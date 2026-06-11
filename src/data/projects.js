@@ -257,7 +257,6 @@ const projects = [
       "Historical Trend Analysis",
       "Market Watch (Global Performance)",
       "Premium UI/UX",
-      ,
     ],
     live: "#",
     github: "https://github.com/Imtiaz-Ali17314/FLUX-currency-converter",
@@ -533,7 +532,7 @@ const projects = [
       "https://github.com/Imtiaz-Ali17314/Computer-Performance-Tracker-Electron-Js-Desktop-App",
     image: "/images/projects/Computer Performance Tracker.png",
   },
-  
+
   {
     id: 27,
     title: "CampaignOS",
