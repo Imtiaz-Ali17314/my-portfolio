@@ -607,7 +607,7 @@ const projects = [
   
   {
     id: 29,
-    title: "🛍️ AuraCart - Premium E-Commerce Platform",
+    title: "🛍️ AuraCart",
     slug: "auracart",
     category: "Frontend",
     stack: ["React.js", "Redux Toolkit", "Vite", "Tailwind CSS"],
