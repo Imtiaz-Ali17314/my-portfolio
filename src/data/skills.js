@@ -7,6 +7,7 @@ const skills = [
       "JavaScript",
       "React",
       "Vue",
+      "TypeScript",
       "Bootstrap",
       "Tailwind",
     ],
@@ -34,7 +35,7 @@ const skills = [
 
   {
     category: "Tools",
-    items: ["Git", "GitHub", "Postman", "VS Code"],
+    items: ["Git", "GitHub", "VS Code"],
   },
 ];
 

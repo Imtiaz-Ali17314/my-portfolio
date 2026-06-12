@@ -581,7 +581,7 @@ const projects = [
     live: "#",
     github:
       "https://github.com/Imtiaz-Ali17314/CampaignOS-Smart-Campaign-Management-System",
-    image: "/images/projects/CampaignOS.png",
+    image: "/images/projects/campaignOs.JPG",
   },
 
   {
