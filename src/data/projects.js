@@ -2,6 +2,7 @@ const projects = [
   {
     id: 1,
     title: "Flexbox Project Layout",
+    slug: "flexbox-project-layout",
     category: "Frontend",
     stack: ["HTML", "CSS"],
     description:
@@ -20,6 +21,7 @@ const projects = [
   {
     id: 2,
     title: "Amazon Homepage Clone",
+    slug: "amazon-homepage-clone",
     category: "Frontend",
     stack: ["HTML", "CSS"],
     description:
@@ -40,6 +42,7 @@ const projects = [
   {
     id: 3,
     title: "Tic-Tac-Toe Game",
+    slug: "tic-tac-toe-game",
     category: "Frontend",
     stack: ["HTML", "CSS", "JavaScript"],
     description:
@@ -59,6 +62,7 @@ const projects = [
   {
     id: 4,
     title: "Rock Paper Scissors Premium",
+    slug: "rock-paper-scissors-premium",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -78,6 +82,7 @@ const projects = [
   {
     id: 5,
     title: "🕰️ Digital Clock Pro",
+    slug: "digital-clock-pro",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -98,6 +103,7 @@ const projects = [
   {
     id: 6,
     title: "⏱️ ChronosAnalytics",
+    slug: "chronos-analytics",
     category: "Frontend",
     stack: ["HTML", "CSS", "JavaScript"],
     description:
@@ -119,6 +125,7 @@ const projects = [
   {
     id: 7,
     title: "🧮 QuantumCalc",
+    slug: "quantum-calc",
     category: "Frontend",
     stack: ["React 19", "Vite", "Bootstrap 5", "Interactivity"],
     description:
@@ -139,6 +146,7 @@ const projects = [
   {
     id: 8,
     title: "🌌 Chronos Nebula",
+    slug: "chronos-nebula",
     category: "Frontend",
     stack: ["React 19", "Vite", "Framer Motion 12", "Bootstrap 5"],
     description:
@@ -161,6 +169,7 @@ const projects = [
   {
     id: 9,
     title: "🔐 CIPHER VAULT",
+    slug: "cipher-vault",
     category: "Frontend",
     stack: ["HTML", "CSS", "JavaScript"],
     description:
@@ -182,6 +191,7 @@ const projects = [
   {
     id: 10,
     title: "✨ Stellar Tasks",
+    slug: "stellar-tasks",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -202,6 +212,7 @@ const projects = [
   {
     id: 11,
     title: "🌌 Zenith Mission Control",
+    slug: "zenith-mission-control",
     category: "Frontend",
     stack: ["React", "React Context API & `useReducer`", "CSS3", "Vite"],
     description:
@@ -222,6 +233,7 @@ const projects = [
   {
     id: 12,
     title: "🌤️ AtmosLux",
+    slug: "atmoslux",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript", "OpenWeatherMap API"],
     description:
@@ -242,6 +254,7 @@ const projects = [
   {
     id: 13,
     title: "⚡ FLUX",
+    slug: "flux",
     category: "Frontend",
     stack: [
       "HTML5",
@@ -266,6 +279,7 @@ const projects = [
   {
     id: 14,
     title: "Lumina-Image-Workspace",
+    slug: "lumina-image-workspace",
     category: "Frontend",
     stack: [" HTML5", "CSS3", "JavaScript"],
     description:
@@ -288,6 +302,8 @@ const projects = [
     id: 15,
     title:
       "🎙️ SpeakFlow",
+    slug:
+      "speakflow",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -307,6 +323,7 @@ const projects = [
   {
     id: 16,
     title: "📚 Quiz Mind",
+    slug: "quiz-mind",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -326,6 +343,7 @@ const projects = [
   {
     id: 17,
     title: "DevPortfolio Ranker 🚀",
+    slug: "dev-portfolio-ranker",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -345,6 +363,7 @@ const projects = [
   {
     id: 18,
     title: "Personal Developer Portfolio 🚀",
+    slug: "personal-developer-portfolio",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "JavaScript"],
     description:
@@ -363,6 +382,7 @@ const projects = [
   {
     id: 19,
     title: "My Portfolio Website 🌐",
+    slug: "my-portfolio-website",
     category: "Frontend",
     stack: ["HTML5", "Bootstrap 5", "JavaScript"],
     description:
@@ -384,6 +404,7 @@ const projects = [
   {
     id: 20,
     title: "ApexCrypt OS 🌌",
+    slug: "apex-crypt-os",
     category: "Frontend",
     stack: [
       "HTML5",
@@ -412,6 +433,7 @@ const projects = [
   {
     id: 21,
     title: "Spotify Web Player Clone 🎵",
+    slug: "spotify-web-player-clone",
     category: "Frontend",
     stack: ["HTML5", "CSS3", "Typography:Montserrat", "FontAwesome"],
     description:
@@ -432,6 +454,7 @@ const projects = [
   {
     id: 22,
     title: "🎓 Learn Vue.js Practice App",
+    slug: "learn-vue-js-practice-app",
     category: "Full Stack",
     stack: ["Laravel 12", "Vue 3", "Bootstrap 5", "MySQL"],
     description:
@@ -452,6 +475,7 @@ const projects = [
   {
     id: 23,
     title: "🗄️ LaraVue Portal",
+    slug: "laravue-portal",
     category: "Full Stack",
     stack: ["Laravel 12", "Vue.js 3 (Options API)", "Bootstrap 5", "MySQL"],
     description:
@@ -469,6 +493,7 @@ const projects = [
   {
     id: 24,
     title: "شعبہ نظم - Shoba Nazam v2",
+    slug: "shoba-nazam-v2",
     category: "Full Stack",
     stack: [
       "Laravel 12",
@@ -498,6 +523,7 @@ const projects = [
   {
     id: 25,
     title: "FileFusion",
+    slug: "file-fusion",
     category: "Full Stack",
     stack: ["Laravel 12", "Vue.js 3", "Bootstrap 5", "MySQL"],
     description:
@@ -517,6 +543,7 @@ const projects = [
   {
     id: 26,
     title: "💻 Computer Performance Tracker",
+    slug: "computer-performance-tracker",
     category: "Desktop App",
     stack: ["Electron.js", "React.js", "TypeScript", "Vite"],
     description:
@@ -536,6 +563,7 @@ const projects = [
   {
     id: 27,
     title: "CampaignOS",
+    slug: "campaign-os",
     category: "Full Stack",
     stack: ["Node.js", "React.js", "Tailwind", "WebSockets", "PostgreSQL", "Docker"],
     description:
@@ -554,6 +582,50 @@ const projects = [
     github:
       "https://github.com/Imtiaz-Ali17314/CampaignOS-Smart-Campaign-Management-System",
     image: "/images/projects/CampaignOS.png",
+  },
+
+  {
+    id: 28,
+    title: "🌐 Connectify",
+    slug: "connectify",
+    category: "Frontend",
+    stack: ["React.js", "Bootstrap 5", "Vite"],
+    description:
+      "Connectify is a polished, responsive social media feed application built to demonstrate professional React development patterns. Upgraded from a simple list app to a full-fledged showcase, it incorporates modern UI standards without relying on heavy external styling libraries, leveraging Bootstrap 5 and the Context API for an elegant user experience.",
+    features: [
+      "Dynamic Theming",
+      "Demo Authentication Flow",
+      "Skeletons & Error Handling",
+      "Responsive Design",
+      "API Integration",
+    ],
+    live: "#",
+    github:
+      "https://github.com/Imtiaz-Ali17314/Connectify-Modern-Social-Feed",
+    image: "/images/projects/Connectify.png",
+  },
+  
+  {
+    id: 29,
+    title: "🛍️ AuraCart - Premium E-Commerce Platform",
+    slug: "auracart",
+    category: "Frontend",
+    stack: ["React.js", "Redux Toolkit", "Vite", "Tailwind CSS"],
+    description:
+      "AuraCart is a premium, full-featured e-commerce web application built with React, Redux Toolkit, and Tailwind CSS. It features a modern, luxury UI with seamless shopping cart functionality, dynamic category filtering, and robust state management.",
+    features: [
+      "Modern Luxury UI",
+      "Dynamic Category Filtering",
+      "Real-Time Search",
+      "Shopping Cart Management",
+      "Robust State Management",
+      "Resilient Data Fetching",
+      "Responsive Layout",
+    ],
+    live: "#",
+    github:
+      "https://github.com/Imtiaz-Ali17314/AuraCart-Premium-E-Commerce-Platform",
+    image: "/images/projects/aura-cart.png",
   },
 ];
 
