@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import { useTheme } from "../context/ThemeContext";
 import projects from "../data/projects";
+import MagicFlowerTrail from "../components/ui/MagicFlowerTrail";
 
 const MainLayout = () => {
   const { theme } = useTheme();
@@ -47,10 +48,13 @@ const MainLayout = () => {
   return (
     <div
       className={`
-        min-h-screen transition-colors duration-300
-        ${theme === "dark" ? "bg-[#0a0a0c] text-slate-100" : "bg-white text-slate-900"}
+        min-h-screen transition-colors duration-500
+        ${theme === "dark" ? "bg-[#080416] text-slate-100" : "bg-[#fcfaff] text-slate-900"}
       `}
     >
+      {/* Magical canvas flower trail — floats above everything */}
+      <MagicFlowerTrail />
+
       <Navbar />
 
       <main>

@@ -3,43 +3,45 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   DESIGN TOKENS & SYSTEM PROPERTIES
+   MAGICAL ASTRAL BLOOM DESIGN TOKENS
    ========================================================================== */
 
 :root {
-  /* Premium Cosmic Harmonies - Starlight Cyan & Hot Violet/Pink */
-  --color-primary: 139, 92, 246; /* violet-500 (#8b5cf6) */
-  --color-primary-hover: 124, 58, 237; /* violet-600 */
-  --color-accent: 236, 72, 153; /* pink-500 (#ec4899) */
-  --color-accent-glow: rgba(236, 72, 153, 0.2);
-  
-  /* Light Mode Palette: Crisp Crystalline Frost Theme */
-  --background: 255, 255, 255;
-  --surface: 245, 247, 250;
-  --surface-hover: 238, 241, 247;
-  --border-color: 222, 226, 235;
-  --text-primary: 15, 23, 42;
-  --text-secondary: 60, 72, 94;
-  --text-muted: 140, 150, 170;
-  
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+  /* Magical Palette – Luminous Violet, Fuchsia, Cyan, Gold */
+  --color-primary: 167, 92, 255;        /* Electric Violet (#a75cff) */
+  --color-primary-hover: 139, 56, 229;  /* Deep Violet (#8b38e5) */
+  --color-accent: 255, 72, 176;         /* Hot Fuchsia (#ff48b0) */
+  --color-cyan: 56, 217, 255;           /* Neon Cyan (#38d9ff) */
+  --color-gold: 255, 200, 80;           /* Starlight Gold (#ffc850) */
+  --color-accent-glow: rgba(255, 72, 176, 0.25);
+
+  /* Light Mode: Crystal Blossom */
+  --background: 252, 250, 255;          /* Soft Lavender White */
+  --surface: 245, 242, 255;             /* Petal Tint */
+  --surface-hover: 237, 232, 255;       /* Hover Petal */
+  --border-color: 210, 200, 240;        /* Soft Violet Border */
+  --text-primary: 18, 10, 38;           /* Deep Midnight */
+  --text-secondary: 65, 50, 100;        /* Dusky Violet */
+  --text-muted: 150, 135, 180;          /* Muted Lavender */
+
+  --shadow-sm: 0 1px 3px 0 rgba(120, 60, 200, 0.08);
+  --shadow-md: 0 4px 12px -1px rgba(120, 60, 200, 0.12), 0 2px 6px -1px rgba(255, 72, 176, 0.06);
+  --shadow-lg: 0 10px 25px -3px rgba(120, 60, 200, 0.15), 0 4px 10px -2px rgba(255, 72, 176, 0.08);
+  --shadow-xl: 0 20px 40px -5px rgba(120, 60, 200, 0.18), 0 10px 20px -5px rgba(255, 72, 176, 0.1);
+
   --transition-speed: 0.3s;
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
-  /* Premium Dark Mode: Deep Cosmic Aurora Cyber Theme */
-  --background: 6, 6, 14; /* Deep Space Obsidian (#06060e) */
-  --surface: 13, 12, 26; /* Cosmic Void Purple-Black (#0d0c1a) */
-  --surface-hover: 23, 20, 48; /* Glowing Nebula Purple (#171430) */
-  --border-color: 30, 27, 56; /* Cosmic Dust Border (#1e1b38) */
-  --text-primary: 241, 243, 248; /* Silver-Blue Starlight */
-  --text-secondary: 180, 184, 204; /* Muted Galactic Gray */
-  --text-muted: 110, 114, 138; /* Dark Cosmos Slate */
+  /* Dark Mode: Astral Bloom — Deep Space with Neon Aurora */
+  --background: 8, 4, 22;              /* #080416 Abyssal Violet-Black */
+  --surface: 16, 10, 40;              /* #100a28 Deep Nebula */
+  --surface-hover: 28, 18, 65;        /* #1c1241 Aurora Hover */
+  --border-color: 45, 30, 90;         /* #2d1e5a Violet Edge */
+  --text-primary: 240, 235, 255;      /* #f0ebff Starlight White */
+  --text-secondary: 190, 175, 220;    /* #beafdc Moonlight Lavender */
+  --text-muted: 120, 105, 155;        /* #78699b Cosmic Violet Gray */
 }
 
 /* ==========================================================================
@@ -54,7 +56,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Native Scroll offset for fixed/sticky headers! */
   scroll-padding-top: 5rem;
 }
 
@@ -75,10 +76,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Custom modern scrollbars */
+/* Premium magical scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -86,103 +87,134 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--border-color));
-  border-radius: 4px;
+  background: linear-gradient(180deg, rgb(var(--color-primary)), rgb(var(--color-accent)));
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--color-primary));
+  background: linear-gradient(180deg, rgb(var(--color-accent)), rgb(var(--color-cyan)));
 }
 
-/* Selection aesthetics */
+/* Magical text selection */
 ::selection {
-  background-color: rgba(var(--color-primary), 0.25);
-  color: inherit;
+  background-color: rgba(var(--color-primary), 0.3);
+  color: rgb(var(--text-primary));
 }
+
+
 
 /* ==========================================================================
-   PREMIUM UTILITIES & GLASSMORPHISM
+   PREMIUM GLASSMORPHISM PANELS
    ========================================================================== */
 
-/* Glassmorphism Panel styles */
 .glass-panel {
-  background: rgba(var(--surface), 0.7);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(var(--surface), 0.65);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
   border: 1px solid rgba(var(--border-color), 0.5);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .dark .glass-panel {
-  background: rgba(var(--surface), 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 
-              inset 0 1px 1px rgba(255, 255, 255, 0.02);
+  background: rgba(var(--surface), 0.45);
+  border: 1px solid rgba(167, 92, 255, 0.08);
+  border-top: 1px solid rgba(167, 92, 255, 0.18);
+  box-shadow:
+    0 12px 40px -8px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(167, 92, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .glass-panel-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(var(--color-primary), 0.4);
-  box-shadow: 0 15px 35px -10px rgba(var(--color-primary), 0.15),
-              0 0 15px 0 rgba(var(--color-primary), 0.08);
-  transform: translateY(-4px);
+  border-color: rgba(var(--color-primary), 0.45);
+  box-shadow:
+    0 20px 45px -12px rgba(var(--color-primary), 0.2),
+    0 0 20px 0 rgba(var(--color-primary), 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px) scale(1.005);
 }
 
 .dark .glass-panel-hover:hover {
-  border-color: rgba(var(--color-accent), 0.35);
-  box-shadow: 0 15px 35px -10px rgba(var(--color-accent), 0.12),
-              0 0 20px 0 rgba(var(--color-accent), 0.06);
+  border-color: rgba(var(--color-accent), 0.4);
+  box-shadow:
+    0 20px 45px -12px rgba(var(--color-accent), 0.18),
+    0 0 30px 0 rgba(var(--color-accent), 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-/* High-tech glow background nodes */
+/* ==========================================================================
+   MAGICAL GLOW NODES
+   ========================================================================== */
+
 .glow-node {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.12;
+  filter: blur(100px);
+  opacity: 0.1;
   pointer-events: none;
   z-index: 0;
-  transition: opacity 0.5s ease;
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
 
 .dark .glow-node {
-  opacity: 0.22;
+  opacity: 0.28;
 }
 
-/* Animated mesh gradient backgrounds */
-@keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* ==========================================================================
+   ANIMATED MAGICAL MESH GRADIENT — AURORA BOREALIS EFFECT
+   ========================================================================== */
+
+@keyframes aurora-drift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 0%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes nebula-pulse {
+  0%, 100% { opacity: 0.06; transform: scale(1) translate3d(0,0,0); }
+  50%       { opacity: 0.14; transform: scale(1.05) translate3d(0,0,0); }
 }
 
 .mesh-gradient-bg {
-  background: 
-    radial-gradient(at 0% 0%, rgba(var(--color-primary), 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(var(--color-accent), 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(var(--color-primary), 0.06) 0px, transparent 50%);
-  background-size: 200% 200%;
-  animation: aurora 15s ease infinite;
+  position: relative;
 }
 
-/* Glowing text elements */
+.mesh-gradient-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(var(--color-primary), 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 5%, rgba(var(--color-accent), 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(var(--color-cyan), 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(var(--color-gold), 0.07) 0%, transparent 50%);
+  background-size: 300% 300%;
+  animation: aurora-drift 18s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   GLOBAL GLOW UTILITIES
+   ========================================================================== */
+
 .glow-text {
-  text-shadow: 0 0 20px rgba(var(--color-primary), 0.3);
+  text-shadow: 0 0 25px rgba(var(--color-primary), 0.4), 0 0 50px rgba(var(--color-accent), 0.2);
 }
 
-/* Standard styling alignments */
+/* ==========================================================================
+   SECTION LAYOUT
+   ========================================================================== */
+
 .section-container {
   width: 100%;
   max-width: 1280px;
@@ -190,24 +222,36 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6rem 1.5rem;
 }
 
-/* Input Fields styling */
+/* ==========================================================================
+   MAGICAL FORM INPUTS
+   ========================================================================== */
+
 .glass-input {
   background: rgba(var(--surface), 0.5);
-  border: 1px solid rgb(var(--border-color));
+  border: 1px solid rgba(var(--border-color), 0.8);
   color: rgb(var(--text-primary));
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   transition: all var(--transition-speed) var(--transition-smooth);
 }
 
-.glass-input:focus {
-  outline: none;
-  border-color: rgb(var(--color-primary));
-  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.15);
-  background: rgba(var(--surface), 0.85);
+.glass-input::placeholder {
+  color: rgb(var(--text-muted));
 }
 
-/* Premium Button hover animations */
+.glass-input:focus {
+  outline: none;
+  border-color: rgba(var(--color-primary), 0.7);
+  box-shadow:
+    0 0 0 3px rgba(var(--color-primary), 0.12),
+    0 0 20px rgba(var(--color-primary), 0.08);
+  background: rgba(var(--surface), 0.9);
+}
+
+/* ==========================================================================
+   PREMIUM BUTTON SHINE SWEEP
+   ========================================================================== */
+
 .glow-btn {
   position: relative;
   overflow: hidden;
@@ -219,18 +263,19 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 60%;
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.25),
     transparent
   );
-  transition: all 0.6s ease;
+  transform: skewX(-20deg);
+  transition: all 0.65s ease;
   z-index: -1;
 }
 
 .glow-btn:hover::before {
-  left: 100%;
+  left: 160%;
 }

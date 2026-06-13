@@ -22,11 +22,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden mesh-gradient-bg transition-colors duration-300"
+      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden mesh-gradient-bg transition-colors duration-500"
     >
-      {/* Glow Blur Nodes */}
-      <div className="glow-node w-[350px] h-[350px] bg-indigo-500/10 left-[10%] top-[15%] rounded-full blur-[80px]" />
-      <div className="glow-node w-[400px] h-[400px] bg-pink-500/10 right-[15%] bottom-[15%] rounded-full blur-[100px]" />
+      {/* Multi-hue magical glow orbs */}
+      <div className="glow-node w-[500px] h-[500px] bg-violet-500/20 left-[5%] top-[10%] rounded-full blur-[120px]" />
+      <div className="glow-node w-[450px] h-[450px] bg-fuchsia-500/20 right-[10%] bottom-[10%] rounded-full blur-[110px]" />
+      <div className="glow-node w-[350px] h-[350px] bg-cyan-400/15 left-[40%] bottom-[20%] rounded-full blur-[90px]" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
         

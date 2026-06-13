@@ -56,7 +56,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-[#0a0a0c]/80 border-b border-slate-200 dark:border-[#262630] transition-colors duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-[#080416]/80 border-b border-slate-200/60 dark:border-[#2d1e5a]/60 transition-colors duration-300" style={{backdropFilter: 'blur(20px) saturate(180%)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
@@ -108,7 +108,7 @@ export default function Navbar() {
             <button
               onClick={toggleMenu}
               aria-label="Toggle Navigation Menu"
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-2xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1b1b24] transition-colors focus:outline-none"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-2xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1c1241]/60 transition-colors focus:outline-none"
             >
               {isOpen ? <FiX /> : <FiMenu />}
             </button>
@@ -124,7 +124,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-white/95 dark:bg-[#0a0a0c]/95 border-t border-slate-200 dark:border-[#262630]"
+            className="md:hidden overflow-hidden bg-white/95 dark:bg-[#080416]/95 border-t border-slate-200/60 dark:border-[#2d1e5a]/60"
           >
             <div className="px-6 py-6 space-y-4 flex flex-col">
               {navLinks.map((link) => (
