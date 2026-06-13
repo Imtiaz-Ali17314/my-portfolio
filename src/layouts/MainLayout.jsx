@@ -6,6 +6,7 @@ import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import { useTheme } from "../context/ThemeContext";
 import projects from "../data/projects";
 import MagicFlowerTrail from "../components/ui/MagicFlowerTrail";
+import CodeWorldBackground from "../components/ui/CodeWorldBackground";
 
 const MainLayout = () => {
   const { theme } = useTheme();
@@ -52,6 +53,9 @@ const MainLayout = () => {
         ${theme === "dark" ? "bg-[#080416] text-slate-100" : "bg-[#fcfaff] text-slate-900"}
       `}
     >
+      {/* Code World Matrix-style background in dark mode */}
+      {theme === "dark" && <CodeWorldBackground />}
+
       {/* Magical canvas flower trail — floats above everything */}
       <MagicFlowerTrail />
 

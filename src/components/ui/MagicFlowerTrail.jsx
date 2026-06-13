@@ -24,22 +24,20 @@ class Flower {
     this.y = y;
     const palettes = isDark ? DARK_PALETTES : LIGHT_PALETTES;
     this.palette = palettes[Math.floor(Math.random() * palettes.length)];
-    this.size = 4 + Math.random() * 9;          // petal radius (px)
-    this.petalCount = 5 + Math.floor(Math.random() * 4); // 5-8 petals
+    this.size = 5 + Math.random() * 8;                  // petal radius (px)
+    this.petalCount = 5 + Math.floor(Math.random() * 3); // 5-7 petals
     this.rotation = Math.random() * Math.PI * 2;
-    this.rotationSpeed = (Math.random() - 0.5) * 0.08;
+    this.rotationSpeed = (Math.random() - 0.5) * 0.05;
 
-    // ── Full 360° burst: random angle + random speed ──────────────────────
-    const angle = Math.random() * Math.PI * 2;          // any direction
-    const speed = 1.8 + Math.random() * 3.2;            // burst magnitude
-    this.vx = Math.cos(angle) * speed;
-    this.vy = Math.sin(angle) * speed;
-    this.gravity = 0.055 + Math.random() * 0.04;        // gentle pull down
+    // ── Floating upward physics ──────────────────────────────────────────
+    this.vx = (Math.random() - 0.5) * 0.9;              // gentle horizontal sway
+    this.vy = -0.5 - Math.random() * 1.2;               // float upward
+    this.gravity = -0.008 - Math.random() * 0.012;       // slow upward acceleration
     // ─────────────────────────────────────────────────────────────────────
     this.alpha = 1;
-    this.decay = 0.012 + Math.random() * 0.01;
+    this.decay = 0.008 + Math.random() * 0.008;         // Fades out in 1 - 2 seconds
     this.scale = 1;
-    this.scaleDecay = 0.003 + Math.random() * 0.002;
+    this.scaleDecay = 0.004 + Math.random() * 0.004;
     // sparkle center
     this.centerColor = isDark ? "#ffffff" : "#fffbf0";
   }
@@ -47,7 +45,7 @@ class Flower {
   update() {
     this.x += this.vx;
     this.y += this.vy;
-    this.vy += this.gravity;
+    this.vy += this.gravity; // floats upward (negative gravity)
     this.rotation += this.rotationSpeed;
     this.alpha -= this.decay;
     this.scale -= this.scaleDecay;
@@ -104,7 +102,15 @@ class Flower {
 const MagicFlowerTrail = () => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
-  const mouseRef = useRef({ x: -999, y: -999, moved: false });
+  // Track cursor position, velocities, and idle timer
+  const mouseRef = useRef({
+    x: -999,
+    y: -999,
+    lastX: -999,
+    lastY: -999,
+    speed: 0,
+    lastMoveTime: 0
+  });
   const rafRef = useRef(null);
   const frameCountRef = useRef(0);
   const isDarkRef = useRef(false);
@@ -129,28 +135,58 @@ const MagicFlowerTrail = () => {
     const observer = new MutationObserver(updateDarkMode);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-    // Track mouse
+    // Track mouse & touch coordinates + speed
     const onMouseMove = (e) => {
-      mouseRef.current.x = e.clientX;
-      mouseRef.current.y = e.clientY;
-      mouseRef.current.moved = true;
+      const m = mouseRef.current;
+      m.lastX = m.x;
+      m.lastY = m.y;
+      m.x = e.clientX;
+      m.y = e.clientY;
+
+      if (m.lastX !== -999) {
+        const dx = m.x - m.lastX;
+        const dy = m.y - m.lastY;
+        m.speed = Math.sqrt(dx * dx + dy * dy);
+      }
+      m.lastMoveTime = Date.now();
     };
+
     const onTouchMove = (e) => {
       const t = e.touches[0];
-      mouseRef.current.x = t.clientX;
-      mouseRef.current.y = t.clientY;
-      mouseRef.current.moved = true;
+      const m = mouseRef.current;
+      m.lastX = m.x;
+      m.lastY = m.y;
+      m.x = t.clientX;
+      m.y = t.clientY;
+
+      if (m.lastX !== -999) {
+        const dx = m.x - m.lastX;
+        const dy = m.y - m.lastY;
+        m.speed = Math.sqrt(dx * dx + dy * dy);
+      }
+      m.lastMoveTime = Date.now();
     };
+
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("touchmove", onTouchMove, { passive: true });
 
-    // Spawn flowers on each moved frame (throttled to every 2 frames)
+    // Spawn flowers proportional to movement speed, capped at idle limit (150ms)
     const spawnBurst = () => {
-      const { x, y, moved } = mouseRef.current;
-      if (!moved) return;
-      const count = 1 + Math.floor(Math.random() * 2); // 1-2 per frame burst
+      const m = mouseRef.current;
+      const timeSinceLastMove = Date.now() - m.lastMoveTime;
+      
+      // Stop creating flowers if mouse has stopped moving (e.g. idle for 150ms)
+      if (timeSinceLastMove > 150) return;
+
+      const speed = m.speed || 0;
+      // Faster mouse movement results in more flowers spawning simultaneously
+      const count = Math.min(3, Math.floor(speed / 10) + 1);
+
       for (let i = 0; i < count; i++) {
-        particlesRef.current.push(new Flower(x, y, isDarkRef.current));
+        // Slight dispersion offset for natural growth look
+        const offsetX = (Math.random() - 0.5) * 12;
+        const offsetY = (Math.random() - 0.5) * 12;
+        particlesRef.current.push(new Flower(m.x + offsetX, m.y + offsetY, isDarkRef.current));
       }
     };
 
@@ -158,8 +194,12 @@ const MagicFlowerTrail = () => {
     const loop = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Decelerate speed value on each frame when movement slows
+      mouseRef.current.speed *= 0.9;
+
       frameCountRef.current++;
-      if (frameCountRef.current % 4 === 0) {
+      // Check spawning every 3 frames for a rich but performant flow
+      if (frameCountRef.current % 3 === 0) {
         spawnBurst();
       }
 
@@ -170,9 +210,9 @@ const MagicFlowerTrail = () => {
         return !p.dead;
       });
 
-      // Cap total alive particles
-      if (particlesRef.current.length > 300) {
-        particlesRef.current.splice(0, particlesRef.current.length - 300);
+      // Cap total alive particles to optimize CPU load
+      if (particlesRef.current.length > 250) {
+        particlesRef.current.splice(0, particlesRef.current.length - 250);
       }
 
       rafRef.current = requestAnimationFrame(loop);

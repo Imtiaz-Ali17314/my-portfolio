@@ -27,7 +27,7 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-center bg-white dark:bg-[#0a0a0c] px-6">
+      <div className="min-h-screen flex items-center justify-center text-center bg-white dark:bg-transparent px-6">
         <div className="space-y-6 max-w-md">
           <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white">Project Not Found</h1>
           <p className="text-slate-600 dark:text-slate-400">
@@ -46,7 +46,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0c] py-12 pt-28 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-transparent py-12 pt-28 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
       
       {/* Background glow node */}
       <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />

@@ -33,7 +33,7 @@ const itemVariants = {
 
 const Resume = () => {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0c] py-12 pt-28 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-transparent py-12 pt-28 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
       
       {/* Glow Blur Nodes */}
       <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />

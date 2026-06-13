@@ -201,6 +201,11 @@ h1, h2, h3, h4, h5, h6 {
   animation: aurora-drift 18s ease infinite;
   pointer-events: none;
   z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dark .mesh-gradient-bg::before {
+  opacity: 0;
 }
 
 /* ==========================================================================

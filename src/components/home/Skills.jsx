@@ -67,7 +67,7 @@ const itemVariants = {
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-[#0a0a0c]">
+    <section id="skills" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-transparent">
       
       {/* Background Glow Node */}
       <div className="glow-node w-[450px] h-[450px] bg-indigo-500/5 left-[50%] top-[30%] -translate-x-1/2 rounded-full blur-[110px] pointer-events-none" />

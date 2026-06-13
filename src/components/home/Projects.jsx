@@ -28,7 +28,7 @@ const Projects = () => {
   const featuredProjects = projects.slice(0, 6);
 
   return (
-    <section id="projects" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-[#0a0a0c]">
+    <section id="projects" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-transparent">
       {/* Glow highlight node */}
       <div className="glow-node w-[500px] h-[500px] bg-pink-500/5 right-[-200px] bottom-[10%] rounded-full blur-[120px] pointer-events-none" />
 
