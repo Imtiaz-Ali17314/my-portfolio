@@ -1,53 +1,78 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import projects from "../../data/projects";
+import ProjectCard from "../ui/ProjectCard";
+import Button from "../common/Button";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
 
 const Projects = () => {
+  const navigate = useNavigate();
+  // Display the top 6 premium/full-stack projects on the home page
+  const featuredProjects = projects.slice(0, 6);
+
   return (
-    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10">Projects</h2>
+    <section id="projects" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-[#0a0a0c]">
+      {/* Glow highlight node */}
+      <div className="glow-node w-[500px] h-[500px] bg-pink-500/5 right-[-200px] bottom-[10%] rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <Link
-            key={project.id}
-            to={`/projects/${project.id}`}
-            className="block"
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* Title */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3">
+            Selected Work
+          </p>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
+            Featured Projects
+          </h2>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mt-4 rounded-full" />
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {featuredProjects.map((project, index) => (
+            <motion.div key={project.id} variants={itemVariants}>
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* View All Projects Action */}
+        <div className="mt-16 text-center">
+          <Button
+            variant="outline"
+            onClick={() => {
+              navigate("/projects");
+              window.scrollTo(0, 0);
+            }}
+            className="px-8 py-3.5 border-indigo-500 text-indigo-500 hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-500 dark:hover:text-white transition-all shadow-md"
           >
-            <div
-              key={index}
-              className="group relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-md 
-  border border-gray-200 dark:border-gray-800 
-  transition-all duration-300 ease-out
-  hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/40 cursor-pointer"
-            >
-              {/* Image Section */}
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-              </div>
-
-              {/* Content */}
-              <div className="p-4 relative">
-                <h3 className="font-semibold text-gray-900 dark:text-white transition-colors group-hover:text-blue-500">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-gray-500 mt-2 line-clamp-3 transition-all duration-300 group-hover:text-gray-300">
-                  {project.description}
-                </p>
-
-                {/* Bottom accent line */}
-                <div className="mt-3 h-[2px] w-0 bg-blue-500 transition-all duration-300 group-hover:w-full" />
-              </div>
-            </div>
-          </Link>
-        ))}
+            Explore All 29 Projects &rarr;
+          </Button>
+        </div>
       </div>
     </section>
   );

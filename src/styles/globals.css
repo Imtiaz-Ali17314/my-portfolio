@@ -2,42 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================
-   ROOT VARIABLES
-========================= */
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM PROPERTIES
+   ========================================================================== */
 
 :root {
-  --color-primary: #2563eb;
-  --color-secondary: #0f172a;
-
-  --background: #ffffff;
-  --surface: #f8fafc;
-
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-
-  --border-color: #e2e8f0;
-
+  /* Premium Harmonies - Slate & Electric Indigo/Violet */
+  --color-primary: 99, 102, 241; /* indigo-500 (#6366f1) */
+  --color-primary-hover: 79, 70, 229; /* indigo-600 */
+  --color-accent: 236, 72, 153; /* pink-500 (#ec4899) */
+  --color-accent-glow: rgba(236, 72, 153, 0.15);
+  
+  /* Light Mode Palette */
+  --background: 255, 255, 255;
+  --surface: 248, 250, 252; /* slate-50 */
+  --surface-hover: 241, 245, 249; /* slate-100 */
+  --border-color: 226, 232, 240; /* slate-200 */
+  --text-primary: 15, 23, 42; /* slate-900 */
+  --text-secondary: 71, 85, 105; /* slate-600 */
+  --text-muted: 148, 163, 184; /* slate-400 */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
   --transition-speed: 0.3s;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* =========================
-   DARK MODE
-========================= */
 
 .dark {
-  --background: #020617;
-  --surface: #0f172a;
-
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-
-  --border-color: #1e293b;
+  /* Premium Dark Mode - Deep Space Cyber Theme */
+  --background: 10, 10, 12; /* Deep Obsidian Black (#0a0a0c) */
+  --surface: 18, 18, 24; /* Dark Cyber Surface (#121218) */
+  --surface-hover: 27, 27, 36; /* Hover highlight (#1b1b24) */
+  --border-color: 38, 38, 48; /* slate-800 (#262630) */
+  --text-primary: 248, 250, 252; /* slate-50 */
+  --text-secondary: 203, 213, 225; /* slate-300 */
+  --text-muted: 100, 116, 139; /* slate-500 */
 }
 
-/* =========================
-   GLOBAL RESET
-========================= */
+/* ==========================================================================
+   GLOBAL STYLE OVERRIDES & BASE RESETS
+   ========================================================================== */
 
 * {
   margin: 0;
@@ -45,125 +52,153 @@
   box-sizing: border-box;
 }
 
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
+  /* Native Scroll offset for fixed/sticky headers! */
+  scroll-padding-top: 5rem;
 }
 
 body {
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
-
-  background: var(--background);
-  color: var(--text-primary);
-
-  transition:
-    background-color var(--transition-speed),
-    color var(--transition-speed);
-
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--text-primary));
+  transition: background-color var(--transition-speed) var(--transition-smooth),
+              color var(--transition-speed) var(--transition-smooth);
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
+/* Custom modern scrollbars */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--surface);
+  background: rgb(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 50px;
+  background: rgb(var(--border-color));
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  opacity: 0.8;
+  background: rgb(var(--color-primary));
 }
 
-/* =========================
-   REUSABLE CONTAINERS
-========================= */
-
-.container-custom {
-  width: 100%;
-  max-width: 1280px;
-
-  margin: 0 auto;
-
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-/* =========================
-   TEXT UTILITIES
-========================= */
-
-.heading-primary {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.heading-secondary {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-}
-
-.text-muted {
-  color: var(--text-secondary);
-}
-
-/* =========================
-   IMAGE DEFAULTS
-========================= */
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-a {
-  text-decoration: none;
+/* Selection aesthetics */
+::selection {
+  background-color: rgba(var(--color-primary), 0.25);
   color: inherit;
 }
 
-/* =========================
-   BUTTON RESET
-========================= */
+/* ==========================================================================
+   PREMIUM UTILITIES & GLASSMORPHISM
+   ========================================================================== */
 
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
+/* Glassmorphism Panel styles */
+.glass-panel {
+  background: rgba(var(--surface), 0.7);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(var(--border-color), 0.5);
 }
 
-/* =========================
-   SELECTION
-========================= */
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-::selection {
-  background: #2563eb;
-  color: white;
+.glass-panel-hover:hover {
+  border-color: rgba(var(--color-primary), 0.4);
+  box-shadow: 0 10px 30px -10px rgba(var(--color-primary), 0.15);
+  transform: translateY(-2px);
+}
+
+/* High-tech glow background nodes */
+.glow-node {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dark .glow-node {
+  opacity: 0.25;
+}
+
+/* Animated mesh gradient backgrounds */
+.mesh-gradient-bg {
+  background: 
+    radial-gradient(at 0% 0%, rgba(var(--color-primary), 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(var(--color-accent), 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(var(--color-primary), 0.04) 0px, transparent 50%);
+}
+
+/* Glowing text elements */
+.glow-text {
+  text-shadow: 0 0 20px rgba(var(--color-primary), 0.3);
+}
+
+/* Standard styling alignments */
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+/* Input Fields styling */
+.glass-input {
+  background: rgba(var(--surface), 0.5);
+  border: 1px solid rgb(var(--border-color));
+  color: rgb(var(--text-primary));
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: rgb(var(--color-primary));
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), 0.15);
+  background: rgba(var(--surface), 0.85);
+}
+
+/* Premium Button hover animations */
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glow-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.glow-btn:hover::before {
+  left: 100%;
 }

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <!-- Capsule Background -->
+  <rect width="100" height="100" rx="24" fill="#0b0b0f" />
+  <!-- Left Bracket -->
+  <path d="M 32,32 L 15,50 L 32,68" stroke="url(#brandGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <!-- Right Bracket -->
+  <path d="M 68,32 L 85,50 L 68,68" stroke="url(#brandGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <!-- Center Developer Letter -->
+  <text x="50%" y="63%" font-family="'Outfit', -apple-system, sans-serif" font-weight="800" font-size="36" fill="#ffffff" text-anchor="middle">I</text>
+</svg>

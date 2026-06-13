@@ -2,74 +2,113 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#home", type: "scroll" },
+  { name: "About", href: "#about", type: "scroll" },
+  { name: "Skills", href: "#skills", type: "scroll" },
+  { name: "Experience", href: "#experience", type: "scroll" },
+  { name: "Projects", href: "#projects", type: "scroll" },
+  { name: "Contact", href: "#contact", type: "scroll" },
+  { name: "Resume", href: "/resume", type: "route" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
-
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleScroll = (e, id) => {
+  const handleNavClick = (e, link) => {
     e.preventDefault();
+    setIsOpen(false);
 
-    // always go to home first
-    navigate("/");
-
-    // wait for page render then scroll
-    setTimeout(() => {
-      const element = document.querySelector(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+    if (link.type === "route") {
+      navigate(link.href);
+    } else {
+      if (location.pathname === "/") {
+        const element = document.querySelector(link.href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        navigate("/");
+        // wait for page load to scroll
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
       }
-    }, 100);
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 dark:bg-black/60 border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-[#0a0a0c]/80 border-b border-slate-200 dark:border-[#262630] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
+          
           {/* Logo */}
           <a
-            href="#home"
-            onClick={(e) => handleScroll(e, "#home")}
-            className="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+            href="/"
+            onClick={handleLogoClick}
+            className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1 group"
           >
-            Imtiaz<span className="text-blue-500">.dev</span>
+            <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
+              Imtiaz
+            </span>
+            <span className="text-slate-800 dark:text-slate-200 font-extrabold font-mono text-xl">&lt;dev/&gt;</span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleScroll(e, link.href)}
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-500 transition"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isRouteActive = location.pathname === link.href;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link)}
+                  className={`text-sm font-semibold tracking-wide transition-all duration-300 relative py-1 hover:text-indigo-500 dark:hover:text-indigo-400
+                    ${isRouteActive 
+                      ? "text-indigo-600 dark:text-indigo-400" 
+                      : "text-slate-600 dark:text-slate-300"
+                    }
+                  `}
+                >
+                  {link.name}
+                  {isRouteActive && (
+                    <motion.span 
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full"
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <ThemeToggle />
 
             {/* Mobile Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden text-2xl text-gray-800 dark:text-white"
+              aria-label="Toggle Navigation Menu"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-2xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#1b1b24] transition-colors focus:outline-none"
             >
               {isOpen ? <FiX /> : <FiMenu />}
             </button>
@@ -84,15 +123,16 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden bg-white/95 dark:bg-[#0a0a0c]/95 border-t border-slate-200 dark:border-[#262630]"
           >
-            <div className="px-4 py-4 space-y-4">
+            <div className="px-6 py-6 space-y-4 flex flex-col">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => handleScroll(e, link.href)}
-                  className="block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition"
+                  onClick={(e) => handleNavClick(e, link)}
+                  className="text-lg font-medium py-2 text-slate-700 dark:text-slate-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors border-b border-slate-100 dark:border-[#1b1b24]/50 last:border-0"
                 >
                   {link.name}
                 </a>

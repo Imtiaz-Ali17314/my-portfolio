@@ -1,60 +1,103 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
+
+const footerLinks = [
+  { name: "Home", href: "#home", type: "scroll" },
+  { name: "About", href: "#about", type: "scroll" },
+  { name: "Skills", href: "#skills", type: "scroll" },
+  { name: "Experience", href: "#experience", type: "scroll" },
+  { name: "Projects", href: "#projects", type: "scroll" },
+  { name: "Contact", href: "#contact", type: "scroll" },
+  { name: "Resume", href: "/resume", type: "route" },
+];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+
+    if (link.type === "route") {
+      navigate(link.href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      if (location.pathname === "/") {
+        const element = document.querySelector(link.href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+      }
+    }
+  };
 
   return (
-    <footer className="w-full border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-[#0b0b0f] text-gray-700 dark:text-gray-300">
-      <div className="max-w-6xl mx-auto px-4 py-10">
+    <footer className="w-full border-t border-slate-200 dark:border-[#262630] bg-[#f8fafc] dark:bg-[#0b0b0f] text-slate-700 dark:text-slate-300 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           
           {/* Brand */}
-          <div>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-              Imtiaz Ali
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold tracking-wide text-slate-900 dark:text-white flex items-center gap-1">
+              <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">
+                Imtiaz
+              </span>
+              <span className="text-slate-700 dark:text-slate-300 font-extrabold font-mono text-base">&lt;dev/&gt;</span>
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              Full Stack Web Developer focused on building scalable web
-              applications, modern UI experiences, and real-world solutions.
+            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              Full Stack Web Developer dedicated to writing clean, scalable code 
+              and crafting digital products that combine beautiful UX with high performance.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
-              Quick Links
+          <div className="space-y-4">
+            <h3 className="text-base font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+              Explore
             </h3>
-            <ul className="space-y-2 text-sm">
-              {["Home", "About", "Skills", "Experience", "Projects", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="hover:text-blue-500 transition"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+            <ul className="grid grid-cols-2 gap-2 text-sm">
+              {footerLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link)}
+                    className="hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Social Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <div className="space-y-4">
+            <h3 className="text-base font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Connect
             </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Feel free to reach out via email or connect with me on social platforms.
+            </p>
 
-            <div className="flex gap-4 text-xl">
+            <div className="flex gap-4 text-2xl pt-2">
               <a
                 href="https://github.com/Imtiaz-Ali17314"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-black dark:hover:text-white transition"
+                aria-label="GitHub Profile"
+                className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
               >
                 <FaGithub />
               </a>
@@ -63,14 +106,16 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/imtiaz-ali-79476a385/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-blue-600 transition"
+                aria-label="LinkedIn Profile"
+                className="text-slate-500 hover:text-blue-600 dark:hover:text-indigo-400 transition-colors duration-200"
               >
                 <FaLinkedin />
               </a>
 
               <a
                 href="mailto:imtiazali80102@gmail.com"
-                className="hover:text-red-500 transition"
+                aria-label="Email Me"
+                className="text-slate-500 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
               >
                 <FaEnvelope />
               </a>
@@ -79,14 +124,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-10 border-t border-gray-200 dark:border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between text-sm">
-          
-          <p className="text-gray-600 dark:text-gray-400">
-            © {currentYear} Imtiaz Ali. All rights reserved.
-          </p>
-
-          <p className="mt-3 md:mt-0 text-gray-500 dark:text-gray-500">
-            Built with React & Tailwind CSS 🚀
+        <div className="mt-12 border-t border-slate-200 dark:border-[#262630]/50 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-500">
+          <p>© {currentYear} Imtiaz Ali. All rights reserved.</p>
+          <p className="mt-4 sm:mt-0 flex items-center gap-1">
+            Built with React &amp; Tailwind CSS 🚀
           </p>
         </div>
       </div>
