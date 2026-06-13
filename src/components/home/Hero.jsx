@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import Button from "../common/Button";
+import Typewriter from "../ui/Typewriter";
 
 const words = [
   "Full Stack Web Developer",
@@ -11,42 +11,6 @@ const words = [
 ];
 
 const Hero = () => {
-  const [wordIdx, setWordIdx] = useState(0);
-  const [subIdx, setSubIdx] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [blink, setBlink] = useState(true);
-
-  // Typewriter effect
-  useEffect(() => {
-    if (subIdx === words[wordIdx].length + 1 && !isDeleting) {
-      const timeout = setTimeout(() => setIsDeleting(true), 1800);
-      return () => clearTimeout(timeout);
-    }
-
-    if (subIdx === 0 && isDeleting) {
-      setIsDeleting(false);
-      setWordIdx((prev) => (prev + 1) % words.length);
-      return;
-    }
-
-    const timeout = setTimeout(
-      () => {
-        setSubIdx((prev) => prev + (isDeleting ? -1 : 1));
-      },
-      isDeleting ? 40 : 90
-    );
-
-    return () => clearTimeout(timeout);
-  }, [subIdx, isDeleting, wordIdx]);
-
-  // Cursor blink
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBlink((prev) => !prev);
-    }, 450);
-    return () => clearInterval(interval);
-  }, []);
-
   const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.querySelector(id);
@@ -100,8 +64,7 @@ const Hero = () => {
           className="h-10 text-xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent"
         >
           <span>I'm a </span>
-          <span>{words[wordIdx].substring(0, subIdx)}</span>
-          <span className={`inline-block w-[2px] h-[0.9em] bg-indigo-500 dark:bg-indigo-400 ml-1 align-middle ${blink ? "opacity-100" : "opacity-0"}`} />
+          <Typewriter words={words} />
         </motion.div>
 
         {/* Short Pitch */}

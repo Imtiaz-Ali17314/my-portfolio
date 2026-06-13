@@ -10,17 +10,17 @@ const Button = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+    "inline-flex items-center justify-center rounded-xl px-6 py-3.5 text-sm font-bold tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60";
 
   const variants = {
     primary:
-      "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-md hover:shadow-lg",
+      "bg-gradient-to-r from-indigo-500 to-pink-500 text-white hover:opacity-95 shadow-md hover:shadow-lg hover:shadow-indigo-500/15 focus:ring-indigo-500",
 
     secondary:
-      "bg-slate-800 text-white hover:bg-slate-900 focus:ring-slate-600 shadow-md hover:shadow-lg dark:bg-slate-700 dark:hover:bg-slate-600",
+      "bg-slate-100 text-slate-800 hover:bg-slate-200 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:bg-slate-700/80 focus:ring-slate-500 shadow-sm",
 
     outline:
-      "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900",
+      "border border-slate-200 text-slate-700 hover:border-indigo-500/40 hover:text-indigo-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-indigo-400/40 dark:hover:text-indigo-400 focus:ring-indigo-500 hover:bg-indigo-500/[0.02] dark:hover:bg-indigo-500/[0.02]",
   };
 
   return (

@@ -1,10 +1,52 @@
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { FiCheckCircle, FiStar, FiFileText } from "react-icons/fi";
 
+const StatCounter = ({ value, suffix = "" }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const target = parseInt(value, 10);
+    if (isNaN(target)) {
+      setCount(value);
+      return;
+    }
+
+    let start = 0;
+    const duration = 1500; // 1.5s
+    const startTime = performance.now();
+
+    const animate = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing: easeOutQuad
+      const easeProgress = progress * (2 - progress);
+      const current = Math.floor(easeProgress * target);
+      
+      setCount(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isInView, value]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
+
 const stats = [
-  { value: "1+", label: "Year Experience", desc: "Self-learning & practice" },
-  { value: "6+", label: "Client Projects", desc: "Real-world production sites" },
-  { value: "29+", label: "Personal Projects", desc: "HTML/CSS to Advanced SaaS" },
+  { value: 1, suffix: "+", label: "Year Experience", desc: "Self-learning & practice" },
+  { value: 6, suffix: "+", label: "Client Projects", desc: "Real-world production sites" },
+  { value: 29, suffix: "+", label: "Personal Projects", desc: "HTML/CSS to Advanced SaaS" },
 ];
 
 const containerVariants = {
@@ -100,7 +142,7 @@ const About = () => {
               >
                 <div className="flex-grow space-y-1">
                   <span className="text-4xl font-extrabold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">
-                    {stat.value}
+                    <StatCounter value={stat.value} suffix={stat.suffix} />
                   </span>
                   <h4 className="text-base font-bold text-slate-800 dark:text-slate-100">
                     {stat.label}
