@@ -7,20 +7,20 @@
    ========================================================================== */
 
 :root {
-  /* Premium Harmonies - Slate & Electric Indigo/Violet */
-  --color-primary: 99, 102, 241; /* indigo-500 (#6366f1) */
-  --color-primary-hover: 79, 70, 229; /* indigo-600 */
+  /* Premium Cosmic Harmonies - Starlight Cyan & Hot Violet/Pink */
+  --color-primary: 139, 92, 246; /* violet-500 (#8b5cf6) */
+  --color-primary-hover: 124, 58, 237; /* violet-600 */
   --color-accent: 236, 72, 153; /* pink-500 (#ec4899) */
-  --color-accent-glow: rgba(236, 72, 153, 0.15);
+  --color-accent-glow: rgba(236, 72, 153, 0.2);
   
-  /* Light Mode Palette */
+  /* Light Mode Palette: Crisp Crystalline Frost Theme */
   --background: 255, 255, 255;
-  --surface: 248, 250, 252; /* slate-50 */
-  --surface-hover: 241, 245, 249; /* slate-100 */
-  --border-color: 226, 232, 240; /* slate-200 */
-  --text-primary: 15, 23, 42; /* slate-900 */
-  --text-secondary: 71, 85, 105; /* slate-600 */
-  --text-muted: 148, 163, 184; /* slate-400 */
+  --surface: 245, 247, 250;
+  --surface-hover: 238, 241, 247;
+  --border-color: 222, 226, 235;
+  --text-primary: 15, 23, 42;
+  --text-secondary: 60, 72, 94;
+  --text-muted: 140, 150, 170;
   
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -32,14 +32,14 @@
 }
 
 .dark {
-  /* Premium Dark Mode - Deep Space Cyber Theme */
-  --background: 10, 10, 12; /* Deep Obsidian Black (#0a0a0c) */
-  --surface: 18, 18, 24; /* Dark Cyber Surface (#121218) */
-  --surface-hover: 27, 27, 36; /* Hover highlight (#1b1b24) */
-  --border-color: 38, 38, 48; /* slate-800 (#262630) */
-  --text-primary: 248, 250, 252; /* slate-50 */
-  --text-secondary: 203, 213, 225; /* slate-300 */
-  --text-muted: 100, 116, 139; /* slate-500 */
+  /* Premium Dark Mode: Deep Cosmic Aurora Cyber Theme */
+  --background: 6, 6, 14; /* Deep Space Obsidian (#06060e) */
+  --surface: 13, 12, 26; /* Cosmic Void Purple-Black (#0d0c1a) */
+  --surface-hover: 23, 20, 48; /* Glowing Nebula Purple (#171430) */
+  --border-color: 30, 27, 56; /* Cosmic Dust Border (#1e1b38) */
+  --text-primary: 241, 243, 248; /* Silver-Blue Starlight */
+  --text-secondary: 180, 184, 204; /* Muted Galactic Gray */
+  --text-muted: 110, 114, 138; /* Dark Cosmos Slate */
 }
 
 /* ==========================================================================
@@ -107,9 +107,18 @@ h1, h2, h3, h4, h5, h6 {
 /* Glassmorphism Panel styles */
 .glass-panel {
   background: rgba(var(--surface), 0.7);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(var(--border-color), 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-panel {
+  background: rgba(var(--surface), 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.02);
 }
 
 .glass-panel-hover {
@@ -118,16 +127,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .glass-panel-hover:hover {
   border-color: rgba(var(--color-primary), 0.4);
-  box-shadow: 0 10px 30px -10px rgba(var(--color-primary), 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 15px 35px -10px rgba(var(--color-primary), 0.15),
+              0 0 15px 0 rgba(var(--color-primary), 0.08);
+  transform: translateY(-4px);
+}
+
+.dark .glass-panel-hover:hover {
+  border-color: rgba(var(--color-accent), 0.35);
+  box-shadow: 0 15px 35px -10px rgba(var(--color-accent), 0.12),
+              0 0 20px 0 rgba(var(--color-accent), 0.06);
 }
 
 /* High-tech glow background nodes */
 .glow-node {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
+  filter: blur(90px);
+  opacity: 0.12;
   pointer-events: none;
   z-index: 0;
   transition: opacity 0.5s ease;
@@ -136,15 +152,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dark .glow-node {
-  opacity: 0.25;
+  opacity: 0.22;
 }
 
 /* Animated mesh gradient backgrounds */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .mesh-gradient-bg {
   background: 
-    radial-gradient(at 0% 0%, rgba(var(--color-primary), 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(var(--color-accent), 0.05) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(var(--color-primary), 0.04) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(var(--color-primary), 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(var(--color-accent), 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(var(--color-primary), 0.06) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: aurora 15s ease infinite;
 }
 
 /* Glowing text elements */
