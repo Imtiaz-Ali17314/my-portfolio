@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden bg-slate-50/50 dark:bg-black/30">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden bg-slate-50/50 dark:bg-transparent">
       
       {/* Background Glow */}
       <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 right-[10%] top-[10%] rounded-full blur-[100px] pointer-events-none" />

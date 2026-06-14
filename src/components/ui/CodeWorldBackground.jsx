@@ -41,10 +41,54 @@ const CodeWorldBackground = () => {
     const ambientLight = new THREE.AmbientLight(0x444444);
     scene.add(ambientLight);
 
-    // Strong point light at the center representing sun light
-    const sunLight = new THREE.PointLight(0xffffff, 3.5, 450, 0.8);
-    sunLight.position.set(0, 0, 0);
-    scene.add(sunLight);
+    // Soft cybernetic point light — dim enough to not wash out content
+    const coreLight = new THREE.PointLight(0x06b6d4, 1.2, 300, 1.0);
+    coreLight.position.set(0, 0, 0);
+    scene.add(coreLight);
+
+    // --- Digital Code Core (replaces bright sun) ---
+    // Outer wireframe sphere — green digital grid
+    const coreGeo = new THREE.SphereGeometry(7.5, 12, 10);
+    const coreMat = new THREE.MeshBasicMaterial({
+      color: 0x10b981,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.45
+    });
+    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+    scene.add(coreMesh);
+
+    // Tiny inner cyan orb at absolute center
+    const innerGeo = new THREE.SphereGeometry(3.2, 16, 16);
+    const innerMat = new THREE.MeshBasicMaterial({
+      color: 0x06b6d4,
+      transparent: true,
+      opacity: 0.28
+    });
+    const innerMesh = new THREE.Mesh(innerGeo, innerMat);
+    scene.add(innerMesh);
+
+    // Gimbal ring 1 — green torus on Y-axis
+    const ring1Geo = new THREE.TorusGeometry(9.5, 0.18, 8, 80);
+    const ring1Mat = new THREE.MeshBasicMaterial({
+      color: 0x10b981,
+      transparent: true,
+      opacity: 0.55
+    });
+    const ring1Mesh = new THREE.Mesh(ring1Geo, ring1Mat);
+    ring1Mesh.rotation.x = Math.PI / 2;
+    scene.add(ring1Mesh);
+
+    // Gimbal ring 2 — cyan torus on X-axis
+    const ring2Geo = new THREE.TorusGeometry(9.5, 0.18, 8, 80);
+    const ring2Mat = new THREE.MeshBasicMaterial({
+      color: 0x06b6d4,
+      transparent: true,
+      opacity: 0.45
+    });
+    const ring2Mesh = new THREE.Mesh(ring2Geo, ring2Mat);
+    ring2Mesh.rotation.y = Math.PI / 2;
+    scene.add(ring2Mesh);
 
     // --- Twinkling Starfield ---
     const starCount = 1000;
@@ -77,14 +121,14 @@ const CodeWorldBackground = () => {
     // --- Solar System ---
     // Emissive Sun
     const sunGeo = new THREE.SphereGeometry(8.5, 32, 32);
-    const sunMat = new THREE.MeshBasicMaterial({ color: 0xffa500 }); // Warm orange sun
+    const sunMat = new THREE.MeshBasicMaterial({ color: 0x82652F}); // Warm orange sun
     const sunMesh = new THREE.Mesh(sunGeo, sunMat);
     scene.add(sunMesh);
 
     // Subtle Outer Sun Glow Layer
     const sunGlowGeo = new THREE.SphereGeometry(10.2, 32, 32);
     const sunGlowMat = new THREE.MeshBasicMaterial({
-      color: 0xff7700,
+      color: 0x82652F,
       transparent: true,
       opacity: 0.22,
       blending: THREE.AdditiveBlending
@@ -233,9 +277,12 @@ const CodeWorldBackground = () => {
     const animate = () => {
       frameId = requestAnimationFrame(animate);
 
-      // Rotate Sun
-      sunMesh.rotation.y += 0.0008;
-      sunGlowMesh.rotation.y -= 0.0004;
+      // Animate Digital Code Core
+      coreMesh.rotation.y += 0.0015;
+      coreMesh.rotation.x += 0.0008;
+      innerMesh.rotation.y -= 0.002;
+      ring1Mesh.rotation.z += 0.004;  // spin green ring
+      ring2Mesh.rotation.x += 0.003;  // spin cyan ring in opposite feel
 
       // Orbit Planets (Slow peaceful speeds)
       planets.forEach((p) => {
@@ -296,13 +343,22 @@ const CodeWorldBackground = () => {
       starGeo.dispose();
       starMat.dispose();
 
-      scene.remove(sunMesh);
-      sunGeo.dispose();
-      sunMat.dispose();
+      // Dispose digital core elements
+      scene.remove(coreMesh);
+      coreGeo.dispose();
+      coreMat.dispose();
 
-      scene.remove(sunGlowMesh);
-      sunGlowGeo.dispose();
-      sunGlowMat.dispose();
+      scene.remove(innerMesh);
+      innerGeo.dispose();
+      innerMat.dispose();
+
+      scene.remove(ring1Mesh);
+      ring1Geo.dispose();
+      ring1Mat.dispose();
+
+      scene.remove(ring2Mesh);
+      ring2Geo.dispose();
+      ring2Mat.dispose();
 
       planets.forEach((p) => {
         scene.remove(p.mesh);
