@@ -121,7 +121,7 @@ const projects = [
       "Complete Cart calculations (taxes, discounts, delivery fees)",
       "Responsive Layout design (mobile to widescreen desktop)"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/AuraCart-Premium-E-Commerce-Platform/",
     "github": "https://github.com/Imtiaz-Ali17314/AuraCart-Premium-E-Commerce-Platform",
     "image": "/images/projects/aura-cart.png"
   },
