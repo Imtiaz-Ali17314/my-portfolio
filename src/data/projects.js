@@ -168,7 +168,7 @@ const projects = [
       "Centralized React Context API for state sharing",
       "Interactive post reaction and comment section"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Connectify-Modern-Social-Feed",
     "github": "https://github.com/Imtiaz-Ali17314/Connectify-Modern-Social-Feed",
     "image": "/images/projects/Connectify.png"
   },
@@ -213,7 +213,7 @@ const projects = [
       "Dynamic Grid Layouts for albums, charts, and playlists",
       "Custom Media Playback Progress Bar design"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Spotify-Clone/",
     "github": "https://github.com/Imtiaz-Ali17314/Spotify-Clone",
     "image": "/images/projects/Spotify-Clone.png"
   },
@@ -237,7 +237,7 @@ const projects = [
       "Whale Alert Feed processing transaction telemetry",
       "Simulated Technical Analysis AI Assistant"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/ApexCrypt-OS/",
     "github": "https://github.com/Imtiaz-Ali17314/ApexCrypt-OS",
     "image": "/images/projects/ApexCrypt OS.png"
   },
@@ -260,7 +260,7 @@ const projects = [
       "Bento Grid-style Skills Showcase Layout",
       "Responsive project filter gallery"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/My-Portfolio-Website/",
     "github": "https://github.com/Imtiaz-Ali17314/My-Portfolio-Website",
     "image": "/images/projects/My Portfolio Website.png"
   },
@@ -283,7 +283,7 @@ const projects = [
       "Interactive Vertical Career Timeline",
       "Custom cursor micro-interactions"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Portfolio-Website/",
     "github": "https://github.com/Imtiaz-Ali17314/Portfolio-Website",
     "image": "/images/projects/Portfolio-Website.png"
   },
@@ -306,7 +306,7 @@ const projects = [
       "LocalStorage Workspace Retention across page loads",
       "Animated card placements and hover targets"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/DevPortfolio-Ranker/",
     "github": "https://github.com/Imtiaz-Ali17314/DevPortfolio-Ranker",
     "image": "/images/projects/DevPortfolio-Ranker.png"
   },
@@ -329,7 +329,7 @@ const projects = [
       "Leaderboard persistence via LocalStorage",
       "Sleek Glassmorphic Interfaces with Dark Mode options"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/QuizMind-Study-Hub/",
     "github": "https://github.com/Imtiaz-Ali17314/QuizMind-Study-Hub",
     "image": "/images/projects/Quiz‑Mind.png"
   },
@@ -353,7 +353,7 @@ const projects = [
       "Granular vocal pitch, speed rate, and volume adjustments",
       "Save/import script snippets to LocalStorage"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/SpeakFlow-Speech-Studio/",
     "github": "https://github.com/Imtiaz-Ali17314/SpeakFlow-Speech-Studio",
     "image": "/images/projects/SpeakFlow.png"
   },
@@ -377,7 +377,7 @@ const projects = [
       "Inline base64 blur placeholder generator",
       "Social media banner canvas layout and export tool"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Lumina-Developers-Smart-Image-Workspace-and-Live-Asset-Studio/",
     "github": "https://github.com/Imtiaz-Ali17314/Lumina-Developers-Smart-Image-Workspace-and-Live-Asset-Studio",
     "image": "/images/projects/Lumina.JPG"
   },
@@ -400,7 +400,7 @@ const projects = [
       "Interactive Global Market Watch panel",
       "Premium Glassmorphic trading-themed interface"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/FLUX-currency-converter/",
     "github": "https://github.com/Imtiaz-Ali17314/FLUX-currency-converter",
     "image": "/images/projects/FLUX.png"
   },
@@ -423,7 +423,7 @@ const projects = [
       "Responsive 5-Day Forecast Grid",
       "Floating CSS Canvas Particle System"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/AtmosLux-weather-App/",
     "github": "https://github.com/Imtiaz-Ali17314/AtmosLux-weather-App",
     "image": "/images/projects/AtmosLux.png"
   },
@@ -446,7 +446,7 @@ const projects = [
       "Custom Cybernetic UI Theme",
       "Persistent state via storage links"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/ZENITH-todo-app-react-project/",
     "github": "https://github.com/Imtiaz-Ali17314/ZENITH-todo-app-react-project",
     "image": "/images/projects/Zenith Mission Control.png"
   },
@@ -468,7 +468,7 @@ const projects = [
       "Smooth Entry/Exit Animations",
       "Persistent Tasks Storage using client browser memory"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/STELLAR-TASKS-to-do-list-app/",
     "github": "https://github.com/Imtiaz-Ali17314/STELLAR-TASKS-to-do-list-app",
     "image": "/images/projects/Stellar Tasks.png"
   },
@@ -490,7 +490,7 @@ const projects = [
       "Interactive local history logs",
       "High-Tech Sci-Fi themed interfaces"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/CIPHER-VAULT-random-password-generator/",
     "github": "https://github.com/Imtiaz-Ali17314/CIPHER-VAULT-random-password-generator",
     "image": "/images/projects/CIPHER VAULT.png"
   },
@@ -512,7 +512,7 @@ const projects = [
       "Interactive Time Warp controls for fast orbits previewing",
       "Responsive Layout design with Bootstrap grids"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Clock-React-Project/",
     "github": "https://github.com/Imtiaz-Ali17314/Clock-React-Project",
     "image": "/images/projects/Chronos Nebula.png"
   },
@@ -534,7 +534,7 @@ const projects = [
       "Glassmorphic design panels",
       "High-Performance react calculations handler"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/QuantumCalc-3D-Immersive-Calculator-React-Project/",
     "github": "https://github.com/Imtiaz-Ali17314/QuantumCalc-3D-Immersive-Calculator-React-Project",
     "image": "/images/projects/QuantumCalc.png"
   },
@@ -555,7 +555,7 @@ const projects = [
       "Countdown panel for upcoming birthdays",
       "Astrological detail highlights and milestones"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/ChronosAnalytics-Precision-Age-Analytics-Dashboard/",
     "github": "https://github.com/Imtiaz-Ali17314/ChronosAnalytics-Precision-Age-Analytics-Dashboard",
     "image": "/images/projects/ChronosAnalytics.png"
   },
@@ -576,7 +576,7 @@ const projects = [
       "Day/Night visual theme modes",
       "Date tracking & display indicators"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Digital-Clock",
     "github": "https://github.com/Imtiaz-Ali17314/Digital-Clock",
     "image": "/images/projects/Digital Clock Pro.png"
   },
@@ -597,7 +597,7 @@ const projects = [
       "Score audit log showing total rounds",
       "Opponent CPU decision-making algorithms"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Rock-Paper-Scissors-Game/",
     "github": "https://github.com/Imtiaz-Ali17314/Rock-Paper-Scissors-Game",
     "image": "/images/projects/Rock Paper Scissors Premium.png"
   },
@@ -618,7 +618,7 @@ const projects = [
       "Reset game state handlers",
       "Interactive click responses and styling overrides"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Tic-Tac-Toe-game/",
     "github": "https://github.com/Imtiaz-Ali17314/Tic-Tac-Toe-game",
     "image": "/images/projects/Tic-Tac-Toe Game.png"
   },
@@ -638,7 +638,7 @@ const projects = [
       "Multi-column desktop footer grids",
       "Drop-down menus representation"
     ],
-    "live": "#",
+    "live": "https://imtiaz-ali17314.github.io/Amazon-Homepage-Clone-css-project/",
     "github": "https://github.com/Imtiaz-Ali17314/Amazon-Homepage-Clone-css-project",
     "image": "/images/projects/Amazon Homepage Clone.png"
   },
