@@ -12,7 +12,7 @@ import skills from "../../data/skills";
 
 const categoryMeta = {
   frontend: {
-    desc: "Building immersive, accessible, and high-performance user interfaces with modern reactive logic.",
+    desc: "Building immersive, accessible, and high-performance user interfaces with interactive reactive logic.",
     iconBg: "bg-indigo-500/10 dark:bg-indigo-500/20",
     borderClass: "hover:border-indigo-500/40 hover:shadow-indigo-500/[0.06] dark:hover:shadow-indigo-500/[0.03]",
     icon: <FiLayout className="w-5 h-5 text-indigo-500 dark:text-indigo-400" />,
@@ -55,78 +55,31 @@ const categoryMeta = {
   }
 };
 
-const getProficiency = (tech) => {
-  switch (tech.toLowerCase()) {
-    case "react":
-    case "laravel":
-    case "javascript":
-    case "php":
-    case "mysql":
-    case "git":
-    case "html":
-    case "css":
-    case "tailwind":
-      return { label: "Strong", dotColor: "bg-emerald-500 shadow-[0_0_6px_#10b981]" };
-    case "vue":
-    case "typescript":
-    case "postgresql":
-    case "electron.js":
-    case "node.js":
-    case "bootstrap":
-    case "github":
-    case "vs code":
-    case "rest api":
-      return { label: "Solid", dotColor: "bg-blue-500 shadow-[0_0_6px_#3b82f6]" };
-    case "playwright":
-      return { label: "Familiar", dotColor: "bg-purple-500 shadow-[0_0_6px_#a855f7]" };
-    default:
-      return { label: "Solid", dotColor: "bg-blue-500 shadow-[0_0_6px_#3b82f6]" };
-  }
-};
-
-const getBrandGlow = (tech) => {
-  switch (tech.toLowerCase()) {
-    case "react":
-      return "hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.18)] hover:bg-cyan-500/[0.02]";
-    case "vue":
-      return "hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:shadow-[0_0_15px_rgba(52,211,153,0.18)] hover:bg-emerald-500/[0.02]";
-    case "laravel":
-      return "hover:border-red-500 hover:text-red-600 dark:hover:text-red-400 hover:shadow-[0_0_15px_rgba(239,68,68,0.18)] hover:bg-red-500/[0.02]";
-    case "php":
-      return "hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-400 hover:shadow-[0_0_15px_rgba(167,139,250,0.18)] hover:bg-violet-500/[0.02]";
-    case "javascript":
-      return "hover:border-yellow-400 hover:text-yellow-600 dark:hover:text-yellow-400 hover:shadow-[0_0_15px_rgba(250,204,21,0.18)] hover:bg-yellow-500/[0.02]";
-    case "typescript":
-      return "hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.18)] hover:bg-blue-500/[0.02]";
-    case "html":
-      return "hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:shadow-[0_0_15px_rgba(249,115,22,0.18)] hover:bg-orange-500/[0.02]";
-    case "css":
-      return "hover:border-blue-400 hover:text-blue-500 dark:hover:text-blue-400 hover:shadow-[0_0_15px_rgba(96,165,250,0.18)] hover:bg-blue-400/[0.02]";
-    case "tailwind":
-      return "hover:border-teal-400 hover:text-teal-500 dark:hover:text-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.18)] hover:bg-teal-500/[0.02]";
-    case "bootstrap":
-      return "hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 hover:shadow-[0_0_15px_rgba(147,51,234,0.18)] hover:bg-purple-500/[0.02]";
-    case "mysql":
-      return "hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 hover:shadow-[0_0_15px_rgba(14,165,233,0.18)] hover:bg-sky-500/[0.02]";
-    case "postgresql":
-      return "hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.18)] hover:bg-indigo-500/[0.02]";
-    case "rest api":
-      return "hover:border-pink-500 hover:text-pink-600 dark:hover:text-pink-400 hover:shadow-[0_0_15px_rgba(236,72,153,0.18)] hover:bg-pink-500/[0.02]";
-    case "node.js":
-      return "hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:shadow-[0_0_15px_rgba(16,185,129,0.18)] hover:bg-emerald-500/[0.02]";
-    case "playwright":
-      return "hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 hover:shadow-[0_0_15px_rgba(20,184,166,0.18)] hover:bg-teal-500/[0.02]";
-    case "electron.js":
-      return "hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.18)] hover:bg-cyan-500/[0.02]";
-    case "git":
-      return "hover:border-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:shadow-[0_0_15px_rgba(249,115,22,0.18)] hover:bg-orange-500/[0.02]";
-    case "github":
-      return "hover:border-slate-800 hover:text-slate-800 dark:hover:text-white dark:hover:border-white hover:shadow-[0_0_15px_rgba(30,41,59,0.18)] hover:bg-slate-400/[0.02]";
-    case "vs code":
-      return "hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.18)] hover:bg-blue-500/[0.02]";
-    default:
-      return "hover:border-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.18)]";
-  }
+const skillDetails = {
+  react: { percentage: 92, label: "Expert", color: "from-cyan-400 to-cyan-500", text: "group-hover/row:text-cyan-500 dark:group-hover/row:text-cyan-400", glow: "rgba(34, 211, 238, 0.45)" },
+  javascript: { percentage: 90, label: "Expert", color: "from-yellow-400 to-amber-500", text: "group-hover/row:text-yellow-600 dark:group-hover/row:text-yellow-400", glow: "rgba(234, 179, 8, 0.45)" },
+  vue: { percentage: 82, label: "Advanced", color: "from-emerald-400 to-teal-500", text: "group-hover/row:text-emerald-600 dark:group-hover/row:text-emerald-400", glow: "rgba(16, 185, 129, 0.45)" },
+  typescript: { percentage: 85, label: "Advanced", color: "from-blue-500 to-indigo-600", text: "group-hover/row:text-blue-500 dark:group-hover/row:text-blue-400", glow: "rgba(59, 130, 246, 0.45)" },
+  tailwind: { percentage: 88, label: "Expert", color: "from-teal-400 to-cyan-500", text: "group-hover/row:text-teal-500 dark:group-hover/row:text-teal-400", glow: "rgba(45, 212, 191, 0.45)" },
+  bootstrap: { percentage: 80, label: "Advanced", color: "from-purple-500 to-indigo-500", text: "group-hover/row:text-purple-500 dark:group-hover/row:text-purple-400", glow: "rgba(168, 85, 247, 0.45)" },
+  html: { percentage: 95, label: "Expert", color: "from-orange-400 to-red-500", text: "group-hover/row:text-orange-500 dark:group-hover/row:text-orange-400", glow: "rgba(249, 115, 22, 0.45)" },
+  css: { percentage: 90, label: "Expert", color: "from-blue-400 to-indigo-500", text: "group-hover/row:text-blue-600 dark:group-hover/row:text-blue-400", glow: "rgba(59, 130, 246, 0.45)" },
+  
+  laravel: { percentage: 94, label: "Expert", color: "from-red-500 to-orange-600", text: "group-hover/row:text-red-500 dark:group-hover/row:text-red-400", glow: "rgba(239, 68, 68, 0.45)" },
+  php: { percentage: 90, label: "Expert", color: "from-violet-500 to-purple-600", text: "group-hover/row:text-violet-500 dark:group-hover/row:text-violet-400", glow: "rgba(139, 92, 246, 0.45)" },
+  "rest api": { percentage: 92, label: "Expert", color: "from-pink-500 to-rose-600", text: "group-hover/row:text-pink-500 dark:group-hover/row:text-pink-400", glow: "rgba(236, 72, 153, 0.45)" },
+  "node.js": { percentage: 80, label: "Advanced", color: "from-green-500 to-emerald-600", text: "group-hover/row:text-green-500 dark:group-hover/row:text-green-400", glow: "rgba(34, 197, 94, 0.45)" },
+  
+  mysql: { percentage: 90, label: "Expert", color: "from-blue-400 to-sky-500", text: "group-hover/row:text-sky-500 dark:group-hover/row:text-sky-400", glow: "rgba(14, 165, 233, 0.45)" },
+  postgresql: { percentage: 85, label: "Advanced", color: "from-indigo-500 to-blue-600", text: "group-hover/row:text-indigo-500 dark:group-hover/row:text-indigo-400", glow: "rgba(99, 102, 241, 0.45)" },
+  
+  playwright: { percentage: 78, label: "Intermediate", color: "from-teal-400 to-emerald-600", text: "group-hover/row:text-teal-600 dark:group-hover/row:text-teal-400", glow: "rgba(20, 184, 166, 0.45)" },
+  
+  "electron.js": { percentage: 82, label: "Advanced", color: "from-cyan-400 to-blue-500", text: "group-hover/row:text-cyan-500 dark:group-hover/row:text-cyan-400", glow: "rgba(6, 182, 212, 0.45)" },
+  
+  git: { percentage: 90, label: "Expert", color: "from-orange-500 to-red-600", text: "group-hover/row:text-orange-500 dark:group-hover/row:text-orange-400", glow: "rgba(249, 115, 22, 0.45)" },
+  github: { percentage: 88, label: "Advanced", color: "from-slate-600 to-slate-800", text: "group-hover/row:text-slate-700 dark:group-hover/row:text-slate-300", glow: "rgba(30, 41, 59, 0.45)" },
+  "vs code": { percentage: 92, label: "Expert", color: "from-blue-500 to-indigo-600", text: "group-hover/row:text-blue-500 dark:group-hover/row:text-blue-400", glow: "rgba(59, 130, 246, 0.45)" }
 };
 
 const containerVariants = {
@@ -182,7 +135,7 @@ const Skills = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`terminal-card p-6 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 relative group overflow-hidden min-h-[250px] h-full ${meta.borderClass}`}
+                className={`terminal-card p-6 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 relative group overflow-hidden min-h-[380px] h-full ${meta.borderClass}`}
               >
                 {/* Category-themed ambient glow background inside card */}
                 <div 
@@ -204,23 +157,44 @@ const Skills = () => {
                   </div>
 
                   {/* Subtitle / Context description */}
-                  <p className="text-xs text-slate-600 dark:text-slate-350 leading-relaxed font-medium">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                     {meta.desc}
                   </p>
                 </div>
 
-                {/* Skills Tags List */}
-                <div className="flex flex-wrap gap-2 pt-6 relative z-10">
+                {/* Skills Rating Progress Bars */}
+                <div className="space-y-4 pt-6 relative z-10">
                   {skill.items.map((item, idx) => {
-                    const prof = getProficiency(item);
+                    const detail = skillDetails[item.toLowerCase()] || { percentage: 80, label: "Solid", color: "from-indigo-500 to-pink-500", text: "group-hover/row:text-indigo-500", glow: "rgba(99, 102, 241, 0.3)" };
+                    
                     return (
-                      <span
-                        key={idx}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-50 dark:bg-[#120e28]/70 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/[0.06] transition-all duration-300 cursor-default shadow-sm select-none ${getBrandGlow(item)}`}
+                      <div 
+                        key={idx} 
+                        className="space-y-1.5 group/row transition-all duration-300 hover:translate-x-1.5 cursor-default"
                       >
-                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${prof.dotColor} animate-pulse`} title={prof.label} />
-                        <span>{item}</span>
-                      </span>
+                        <div className="flex items-center justify-between text-[11px] font-bold">
+                          <span className={`transition-colors duration-300 ${detail.text} text-slate-800 dark:text-slate-250`}>
+                            {item}
+                          </span>
+                          <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono">
+                            {detail.label} • {detail.percentage}%
+                          </span>
+                        </div>
+
+                        {/* Progress Bar Container */}
+                        <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-900/60 rounded-full overflow-hidden border border-slate-200/40 dark:border-white/[0.02] shadow-inner">
+                          <motion.div
+                            className={`h-full bg-gradient-to-r ${detail.color} rounded-full`}
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${detail.percentage}%` }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.05 }}
+                            style={{
+                              boxShadow: `0 0 10px ${detail.glow}`
+                            }}
+                          />
+                        </div>
+                      </div>
                     );
                   })}
                 </div>
