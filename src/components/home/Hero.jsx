@@ -64,7 +64,7 @@ const Hero = () => {
       <div className="glow-node w-[350px] h-[350px] bg-cyan-400/15 left-[40%] bottom-[20%] rounded-full blur-[90px]" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10 w-full">
-        
+
         {/* Left Side: Content Terminal Card */}
         <motion.div
           variants={containerVariants}
@@ -80,13 +80,13 @@ const Hero = () => {
               <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dfa023] shadow-sm" />
               <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29] shadow-sm" />
             </div>
-            
+
             {/* Terminal Tab Label */}
             <div className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 bg-white/20 dark:bg-[#121218]/40 border border-slate-200/30 dark:border-white/[0.04] px-3.5 py-1.5 rounded-lg shadow-sm">
               <span className="text-indigo-500 dark:text-indigo-400 font-extrabold">&gt;_</span>
               <span>index.jsx</span>
             </div>
-            
+
             <div className="w-[54px] lg:block hidden" />
           </div>
 
@@ -135,7 +135,7 @@ const Hero = () => {
               variants={childVariants}
               className="max-w-xl text-slate-800 dark:text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg font-medium"
             >
-              I build full-stack web applications, modern interactive client experiences, 
+              I build full-stack web applications, modern interactive client experiences,
               and light-weight utilities using React, Vue, Laravel, and Electron.js.
             </motion.p>
 
@@ -168,7 +168,7 @@ const Hero = () => {
               className="flex items-center gap-4 pt-6 w-full border-t border-slate-200/40 dark:border-white/[0.04]"
             >
               <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase select-none mr-2">socials:</span>
-              
+
               <a
                 href="https://github.com/Imtiaz-Ali17314"
                 target="_blank"
@@ -210,14 +210,14 @@ const Hero = () => {
         >
           {/* Main Wrapper with overflow-visible to show floating badges - Scaled up size constraints */}
           <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-[440px] p-4">
-            
+
             {/* Sweeping neon border rotating wrapper */}
             <div className="glow-spin-container rounded-3xl p-[1px] shadow-2xl w-full">
               <div className="glow-spin-border rounded-3xl" />
-              
+
               {/* Terminal Card inner container */}
               <div className="terminal-card overflow-hidden w-full flex flex-col bg-slate-950/80 dark:bg-slate-950/90 relative z-10">
-                
+
                 {/* Terminal Header */}
                 <div className="terminal-header px-5 py-3.5 flex items-center justify-between select-none">
                   <div className="flex items-center gap-1.5">
@@ -230,16 +230,16 @@ const Hero = () => {
                   </div>
                   <div className="w-[36px]" />
                 </div>
-                
+
                 {/* Image Frame Wrapper - Increased internal spacing */}
                 <div className="p-4 sm:p-5 lg:p-6 flex justify-center items-center w-full">
                   <div className="relative group overflow-hidden rounded-2xl w-full aspect-square shadow-inner">
                     {/* Glowing color background overlay on hover inside image frame */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/25 via-transparent to-pink-500/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                    
+
                     {/* Profile Picture */}
                     <img
-                      src="/images/profile/profile.jpg"
+                      src="/images/profile/profile.png"
                       alt="Imtiaz Ali Profile"
                       className="w-full h-full object-cover rounded-2xl filter grayscale-[10%] contrast-[105%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                     />
