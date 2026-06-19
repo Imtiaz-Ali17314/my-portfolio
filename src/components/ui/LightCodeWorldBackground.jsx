@@ -252,7 +252,7 @@ const LightCodeWorldBackground = () => {
 
     // Pre-cache textures using light-mode safe coding colors
     const textureCache = [];
-    const textColors = ["#4f46e5", "#7c3aed", "#0d9488", "#475569"]; // indigo, violet, teal, slate
+    const textColors = ["#1e179c", "#461d8d", "#08534d", "#252c35"]; // indigo, violet, teal, slate
     CODE_ELEMENTS.forEach((char) => {
       textColors.forEach((color) => {
         textureCache.push(createCharTexture(char, color));
