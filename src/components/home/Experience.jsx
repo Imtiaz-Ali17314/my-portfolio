@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiBriefcase, FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiGitCommit, FiLayers } from "react-icons/fi";
 
@@ -76,6 +76,18 @@ const Experience = () => {
   const [activeNode, setActiveNode] = useState(1);
   const activeMilestone = milestones.find((m) => m.id === activeNode);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveNode((prev) => {
+        if (prev === 2) return 1; // Intern (2) -> Full-Time (1)
+        if (prev === 1) return 3; // Full-Time (1) -> Continuous (3)
+        return 2;                 // Continuous (3) -> Intern (2)
+      });
+    }, 5500); // Transitions every 5.5 seconds
+
+    return () => clearInterval(timer);
+  }, [activeNode]);
+
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden bg-transparent">
       
@@ -150,7 +162,7 @@ const Experience = () => {
                   )}
 
                   {/* Node 1: Internship (x = 100, y = 55) */}
-                  <g onClick={() => setActiveNode(2)} className="cursor-pointer">
+                  <g>
                     <circle cx="100" cy="55" r="14" className="fill-white dark:fill-[#080416] stroke-pink-500/20" strokeWidth="2" />
                     {activeNode === 2 && (
                       <motion.circle cx="100" cy="55" r="10" className="fill-pink-500" layoutId="mobileGlowCircle" />
@@ -159,7 +171,7 @@ const Experience = () => {
                   </g>
 
                   {/* Node 2: Full-Time (x = 220, y = 25) */}
-                  <g onClick={() => setActiveNode(1)} className="cursor-pointer">
+                  <g>
                     <circle cx="220" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-indigo-500/20" strokeWidth="2" />
                     {activeNode === 1 && (
                       <motion.circle cx="220" cy="25" r="10" className="fill-indigo-500" layoutId="mobileGlowCircle" />
@@ -168,7 +180,7 @@ const Experience = () => {
                   </g>
 
                   {/* Node 3: Present (x = 280, y = 25) */}
-                  <g onClick={() => setActiveNode(3)} className="cursor-pointer">
+                  <g>
                     <circle cx="280" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-emerald-500/20" strokeWidth="2" />
                     {activeNode === 3 && (
                       <motion.circle cx="280" cy="25" r="10" className="fill-emerald-500" layoutId="mobileGlowCircle" />
@@ -230,7 +242,7 @@ const Experience = () => {
                 )}
 
                 {/* Node 1: Internship Node (x=90, y=210) */}
-                <g onClick={() => setActiveNode(2)} className="cursor-pointer group">
+                <g className="group">
                   <circle cx="90" cy="210" r="16" className="fill-white dark:fill-[#080416] stroke-pink-500/15" strokeWidth="2" />
                   {activeNode === 2 && (
                     <motion.circle cx="90" cy="210" r="11" className="fill-pink-500/90" layoutId="desktopGlowCircle" />
@@ -240,7 +252,7 @@ const Experience = () => {
                 </g>
 
                 {/* Node 2: Full-Time Node (x=50, y=140) */}
-                <g onClick={() => setActiveNode(1)} className="cursor-pointer group">
+                <g className="group">
                   <circle cx="50" cy="140" r="16" className="fill-white dark:fill-[#080416] stroke-indigo-500/15" strokeWidth="2" />
                   {activeNode === 1 && (
                     <motion.circle cx="50" cy="140" r="11" className="fill-indigo-500/90" layoutId="desktopGlowCircle" />
@@ -250,7 +262,7 @@ const Experience = () => {
                 </g>
 
                 {/* Node 3: HEAD Node (x=50, y=60) */}
-                <g onClick={() => setActiveNode(3)} className="cursor-pointer group">
+                <g className="group">
                   <circle cx="50" cy="60" r="16" className="fill-white dark:fill-[#080416] stroke-emerald-500/15" strokeWidth="2" />
                   {activeNode === 3 && (
                     <motion.circle cx="50" cy="60" r="11" className="fill-emerald-500/90" layoutId="desktopGlowCircle" />
@@ -262,7 +274,7 @@ const Experience = () => {
             </div>
 
             <p className="text-[10px] font-medium font-mono text-slate-400 dark:text-slate-500 mt-4 text-center select-none">
-              Click commit nodes to switch viewports
+              Softleed pipeline timeline (auto-rotating)
             </p>
           </div>
 
