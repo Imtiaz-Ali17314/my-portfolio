@@ -70,7 +70,7 @@ const cardVariants = {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-transparent">
+    <section id="about" className="py-24 px-6 relative overflow-hidden bg-transparent">
       
       {/* Background glow */}
       <div className="glow-node w-[350px] h-[350px] bg-indigo-500/5 left-[15%] bottom-[5%] rounded-full blur-[90px] pointer-events-none" />

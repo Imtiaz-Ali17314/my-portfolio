@@ -53,7 +53,7 @@ const cardVariants = {
 
 const Achievements = () => {
   return (
-    <section id="achievements" className="py-24 px-6 relative overflow-hidden bg-white dark:bg-transparent">
+    <section id="achievements" className="py-24 px-6 relative overflow-hidden bg-transparent">
       
       {/* Background glow highlighting */}
       <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 left-[10%] bottom-[5%] rounded-full blur-[100px] pointer-events-none" />

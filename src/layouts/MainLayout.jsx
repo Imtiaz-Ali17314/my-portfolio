@@ -7,6 +7,7 @@ import { useTheme } from "../context/ThemeContext";
 import projects from "../data/projects";
 import MagicFlowerTrail from "../components/ui/MagicFlowerTrail";
 import CodeWorldBackground from "../components/ui/CodeWorldBackground";
+import LightCodeWorldBackground from "../components/ui/LightCodeWorldBackground";
 
 const MainLayout = () => {
   const { theme } = useTheme();
@@ -53,8 +54,8 @@ const MainLayout = () => {
         ${theme === "dark" ? "bg-[#080416] text-slate-100" : "bg-[#fcfaff] text-slate-900"}
       `}
     >
-      {/* Code World Matrix-style background in dark mode */}
-      {theme === "dark" && <CodeWorldBackground />}
+      {/* 3D background based on active theme */}
+      {theme === "dark" ? <CodeWorldBackground /> : <LightCodeWorldBackground />}
 
       {/* Magical canvas flower trail — floats above everything */}
       <MagicFlowerTrail />

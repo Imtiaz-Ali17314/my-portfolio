@@ -284,3 +284,121 @@ h1, h2, h3, h4, h5, h6 {
 .glow-btn:hover::before {
   left: 160%;
 }
+
+/* ==========================================================================
+   HERO 3D PERSPECTIVE TILT EFFECTS
+   ========================================================================== */
+
+/* ==========================================================================
+   TERMINAL CARD & GLASSMORPHIC COMPONENT REDESIGN
+   ========================================================================== */
+
+.terminal-header {
+  border-bottom: 1px solid rgba(var(--border-color), 0.35);
+  background: rgba(var(--surface), 0.55);
+}
+.dark .terminal-header {
+  border-bottom: 1px solid rgba(167, 92, 255, 0.1);
+  background: rgba(12, 8, 30, 0.6);
+}
+
+.terminal-card {
+  background: rgba(var(--surface), 0.5);
+  backdrop-filter: blur(28px) saturate(220%);
+  -webkit-backdrop-filter: blur(28px) saturate(220%);
+  border: 1px solid rgba(var(--border-color), 0.45);
+  box-shadow: 
+    0 20px 50px -15px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.dark .terminal-card {
+  background: rgba(8, 4, 20, 0.5);
+  border: 1px solid rgba(167, 92, 255, 0.08);
+  border-top: 1px solid rgba(167, 92, 255, 0.2);
+  box-shadow: 
+    0 25px 60px -20px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.terminal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--color-primary), 0.4);
+  box-shadow: 
+    0 30px 60px -15px rgba(var(--color-primary), 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.dark .terminal-card:hover {
+  border-color: rgba(var(--color-accent), 0.35);
+  box-shadow: 
+    0 30px 65px -15px rgba(var(--color-primary), 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Sweeping rotating borders for extraordinary frames */
+@keyframes border-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.glow-spin-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glow-spin-border {
+  position: absolute;
+  inset: -150%;
+  z-index: -1;
+  background: conic-gradient(
+    from 0deg,
+    transparent 30%,
+    rgba(var(--color-primary), 0.85) 45%,
+    rgba(var(--color-accent), 0.85) 55%,
+    transparent 70%
+  );
+  animation: border-sweep 7s linear infinite;
+  pointer-events: none;
+}
+
+/* Floating interactive badges */
+.floating-badge {
+  position: absolute;
+  padding: 0.45rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(var(--surface), 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--border-color), 0.6);
+  box-shadow: var(--shadow-md);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgb(var(--text-primary));
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 10;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.floating-badge:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: rgba(var(--color-primary), 0.6);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(var(--color-primary), 0.15);
+}
+
+.dark .floating-badge {
+  background: rgba(16, 10, 42, 0.85);
+  border-color: rgba(167, 92, 255, 0.2);
+}
+
+.dark .floating-badge:hover {
+  border-color: rgba(var(--color-accent), 0.6);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(var(--color-accent), 0.15);
+}

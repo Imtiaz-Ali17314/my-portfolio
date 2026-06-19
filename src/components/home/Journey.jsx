@@ -56,7 +56,7 @@ const cardVariants = {
 
 const Journey = () => {
   return (
-    <section id="journey" className="py-24 px-6 relative overflow-hidden bg-slate-50/50 dark:bg-transparent">
+    <section id="journey" className="py-24 px-6 relative overflow-hidden bg-transparent">
       
       {/* Background Glow */}
       <div className="glow-node w-[400px] h-[400px] bg-pink-500/5 left-[5%] top-[40%] rounded-full blur-[100px] pointer-events-none" />
