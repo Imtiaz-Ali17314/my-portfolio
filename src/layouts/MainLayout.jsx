@@ -17,7 +17,7 @@ const MainLayout = () => {
   // Dynamic SEO Page Resolution
   useEffect(() => {
     let title = "Imtiaz Ali | Full Stack Software Engineer";
-    let desc = "Professional developer portfolio of Imtiaz Ali. Showcasing 29+ personal projects and 6+ client applications built using React, Vue, Laravel, Tailwind CSS, and Electron.js.";
+    let desc = "Professional developer portfolio of Imtiaz Ali. Full Stack Software Engineer at Softleed Company, showcasing a comprehensive collection of 29+ personal applications.";
 
     const path = location.pathname;
 

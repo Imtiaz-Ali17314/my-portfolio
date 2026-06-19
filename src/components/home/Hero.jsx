@@ -4,10 +4,10 @@ import Button from "../common/Button";
 import Typewriter from "../ui/Typewriter";
 
 const words = [
-  "Full Stack Web Developer",
-  "SaaS Product Builder",
-  "React & Laravel Specialist",
-  "UI/UX Craftsperson",
+  "Full Stack Developer",
+  "Laravel Developer",
+  "React & Vue Developer",
+  "Electron.js Developer",
 ];
 
 // Framer Motion Animation Variants for staggering content entry on scroll-in
@@ -126,7 +126,7 @@ const Hero = () => {
               variants={childVariants}
               className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent min-h-[2rem]"
             >
-              <span>I build </span>
+              <span>I'm a </span>
               <Typewriter words={words} />
             </motion.div>
 
@@ -135,8 +135,8 @@ const Hero = () => {
               variants={childVariants}
               className="max-w-xl text-slate-800 dark:text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg font-medium"
             >
-              I build full-stack web applications, modern interactive client experiences,
-              and light-weight utilities using React, Vue, Laravel, and Electron.js.
+              Junior Full Stack Developer with 1 year of hands-on experience.
+              I build modern, responsive, and user focused web applications using React, Vue.js, Laravel, Node.js, and Electron.js.
             </motion.p>
 
             {/* Call to Actions */}

@@ -1,29 +1,29 @@
 const experience = [
   {
     id: 1,
-    role: "Full Stack Developer (Self-Learning + Practice)",
-    company: "Personal Journey",
-    period: "2025 - Present",
+    role: "Full Stack Engineer",
+    company: "Softleed Company",
+    period: "Sep 2025 - Present",
     description:
-      "Worked on multiple real-world and personal projects to build strong full stack development skills.",
+      "Building and maintaining production-grade web applications, interactive portals, and robust backend microservices.",
     highlights: [
-      "Built 6 real-world projects",
-      "Developed 29 personal projects",
-      "Worked with Laravel, Vue, React, Electron",
+      "Developing scalable full-stack features using React, Vue, Laravel, and PostgreSQL/MySQL",
+      "Crafting premium, responsive user interfaces and optimizing REST API performance",
+      "Writing clean, modular, and well-tested code in collaborative agile pipelines"
     ],
   },
 
   {
     id: 2,
-    role: "Frontend Developer Practice",
-    company: "Self Projects",
-    period: "2024 - 2025",
+    role: "Full Stack Developer Intern",
+    company: "Softleed Company",
+    period: "Jul 2025 - Aug 2025",
     description:
-      "Focused on frontend fundamentals and UI development using HTML, CSS, JS and Bootstrap.",
+      "Successfully completed a 2-month full-stack development internship focusing on industrial standards and workflows.",
     highlights: [
-      "Responsive UI design",
-      "DOM manipulation mastery",
-      "UI component building",
+      "Gained hands-on experience with MVC frameworks, routing, and database schema designs",
+      "Collaborated with senior engineers on feature implementations and bug fixes",
+      "Learned version control practices, Git workflows, and testing frameworks"
     ],
   },
 ];

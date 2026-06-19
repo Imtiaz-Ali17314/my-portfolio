@@ -44,9 +44,8 @@ const StatCounter = ({ value, suffix = "" }) => {
 };
 
 const stats = [
-  { value: 1, suffix: "+", label: "Year Experience", desc: "Self-learning & practice" },
-  { value: 6, suffix: "+", label: "Client Projects", desc: "Real-world production sites" },
-  { value: 29, suffix: "+", label: "Personal Projects", desc: "HTML/CSS to Advanced SaaS" },
+  { value: 1, suffix: "", label: "Year Experience", desc: "At Softleed Company" },
+  { value: 29, suffix: "+", label: "Personal Projects", desc: "Web & Desktop Utilities" },
 ];
 
 const containerVariants = {
@@ -94,15 +93,15 @@ const About = () => {
           {/* Narrative Column */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
-              Creating digital experiences that blend clean code with creative design.
+              Building production-grade web systems and modern responsive client experiences.
             </h3>
             
             <p className="text-slate-650 dark:text-slate-350 leading-relaxed text-base">
-              I am a passionate Full Stack Software Engineer with a solid foundation in modern web technologies. Over the past year, I have engaged in intensive self-directed learning and practice, leading to the creation of **6 client platforms** and **29 personal applications** spanning frontend, backend, database structures, and cross-platform desktop shells.
+              I am a Full Stack Software Engineer with professional experience developing web systems and client interfaces. Currently working at Softleed Company, I design, maintain, and scale responsive features across frontend frameworks, backend microservices, and databases.
             </p>
 
             <p className="text-slate-650 dark:text-slate-350 leading-relaxed text-base">
-              My engineering core lies in writing clean, modular, and maintainable code, designing performant user interfaces, and automating processes to resolve concrete problems.
+              My core engineering focus is on writing clean, modular, and performant code, designing secure REST APIs, and building high-fidelity client utilities.
             </p>
 
             {/* Quick check bullets */}
