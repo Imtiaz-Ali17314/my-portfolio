@@ -98,12 +98,12 @@ const ConsoleLogger = () => {
   }, []);
 
   return (
-    <div className="bg-black/35 dark:bg-black/60 rounded-xl p-3 font-mono text-[10px] text-emerald-500 border border-slate-200/20 dark:border-white/[0.04] space-y-1 h-[58px] overflow-hidden select-none">
+    <div className="bg-slate-900 dark:bg-black/75 rounded-xl p-3 font-mono text-[10px] text-emerald-400 border border-slate-950 dark:border-white/[0.04] space-y-1 h-[58px] overflow-hidden select-none shadow-inner">
       {logs.length === 0 ? (
-        <div className="animate-pulse">{"$ listening for updates..."}</div>
+        <div className="animate-pulse text-emerald-400/80">{"$ listening for updates..."}</div>
       ) : (
         logs.map((log, idx) => (
-          <div key={idx} className="truncate">
+          <div key={idx} className="truncate text-emerald-400">
             {log}
           </div>
         ))
@@ -201,11 +201,11 @@ const About = () => {
                 Building production-grade web systems and modern responsive client experiences.
               </h3>
               
-              <p className="text-slate-650 dark:text-slate-350 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                 I am a Junior Full Stack Developer with professional experience developing web systems and client interfaces. Currently working at Softleed Company, I design, maintain, and scale responsive features across frontend frameworks, backend microservices, and databases.
               </p>
 
-              <p className="text-slate-650 dark:text-slate-350 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                 My core engineering focus is on writing clean, modular, and performant code, designing secure REST APIs, and building high-fidelity client utilities.
               </p>
             </div>
@@ -214,7 +214,7 @@ const About = () => {
           {/* Card 2: Experience Counter */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-1 md:row-span-1 glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition-all duration-300"
+            className="md:col-span-1 md:row-span-1 terminal-card p-6 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300"
           >
             <div className="flex items-center justify-between w-full">
               <div className="space-y-1">
@@ -229,9 +229,9 @@ const About = () => {
               <ProgressCircle />
             </div>
             
-            <div className="border-t border-slate-100 dark:border-[#262630]/60 pt-3 mt-4">
-              <span className="text-xs font-mono font-bold text-indigo-500 dark:text-indigo-400">At Softleed Company</span>
-              <p className="text-[10px] text-slate-500 dark:text-slate-450 mt-1 leading-relaxed">
+            <div className="border-t border-slate-200/40 dark:border-white/[0.04] pt-3 mt-4">
+              <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">At Softleed Company</span>
+              <p className="text-xs text-slate-700 dark:text-slate-300 mt-1.5 leading-relaxed font-medium">
                 Joined as intern in July 2025; transitioned to full-time developer role in Sept 2025.
               </p>
             </div>
@@ -240,7 +240,7 @@ const About = () => {
           {/* Card 3: Projects Counter */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-1 md:row-span-1 glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col justify-between hover:scale-[1.02] transition-all duration-300"
+            className="md:col-span-1 md:row-span-1 terminal-card p-6 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300"
           >
             <div className="flex items-center justify-between w-full">
               <div className="space-y-1">
@@ -252,8 +252,8 @@ const About = () => {
                 </h4>
               </div>
               
-              <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 text-lg shadow-inner shrink-0">
-                <FiFileText />
+              <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 text-xl shadow-sm border border-indigo-200/60 dark:border-indigo-500/20 shrink-0">
+                <FiFileText className="w-5 h-5" />
               </div>
             </div>
             
@@ -265,7 +265,7 @@ const About = () => {
           {/* Card 4: Skills Checklist Capsules */}
           <motion.div
             variants={cardVariants}
-            className="md:col-span-3 md:row-span-1 glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col justify-between hover:scale-[1.01] transition-all duration-300"
+            className="md:col-span-3 md:row-span-1 terminal-card p-6 flex flex-col justify-between hover:scale-[1.01] transition-all duration-300"
           >
             <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
               <FiCheckCircle className="text-indigo-500 dark:text-indigo-400" />
@@ -274,17 +274,17 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
               {[
-                { text: "Responsive Web Design", color: "hover:border-cyan-500/50 hover:bg-cyan-500/[0.03] hover:text-cyan-600 dark:hover:text-cyan-400" },
-                { text: "Full-Stack REST APIs", color: "hover:border-red-500/50 hover:bg-red-500/[0.03] hover:text-red-600 dark:hover:text-red-400" },
-                { text: "Desktop Wrappers (Electron)", color: "hover:border-violet-500/50 hover:bg-violet-500/[0.03] hover:text-violet-600 dark:hover:text-violet-400" },
-                { text: "Modern Frontend Frameworks", color: "hover:border-indigo-500/50 hover:bg-indigo-500/[0.03] hover:text-indigo-650 dark:hover:text-indigo-400" },
+                { text: "Responsive Web Design", color: "hover:border-cyan-500/50 hover:bg-cyan-500/[0.04] hover:text-cyan-600 dark:hover:text-cyan-400" },
+                { text: "Full-Stack REST APIs", color: "hover:border-red-500/50 hover:bg-red-500/[0.04] hover:text-red-600 dark:hover:text-red-400" },
+                { text: "Desktop Wrappers (Electron)", color: "hover:border-violet-500/50 hover:bg-violet-500/[0.04] hover:text-violet-600 dark:hover:text-violet-400" },
+                { text: "Modern Frontend Frameworks", color: "hover:border-indigo-500/50 hover:bg-indigo-500/[0.04] hover:text-indigo-600 dark:hover:text-indigo-400" },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center gap-3 p-3.5 rounded-xl border border-slate-200/60 dark:border-[#262630]/60 bg-slate-50/50 dark:bg-[#121218]/40 transition-all duration-300 font-semibold text-slate-700 dark:text-slate-350 select-none ${item.color}`}
+                  className={`flex items-center gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-white/[0.08] bg-white/70 dark:bg-slate-900/60 transition-all duration-300 font-bold text-slate-800 dark:text-slate-200 select-none ${item.color}`}
                 >
                   <FiCheckCircle className="shrink-0 text-indigo-500 dark:text-indigo-400 w-4 h-4" />
-                  <span className="text-xs sm:text-sm font-bold font-sans">{item.text}</span>
+                  <span className="text-xs sm:text-sm font-extrabold font-sans">{item.text}</span>
                 </div>
               ))}
             </div>

@@ -303,22 +303,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .terminal-card {
-  background: rgba(var(--surface), 0.78); /* Increased for maximum contrast */
-  backdrop-filter: blur(36px) saturate(240%); /* Extra blur to diffuse code background elements */
-  -webkit-backdrop-filter: blur(36px) saturate(240%);
-  border: 1px solid rgba(var(--border-color), 0.6);
+  background: rgba(var(--surface), 0.94); /* Increased for maximum contrast & readability */
+  backdrop-filter: blur(40px) saturate(250%); /* Extra blur to diffuse code background elements */
+  -webkit-backdrop-filter: blur(40px) saturate(250%);
+  border: 1px solid rgba(var(--border-color), 0.7);
   box-shadow: 
     0 25px 60px -15px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
   border-radius: 24px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .dark .terminal-card {
-  background: rgba(8, 4, 20, 0.82); /* Increased for maximum contrast */
-  border: 1px solid rgba(167, 92, 255, 0.15);
-  border-top: 1px solid rgba(167, 92, 255, 0.28);
+  background: rgba(8, 4, 20, 0.93); /* Increased for maximum contrast & readability */
+  border: 1px solid rgba(167, 92, 255, 0.18);
+  border-top: 1px solid rgba(167, 92, 255, 0.32);
   box-shadow: 
     0 30px 70px -20px rgba(0, 0, 0, 0.8),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);

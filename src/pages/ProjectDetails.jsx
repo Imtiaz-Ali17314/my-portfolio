@@ -82,7 +82,7 @@ const ProjectDetails = () => {
               <h1 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
                 {project.title}
               </h1>
-              <p className="text-base md:text-lg text-slate-650 dark:text-slate-350 leading-relaxed max-w-3xl">
+              <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
                 {project.description}
               </p>
             </motion.div>
@@ -114,7 +114,7 @@ const ProjectDetails = () => {
                   {project.features.map((feature, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-sm text-slate-650 dark:text-slate-300 leading-relaxed"
+                      className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed"
                     >
                       <FiCheckCircle className="text-indigo-500 dark:text-indigo-400 w-4.5 h-4.5 shrink-0 mt-0.5" />
                       <span>{feature}</span>
@@ -192,9 +192,9 @@ const ProjectDetails = () => {
             {/* Quick specifications context */}
             <motion.div
               variants={itemVariants}
-              className="glass-panel rounded-2xl p-6 space-y-4 text-xs text-slate-500 dark:text-slate-450 leading-relaxed"
+              className="glass-panel rounded-2xl p-6 space-y-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed"
             >
-              <h4 className="font-bold text-slate-700 dark:text-slate-350 flex items-center gap-2 uppercase tracking-wider">
+              <h4 className="font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2 uppercase tracking-wider">
                 <FiInfo /> Project Specifications
               </h4>
               <p>

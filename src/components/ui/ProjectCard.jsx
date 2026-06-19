@@ -59,7 +59,7 @@ const ProjectCard = ({ project }) => {
             {project.stack.slice(0, 4).map((tech, index) => (
               <span
                 key={index}
-                className="text-[10px] font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-350 px-2 py-0.5 rounded"
+                className="text-[10px] font-medium bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded"
               >
                 {tech}
               </span>
@@ -85,7 +85,7 @@ const ProjectCard = ({ project }) => {
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1 text-slate-600 dark:text-slate-450 hover:text-indigo-500 dark:hover:text-indigo-400 font-semibold transition-colors"
+                className="flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 font-semibold transition-colors"
                 title="Live Demo"
               >
                 <FiExternalLink className="text-base" />

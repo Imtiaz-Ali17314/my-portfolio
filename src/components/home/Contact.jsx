@@ -80,11 +80,11 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
               Have a project in mind?
             </h3>
-            <p className="text-slate-650 dark:text-slate-400 leading-relaxed text-sm">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
               Whether you need a custom web application, full-stack integration, desktop utility, or simply want to talk tech, feel free to drop a message! I will reply as soon as possible.
             </p>
             
-            <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-[#262630]/60 text-sm text-slate-600 dark:text-slate-350">
+            <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-[#262630]/60 text-sm text-slate-600 dark:text-slate-300">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-indigo-500/10 text-indigo-500 dark:text-indigo-400">
                   <FiMail />
@@ -151,14 +151,14 @@ const Contact = () => {
 
               {/* Feedback messages */}
               {success && (
-                <div className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-450 rounded-lg text-sm">
+                <div className="flex items-center gap-3 p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-lg text-sm">
                   <FiCheckCircle className="text-lg shrink-0" />
                   <span>Your message has been sent successfully! I will reach out soon.</span>
                 </div>
               )}
 
               {error && (
-                <div className="flex items-center gap-3 p-4 bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-450 rounded-lg text-sm">
+                <div className="flex items-center gap-3 p-4 bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 rounded-lg text-sm">
                   <FiAlertTriangle className="text-lg shrink-0" />
                   <span>{error}</span>
                 </div>

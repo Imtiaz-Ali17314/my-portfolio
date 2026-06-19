@@ -83,7 +83,7 @@ const Resume = () => {
                 <FiFileText className="text-indigo-500" />
                 <span>Professional Profile</span>
               </h2>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-350 leading-relaxed">
+              <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 Detail-oriented and results-driven Full Stack Software Engineer currently working at Softleed Company. Experienced in designing, building, and maintaining production-grade web systems using Laravel, React, Vue, and MySQL/PostgreSQL databases. Developed a robust portfolio of 29 personal projects including frontend dashboards, SaaS workflows, and cross-platform desktop utilities.
               </p>
             </motion.div>
@@ -131,7 +131,7 @@ const Resume = () => {
                         <div className="pt-2 border-t border-slate-100 dark:border-slate-800/60 mt-3">
                           <ul className="space-y-1.5">
                             {item.highlights.map((highlight, idx) => (
-                              <li key={idx} className="flex items-center gap-2 text-xs text-slate-650 dark:text-slate-305">
+                              <li key={idx} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
                                 <FiCheckCircle className="text-indigo-500 dark:text-indigo-400 shrink-0" />
                                 <span>{highlight}</span>
                               </li>

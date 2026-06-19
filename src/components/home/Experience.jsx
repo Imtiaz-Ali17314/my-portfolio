@@ -81,7 +81,7 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-350 leading-relaxed text-sm md:text-base">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
                   {item.description}
                 </p>
 
