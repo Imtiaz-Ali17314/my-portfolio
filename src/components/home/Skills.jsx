@@ -172,7 +172,7 @@ const Skills = () => {
                         key={idx} 
                         className="space-y-1.5 group/row transition-all duration-300 hover:translate-x-1.5 cursor-default"
                       >
-                        <div className="flex items-center justify-between text-base sm:text-lg font-bold">
+                        <div className="flex items-center justify-between text-base sm:text-sm font-bold">
                           <span className={`transition-colors duration-300 ${detail.text} text-slate-800 dark:text-slate-200`}>
                             {item}
                           </span>

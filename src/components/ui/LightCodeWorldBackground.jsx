@@ -3,12 +3,76 @@ import * as THREE from "three";
 
 // List of floating code fragments, symbols, and keywords
 const CODE_ELEMENTS = [
-  "const", "let", "var", "function", "class", "return", "import", "export",
-  "{}", "[]", "()", "<>", "=>", "&&", "||", "===", "++", "--",
-  "async", "await", "map", "filter", "reduce", "Promise", "fetch",
-  "console.log", "document", "window", "api", "git commit", "npm run dev",
-  "<div />", "<span />", "<p>", "<section>", "React", "Vue", "next.js",
-  "0", "1", "x", "y", "i", "j", "true", "false", "null", "undefined"
+  // Numbers & Variables
+  "0", "1", "x", "y", "i", "j", "k", "n", "m", "a", "b", "c",
+  "true", "false", "null", "undefined", "NaN", "Infinity",
+  
+  // Keywords
+  "function()", "const", "let", "var", "return", "import", "export",
+  "class", "extends", "super", "this", "new", "delete", "void",
+  "typeof", "instanceof", "in", "of", "with", "yield", "await",
+  
+  // Operators
+  "{}", "[]", "()", "<>", "=>", "&&", "||", "===", "==", "!=", "!==",
+  "++", "--", "+=", "-=", "*=", "/=", "%=", "**", "??", "?.",
+  "$#@", "*", "&", "|", "^", "%", "!", "?", "~", ">>", "<<", ">>>",
+  
+  // Async & Functional
+  "async", "await", "map", "filter", "reduce", "forEach", "sort",
+  "find", "findIndex", "some", "every", "includes", "push", "pop",
+  "shift", "unshift", "splice", "slice", "concat", "join", "split",
+  
+  // Promises & APIs
+  "Promise", "fetch", "axios", "async/await", "callback", "event",
+  "eventListener", "setTimeout", "setInterval", "requestAnimationFrame",
+  
+  // DOM & Browser
+  "console.log", "console.error", "console.warn", "console.table",
+  "document", "window", "location", "history", "localStorage",
+  "sessionStorage", "navigator", "screen", "alert", "confirm", "prompt",
+  
+  // React & JSX
+  "<div />", "<span />", "<p>", "<section>", "<header>", "<footer>",
+  "<main>", "<article>", "<nav>", "<aside>", "<button>", "<input>",
+  "React", "Vue", "Angular", "Svelte", "Next.js", "Nuxt.js",
+  "JSX", "props", "state", "hooks", "useState", "useEffect",
+  "useContext", "useReducer", "useCallback", "useMemo", "useRef",
+  
+  // Backend & APIs
+  "api", "REST", "GraphQL", "WebSocket", "gRPC",
+  "GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS",
+  
+  // Databases
+  "SQL", "NoSQL", "MongoDB", "PostgreSQL", "MySQL", "Redis",
+  "query", "schema", "model", "migration", "seed", "transaction",
+  
+  // DevOps & Tools
+  "git commit", "git push", "git pull", "git merge", "git rebase",
+  "npm run dev", "npm install", "npm start", "npm build",
+  "yarn add", "yarn start", "yarn build",
+  "docker", "kubernetes", "AWS", "Azure", "GCP",
+  "CI/CD", "deploy", "build", "test", "debug", "monitor",
+  
+  // Data Structures & Algorithms
+  "array", "object", "string", "number", "boolean", "symbol", "bigint",
+  "stack", "queue", "linkedList", "tree", "graph", "hashMap",
+  "set", "map", "weakSet", "weakMap",
+  "sorting", "searching", "recursion", "dynamic", "greedy",
+  "Big-O", "O(1)", "O(n)", "O(log n)", "O(n^2)",
+  
+  // Design Patterns
+  "singleton", "factory", "observer", "mediator", "decorator",
+  "adapter", "proxy", "strategy", "state", "command",
+  
+  // Testing
+  "test", "spec", "expect", "assert", "mock", "stub", "spy",
+  "Jest", "Mocha", "Chai", "Cypress", "Selenium",
+  
+  // Miscellaneous
+  "TODO", "FIXME", "HACK", "NOTE",
+  "undefined", "null", "NaN", "Infinity",
+  "arguments", "eval", "strict mode", "use strict",
+  "package.json", "tsconfig.json", "webpack", "babel", "vite"
 ];
 
 // Helper to get random item
