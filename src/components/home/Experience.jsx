@@ -74,9 +74,12 @@ const milestones = [
 
 const Experience = () => {
   const [activeNode, setActiveNode] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(true);
   const activeMilestone = milestones.find((m) => m.id === activeNode);
 
   useEffect(() => {
+    if (!isPlaying) return;
+
     const timer = setInterval(() => {
       setActiveNode((prev) => {
         if (prev === 2) return 1; // Intern (2) -> Full-Time (1)
@@ -86,7 +89,7 @@ const Experience = () => {
     }, 5500); // Transitions every 5.5 seconds
 
     return () => clearInterval(timer);
-  }, [activeNode]);
+  }, [activeNode, isPlaying]);
 
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden bg-transparent">
@@ -162,7 +165,7 @@ const Experience = () => {
                   )}
 
                   {/* Node 1: Internship (x = 100, y = 55) */}
-                  <g>
+                  <g onClick={() => setActiveNode(2)} className="cursor-pointer">
                     <circle cx="100" cy="55" r="14" className="fill-white dark:fill-[#080416] stroke-pink-500/20" strokeWidth="2" />
                     {activeNode === 2 && (
                       <motion.circle cx="100" cy="55" r="10" className="fill-pink-500" layoutId="mobileGlowCircle" />
@@ -171,7 +174,7 @@ const Experience = () => {
                   </g>
 
                   {/* Node 2: Full-Time (x = 220, y = 25) */}
-                  <g>
+                  <g onClick={() => setActiveNode(1)} className="cursor-pointer">
                     <circle cx="220" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-indigo-500/20" strokeWidth="2" />
                     {activeNode === 1 && (
                       <motion.circle cx="220" cy="25" r="10" className="fill-indigo-500" layoutId="mobileGlowCircle" />
@@ -180,7 +183,7 @@ const Experience = () => {
                   </g>
 
                   {/* Node 3: Present (x = 280, y = 25) */}
-                  <g>
+                  <g onClick={() => setActiveNode(3)} className="cursor-pointer">
                     <circle cx="280" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-emerald-500/20" strokeWidth="2" />
                     {activeNode === 3 && (
                       <motion.circle cx="280" cy="25" r="10" className="fill-emerald-500" layoutId="mobileGlowCircle" />
@@ -242,7 +245,7 @@ const Experience = () => {
                 )}
 
                 {/* Node 1: Internship Node (x=90, y=210) */}
-                <g className="group">
+                <g onClick={() => setActiveNode(2)} className="cursor-pointer group">
                   <circle cx="90" cy="210" r="16" className="fill-white dark:fill-[#080416] stroke-pink-500/15" strokeWidth="2" />
                   {activeNode === 2 && (
                     <motion.circle cx="90" cy="210" r="11" className="fill-pink-500/90" layoutId="desktopGlowCircle" />
@@ -252,7 +255,7 @@ const Experience = () => {
                 </g>
 
                 {/* Node 2: Full-Time Node (x=50, y=140) */}
-                <g className="group">
+                <g onClick={() => setActiveNode(1)} className="cursor-pointer group">
                   <circle cx="50" cy="140" r="16" className="fill-white dark:fill-[#080416] stroke-indigo-500/15" strokeWidth="2" />
                   {activeNode === 1 && (
                     <motion.circle cx="50" cy="140" r="11" className="fill-indigo-500/90" layoutId="desktopGlowCircle" />
@@ -262,7 +265,7 @@ const Experience = () => {
                 </g>
 
                 {/* Node 3: HEAD Node (x=50, y=60) */}
-                <g className="group">
+                <g onClick={() => setActiveNode(3)} className="cursor-pointer group">
                   <circle cx="50" cy="60" r="16" className="fill-white dark:fill-[#080416] stroke-emerald-500/15" strokeWidth="2" />
                   {activeNode === 3 && (
                     <motion.circle cx="50" cy="60" r="11" className="fill-emerald-500/90" layoutId="desktopGlowCircle" />
@@ -274,7 +277,7 @@ const Experience = () => {
             </div>
 
             <p className="text-[10px] font-medium font-mono text-slate-400 dark:text-slate-500 mt-4 text-center select-none">
-              Softleed pipeline timeline (auto-rotating)
+              Softleed timeline (click nodes to inspect)
             </p>
           </div>
 
@@ -294,10 +297,34 @@ const Experience = () => {
                   <FiTerminal className="text-indigo-500 dark:text-indigo-400 font-extrabold" />
                   <span>imtiaz@softleed-desktop: ~/experience</span>
                 </div>
-                
-                <span className="px-2.5 py-1 rounded bg-indigo-500/10 dark:bg-indigo-500/20 text-[10px] font-bold tracking-wide text-indigo-600 dark:text-indigo-400 border border-indigo-200/30 dark:border-indigo-500/10 uppercase select-none">
-                  {activeMilestone.badgeText}
-                </span>
+
+                <div className="flex items-center gap-3">
+                  {/* Play/Pause Autoplay Toggle Button */}
+                  <button
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200/85 dark:border-white/[0.04] text-[9px] font-mono font-bold text-slate-600 dark:text-slate-400 hover:text-indigo-650 dark:hover:text-indigo-400 hover:border-indigo-500/20 transition-all shadow-sm"
+                    title={isPlaying ? "Pause autoplay rotation" : "Start autoplay rotation"}
+                  >
+                    {isPlaying ? (
+                      <>
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                        </span>
+                        <span>AUTOPLAY</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500 animate-pulse"></span>
+                        <span>PAUSED</span>
+                      </>
+                    )}
+                  </button>
+                  
+                  <span className="px-2.5 py-1 rounded bg-indigo-500/10 dark:bg-indigo-500/20 text-[10px] font-bold tracking-wide text-indigo-600 dark:text-indigo-400 border border-indigo-200/30 dark:border-indigo-500/10 uppercase select-none">
+                    {activeMilestone.badgeText}
+                  </span>
+                </div>
               </div>
 
               {/* Dynamic Content Panel */}
