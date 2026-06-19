@@ -369,7 +369,7 @@ const Experience = () => {
                     className="space-y-6"
                   >
                     {/* Commit Message log line */}
-                    <div className="font-mono text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-black/30 border border-slate-250/20 dark:border-white/[0.02] p-3 rounded-xl flex items-start gap-2.5 shadow-inner">
+                    <div className="font-mono text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-black/30 border border-slate-200/20 dark:border-white/[0.02] p-3 rounded-xl flex items-start gap-2.5 shadow-inner">
                       <span className="text-indigo-500 font-bold shrink-0">$</span>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed break-all select-all">{activeMilestone.commit}</span>
                     </div>

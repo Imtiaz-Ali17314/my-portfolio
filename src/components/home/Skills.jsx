@@ -151,13 +151,13 @@ const Skills = () => {
                     <div className={`flex items-center justify-center w-10 h-10 rounded-xl ${meta.iconBg} shrink-0 shadow-sm border border-slate-200/10 dark:border-white/[0.02]`}>
                       {meta.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                       {skill.category}
                     </h3>
                   </div>
 
                   {/* Subtitle / Context description */}
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                     {meta.desc}
                   </p>
                 </div>
@@ -172,11 +172,11 @@ const Skills = () => {
                         key={idx} 
                         className="space-y-1.5 group/row transition-all duration-300 hover:translate-x-1.5 cursor-default"
                       >
-                        <div className="flex items-center justify-between text-[11px] font-bold">
-                          <span className={`transition-colors duration-300 ${detail.text} text-slate-800 dark:text-slate-250`}>
+                        <div className="flex items-center justify-between text-base sm:text-lg font-bold">
+                          <span className={`transition-colors duration-300 ${detail.text} text-slate-800 dark:text-slate-200`}>
                             {item}
                           </span>
-                          <span className="text-[9px] text-slate-500 dark:text-slate-400 font-mono">
+                          <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono">
                             {detail.label} • {detail.percentage}%
                           </span>
                         </div>

@@ -202,7 +202,7 @@ const Resume = () => {
               </div>
 
               <div className="flex justify-between items-center gap-4 pt-2">
-                <div className="text-xs text-slate-450 dark:text-slate-500">
+                <div className="text-xs text-slate-400 dark:text-slate-500">
                   <p>Document Format: PDF</p>
                   <p>Last Updated: June 2026</p>
                 </div>
