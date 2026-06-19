@@ -72,6 +72,24 @@ const milestones = [
   }
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const Experience = () => {
   const [activeNode, setActiveNode] = useState(1);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -111,10 +129,19 @@ const Experience = () => {
         </div>
 
         {/* Interactive Workspace Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.08 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+        >
           
           {/* Left Column: SVG Git branch visualizer */}
-          <div className="lg:col-span-4 flex flex-col items-center glass-panel p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.04]">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-4 flex flex-col items-center glass-panel p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.04]"
+          >
             <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6 flex items-center gap-1.5 self-start select-none">
               <FiGitBranch className="text-indigo-500" />
               <span>Git Branch Roadmap</span>
@@ -279,10 +306,13 @@ const Experience = () => {
             <p className="text-[10px] font-medium font-mono text-slate-400 dark:text-slate-500 mt-4 text-center select-none">
               Softleed timeline (click nodes to inspect)
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Column: Terminal File Inspector Card */}
-          <div className="lg:col-span-8">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-8"
+          >
             <div className="terminal-card flex flex-col w-full min-h-[380px] shadow-2xl relative">
               
               {/* Terminal Title Bar */}
@@ -417,9 +447,9 @@ const Experience = () => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>
