@@ -10,6 +10,40 @@ const words = [
   "UI/UX Craftsperson",
 ];
 
+// Framer Motion Animation Variants for staggering content entry on scroll-in
+const containerVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.65,
+      ease: "easeOut",
+      staggerChildren: 0.08,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+
+const profileVariants = {
+  hidden: { opacity: 0, x: 40, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: "easeOut", delay: 0.15 },
+  },
+};
+
 const Hero = () => {
   const handleScroll = (e, id) => {
     e.preventDefault();
@@ -33,9 +67,10 @@ const Hero = () => {
         
         {/* Left Side: Content Terminal Card */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
           className="lg:col-span-7 terminal-card flex flex-col w-full text-left"
         >
           {/* Terminal Window Header / Control Bar */}
@@ -59,50 +94,46 @@ const Hero = () => {
           <div className="p-6 sm:p-8 md:p-10 flex flex-col items-start space-y-6 md:space-y-8 w-full">
             {/* Intro Tag */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              variants={childVariants}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-200 dark:border-[#262630] bg-white/50 dark:bg-[#121218]/50 backdrop-blur-sm text-xs font-semibold text-indigo-600 dark:text-indigo-400 shadow-sm"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>Available for Freelance &amp; Roles</span>
             </motion.div>
 
-            {/* Name Title */}
+            {/* Name Title with Editor Syntax Highlighting */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
+              variants={childVariants}
               className="space-y-2"
             >
-              <p className="text-slate-500 dark:text-slate-400 font-mono font-bold tracking-wide text-xs sm:text-sm uppercase">
-                const developer = &#123;
+              <p className="text-slate-400 dark:text-slate-500 font-mono font-bold tracking-wide text-xs sm:text-sm uppercase select-none">
+                <span className="text-pink-500 dark:text-pink-400">const</span>{" "}
+                <span className="text-indigo-600 dark:text-indigo-400">developer</span>{" "}
+                <span className="text-slate-400 dark:text-slate-600">=</span>{" "}
+                <span className="text-amber-500 dark:text-amber-400">&#123;</span>
               </p>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-none pl-4">
                 Imtiaz Ali
               </h1>
-              <p className="text-slate-500 dark:text-slate-400 font-mono font-bold tracking-wide text-xs sm:text-sm pl-4">
-                &#125;;
+              <p className="text-slate-400 dark:text-slate-500 font-mono font-bold tracking-wide text-xs sm:text-sm pl-4 select-none">
+                <span className="text-amber-500 dark:text-amber-400">&#125;</span>
+                <span className="text-slate-400 dark:text-slate-600">;</span>
               </p>
             </motion.div>
 
             {/* Dynamic Subtitle */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              variants={childVariants}
               className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent min-h-[2rem]"
             >
               <span>I build </span>
               <Typewriter words={words} />
             </motion.div>
 
-            {/* Short Pitch */}
+            {/* Short Pitch with Improved Text Readability */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="max-w-xl text-slate-600 dark:text-slate-350 leading-relaxed text-sm sm:text-base md:text-lg"
+              variants={childVariants}
+              className="max-w-xl text-slate-800 dark:text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg font-medium"
             >
               I build full-stack web applications, modern interactive client experiences, 
               and light-weight utilities using React, Vue, Laravel, and Electron.js.
@@ -110,9 +141,7 @@ const Hero = () => {
 
             {/* Call to Actions */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              variants={childVariants}
               className="flex flex-col sm:flex-row items-center gap-4 pt-2 w-full sm:w-auto"
             >
               <Button
@@ -133,36 +162,37 @@ const Hero = () => {
               </Button>
             </motion.div>
 
-            {/* Social Links Panel */}
+            {/* Social Links Panel with Premium Button Styling */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 1 }}
-              className="flex items-center gap-6 pt-4 text-xl text-slate-400 dark:text-slate-500 w-full border-t border-slate-200/40 dark:border-white/[0.04]"
+              variants={childVariants}
+              className="flex items-center gap-4 pt-6 w-full border-t border-slate-200/40 dark:border-white/[0.04]"
             >
-              <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase select-none">socials:</span>
+              <span className="text-xs font-mono font-bold tracking-wider text-slate-400 uppercase select-none mr-2">socials:</span>
+              
               <a
                 href="https://github.com/Imtiaz-Ali17314"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub Profile"
-                className="hover:text-slate-800 dark:hover:text-white transition-colors duration-250"
+                className="social-btn github-btn flex items-center justify-center w-11 h-11 rounded-xl text-lg text-slate-500 dark:text-slate-400 glass-panel border border-slate-200/60 dark:border-white/[0.06] hover:scale-110 active:scale-95 transition-all duration-300"
               >
                 <FiGithub />
               </a>
+
               <a
                 href="https://www.linkedin.com/in/imtiaz-ali-79476a385/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn Profile"
-                className="hover:text-blue-600 dark:hover:text-indigo-400 transition-colors duration-250"
+                className="social-btn linkedin-btn flex items-center justify-center w-11 h-11 rounded-xl text-lg text-slate-500 dark:text-slate-400 glass-panel border border-slate-200/60 dark:border-white/[0.06] hover:scale-110 active:scale-95 transition-all duration-300"
               >
                 <FiLinkedin />
               </a>
+
               <a
                 href="mailto:imtiazali80102@gmail.com"
                 aria-label="Email Address"
-                className="hover:text-red-500 dark:hover:text-red-400 transition-colors duration-250"
+                className="social-btn email-btn flex items-center justify-center w-11 h-11 rounded-xl text-lg text-slate-500 dark:text-slate-400 glass-panel border border-slate-200/60 dark:border-white/[0.06] hover:scale-110 active:scale-95 transition-all duration-300"
               >
                 <FiMail />
               </a>
@@ -172,13 +202,14 @@ const Hero = () => {
 
         {/* Right Side: Profile Terminal Card */}
         <motion.div
-          initial={{ opacity: 0, x: 50, scale: 0.95 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          variants={profileVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.15 }}
           className="lg:col-span-5 flex justify-center items-center relative"
         >
-          {/* Main Wrapper with overflow-visible to show floating badges */}
-          <div className="relative w-full max-w-xs sm:max-w-sm p-4">
+          {/* Main Wrapper with overflow-visible to show floating badges - Scaled up size constraints */}
+          <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-[440px] p-4">
             
             {/* Sweeping neon border rotating wrapper */}
             <div className="glow-spin-container rounded-3xl p-[1px] shadow-2xl w-full">
@@ -188,7 +219,7 @@ const Hero = () => {
               <div className="terminal-card overflow-hidden w-full flex flex-col bg-slate-950/80 dark:bg-slate-950/90 relative z-10">
                 
                 {/* Terminal Header */}
-                <div className="terminal-header px-5 py-3 flex items-center justify-between select-none">
+                <div className="terminal-header px-5 py-3.5 flex items-center justify-between select-none">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56] opacity-75" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e] opacity-75" />
@@ -200,60 +231,47 @@ const Hero = () => {
                   <div className="w-[36px]" />
                 </div>
                 
-                {/* Image Frame Wrapper */}
-                <div className="p-4 sm:p-5 flex justify-center items-center w-full">
-                  <div className="relative group overflow-hidden rounded-2xl w-full aspect-square max-w-[280px] sm:max-w-[320px] shadow-inner">
+                {/* Image Frame Wrapper - Increased internal spacing */}
+                <div className="p-4 sm:p-5 lg:p-6 flex justify-center items-center w-full">
+                  <div className="relative group overflow-hidden rounded-2xl w-full aspect-square shadow-inner">
+                    {/* Glowing color background overlay on hover inside image frame */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/25 via-transparent to-pink-500/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+                    
                     {/* Profile Picture */}
                     <img
                       src="/images/profile/profile.jpg"
                       alt="Imtiaz Ali Profile"
-                      className="w-full h-full object-cover rounded-2xl filter grayscale-[15%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover rounded-2xl filter grayscale-[10%] contrast-[105%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating badges surrounding the Profile Card (outside the overflow-hidden wrapper) */}
+            {/* Floating badges surrounding the Profile Card (outside the overflow-hidden wrapper, animated with hardware-accelerated CSS) */}
             {/* Top-Left: React */}
-            <motion.div 
-              className="floating-badge -top-1 -left-2"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            >
+            <div className="floating-badge animate-float-1 -top-1 -left-4 sm:-left-6">
               <FiLayout className="text-cyan-500 w-3.5 h-3.5" />
               <span>React.js</span>
-            </motion.div>
+            </div>
 
             {/* Top-Right: Laravel */}
-            <motion.div 
-              className="floating-badge -top-3 right-6"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.5 }}
-            >
+            <div className="floating-badge animate-float-2 -top-3 -right-4 sm:-right-6">
               <FiServer className="text-red-500 w-3.5 h-3.5" />
               <span>Laravel</span>
-            </motion.div>
+            </div>
 
             {/* Bottom-Left: Electron */}
-            <motion.div 
-              className="floating-badge bottom-10 -left-6"
-              animate={{ y: [0, -9, 0] }}
-              transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut", delay: 0.2 }}
-            >
+            <div className="floating-badge animate-float-3 bottom-12 -left-6 sm:-left-8">
               <FiCpu className="text-violet-500 w-3.5 h-3.5" />
               <span>Electron.js</span>
-            </motion.div>
+            </div>
 
             {/* Bottom-Right: Tailwind */}
-            <motion.div 
-              className="floating-badge bottom-0 -right-2"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut", delay: 0.8 }}
-            >
+            <div className="floating-badge animate-float-4 bottom-0 -right-4 sm:-right-6">
               <FiTerminal className="text-indigo-500 w-3.5 h-3.5" />
               <span>Tailwind CSS</span>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
