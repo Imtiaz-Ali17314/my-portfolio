@@ -1,36 +1,88 @@
-import { motion } from "framer-motion";
-import { FiBriefcase, FiCalendar, FiCheckCircle } from "react-icons/fi";
-import experience from "../../data/experience";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiBriefcase, FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiGitCommit, FiLayers } from "react-icons/fi";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
+const milestones = [
+  {
+    id: 1, // Node 2
+    role: "Full Stack Engineer",
+    company: "Softleed Company",
+    period: "Sep 2025 - Present",
+    commit: "git commit -m \"feat: promote to full-time engineer & scale web systems\"",
+    description: "Promoted to a full-time engineering role after demonstrating rapid growth, technical competence, and system architecture capabilities. Driving core frontend and backend features for industrial clients.",
+    highlights: [
+      "Building and maintaining production-grade web applications, interactive portals, and robust backend microservices.",
+      "Developing scalable full-stack features using React, Vue, Laravel, and PostgreSQL/MySQL.",
+      "Crafting premium, responsive user interfaces and optimizing REST API performance.",
+      "Writing clean, modular, and well-tested code in collaborative agile pipelines."
+    ],
+    skills: [
+      { name: "Advanced Laravel Systems", value: 95 },
+      { name: "High-Fidelity React/Vue UI", value: 92 },
+      { name: "PostgreSQL & Database Tuning", value: 90 },
+      { name: "RESTful APIs & Microservices", value: 94 }
+    ],
+    themeColor: "from-indigo-500 to-violet-600",
+    glowColor: "rgba(99, 102, 241, 0.15)",
+    badgeText: "Full-Time Role"
   },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 35 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1.0],
-    },
+  {
+    id: 2, // Node 1
+    role: "Full Stack Developer Intern",
+    company: "Softleed Company",
+    period: "Jul 2025 - Aug 2025",
+    commit: "git checkout -b internship && git commit -m \"init: full-stack developer internship\"",
+    description: "Completed an intensive 2-month professional internship. Focused on adapting to enterprise coding conventions, setting up development environments, and contributing to core database schemas.",
+    highlights: [
+      "Gained hands-on experience with MVC frameworks, routing, and database schema designs.",
+      "Collaborated with senior engineers on feature implementations and bug fixes.",
+      "Learned version control practices, Git workflows, and testing frameworks."
+    ],
+    skills: [
+      { name: "Laravel MVC Architecture", value: 85 },
+      { name: "React & Vue Frontends", value: 80 },
+      { name: "SQL Database Design", value: 75 },
+      { name: "Git Workflows & Agile", value: 90 }
+    ],
+    themeColor: "from-pink-500 to-rose-600",
+    glowColor: "rgba(244, 63, 94, 0.15)",
+    badgeText: "Learning Phase"
   },
-};
+  {
+    id: 3, // Node 3
+    role: "Full Stack Engineer (Continuous Impact)",
+    company: "Softleed Company",
+    period: "Ongoing Contributions",
+    commit: "git log --oneline -n 1 // head -> origin/main: active deployment",
+    description: "Consistently delivering technical value by maintaining code standards, participating in peer reviews, and supporting team agility.",
+    highlights: [
+      "Actively optimizing database indexing and query layouts for faster dashboard loads.",
+      "Promoting solid coding practices, clean modular architecture, and automated script coverage.",
+      "Participating in technical reviews, providing constructive feedback, and streamlining Git deployments."
+    ],
+    skills: [
+      { name: "System Performance & Speed", value: 95 },
+      { name: "Code Review & Mentorship", value: 88 },
+      { name: "CI/CD & Deployments", value: 85 },
+      { name: "Product Engineering", value: 90 }
+    ],
+    themeColor: "from-emerald-500 to-teal-600",
+    glowColor: "rgba(16, 185, 129, 0.15)",
+    badgeText: "Continuous Integration"
+  }
+];
 
 const Experience = () => {
+  const [activeNode, setActiveNode] = useState(1);
+  const activeMilestone = milestones.find((m) => m.id === activeNode);
+
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden bg-transparent">
       
       {/* Background ambient glow */}
-      <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />
+      <div className="glow-node w-[450px] h-[450px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Title */}
         <div className="text-center mb-16">
@@ -43,68 +95,293 @@ const Experience = () => {
           <div className="h-1.5 w-24 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Timeline container */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 space-y-12"
-        >
-          {experience.map((item, index) => (
-            <motion.div 
-              key={item.id || index}
-              variants={itemVariants}
-              className="relative pl-8 md:pl-12 group"
-            >
-              {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[13px] top-1.5 flex items-center justify-center w-6 h-6 rounded-full bg-white dark:bg-[#0a0a0c] border-2 border-indigo-500 dark:border-indigo-400 group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-pink-500 transition-colors duration-300 shadow-md">
-                <FiBriefcase className="w-3 h-3 text-indigo-500 dark:text-indigo-400 group-hover:text-white transition-colors duration-300" />
+        {/* Interactive Workspace Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: SVG Git branch visualizer */}
+          <div className="lg:col-span-4 flex flex-col items-center glass-panel p-6 rounded-2xl border border-slate-200/60 dark:border-white/[0.04]">
+            <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6 flex items-center gap-1.5 self-start select-none">
+              <FiGitBranch className="text-indigo-500" />
+              <span>Git Branch Roadmap</span>
+            </h3>
+
+            {/* Mobile / Small Screens Horizontal Graph */}
+            <div className="block lg:hidden w-full overflow-x-auto scrollbar-none py-2 select-none">
+              <div className="w-[320px] mx-auto relative">
+                <svg className="w-full h-20" viewBox="0 0 320 80">
+                  {/* Base Lines (Main branch and Internship split) */}
+                  <path
+                    d="M 20,25 L 300,25"
+                    className="stroke-slate-200 dark:stroke-slate-800"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    fill="transparent"
+                  />
+                  <path
+                    d="M 40,25 C 40,25 55,55 80,55 L 120,55 C 145,55 160,25 160,25"
+                    className="stroke-pink-200/50 dark:stroke-pink-500/15"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    fill="transparent"
+                  />
+
+                  {/* Active Highlight Line Segments */}
+                  {activeNode === 1 && (
+                    <motion.path
+                      d="M 20,25 L 220,25"
+                      className="stroke-indigo-500/40 dark:stroke-indigo-400/40"
+                      strokeWidth="4"
+                      fill="transparent"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  )}
+                  {activeNode === 3 && (
+                    <motion.path
+                      d="M 20,25 L 280,25"
+                      className="stroke-emerald-500/40 dark:stroke-emerald-400/40"
+                      strokeWidth="4"
+                      fill="transparent"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  )}
+
+                  {/* Node 1: Internship (x = 100, y = 55) */}
+                  <g onClick={() => setActiveNode(2)} className="cursor-pointer">
+                    <circle cx="100" cy="55" r="14" className="fill-white dark:fill-[#080416] stroke-pink-500/20" strokeWidth="2" />
+                    {activeNode === 2 && (
+                      <motion.circle cx="100" cy="55" r="10" className="fill-pink-500" layoutId="mobileGlowCircle" />
+                    )}
+                    <circle cx="100" cy="55" r="5" className={activeNode === 2 ? "fill-white" : "fill-slate-300 dark:fill-slate-600"} />
+                  </g>
+
+                  {/* Node 2: Full-Time (x = 220, y = 25) */}
+                  <g onClick={() => setActiveNode(1)} className="cursor-pointer">
+                    <circle cx="220" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-indigo-500/20" strokeWidth="2" />
+                    {activeNode === 1 && (
+                      <motion.circle cx="220" cy="25" r="10" className="fill-indigo-500" layoutId="mobileGlowCircle" />
+                    )}
+                    <circle cx="220" cy="25" r="5" className={activeNode === 1 ? "fill-white" : "fill-slate-300 dark:fill-slate-600"} />
+                  </g>
+
+                  {/* Node 3: Present (x = 280, y = 25) */}
+                  <g onClick={() => setActiveNode(3)} className="cursor-pointer">
+                    <circle cx="280" cy="25" r="14" className="fill-white dark:fill-[#080416] stroke-emerald-500/20" strokeWidth="2" />
+                    {activeNode === 3 && (
+                      <motion.circle cx="280" cy="25" r="10" className="fill-emerald-500" layoutId="mobileGlowCircle" />
+                    )}
+                    <circle cx="280" cy="25" r="5" className={activeNode === 3 ? "fill-white" : "fill-slate-300 dark:fill-slate-600"} />
+                  </g>
+
+                  {/* Labels */}
+                  <text x="100" y="78" textAnchor="middle" className="font-mono text-[9px] font-bold fill-slate-500 dark:fill-slate-400">Intern</text>
+                  <text x="220" y="12" textAnchor="middle" className="font-mono text-[9px] font-bold fill-slate-500 dark:fill-slate-400">Engineer</text>
+                  <text x="280" y="12" textAnchor="middle" className="font-mono text-[9px] font-bold fill-slate-500 dark:fill-slate-400">HEAD</text>
+                </svg>
               </div>
+            </div>
 
-              {/* Content Box */}
-              <div className="glass-panel rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl hover:border-indigo-500/30">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">
-                      {item.role}
-                    </h3>
-                    <p className="text-md font-semibold text-indigo-600 dark:text-indigo-400 mt-1">
-                      {item.company}
-                    </p>
-                  </div>
-                  
-                  {/* Period Badge */}
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-full w-fit">
-                    <FiCalendar className="text-indigo-500 dark:text-indigo-400" />
-                    <span>{item.period}</span>
-                  </div>
-                </div>
+            {/* Desktop Vertical Graph */}
+            <div className="hidden lg:flex items-center justify-center w-full h-[320px] select-none">
+              <svg className="w-full h-full" viewBox="0 0 160 300">
+                {/* Main Branch line */}
+                <path
+                  d="M 50,280 L 50,20"
+                  className="stroke-slate-200 dark:stroke-slate-800"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="transparent"
+                />
 
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
-                  {item.description}
-                </p>
+                {/* Internship Branch Curve */}
+                <path
+                  d="M 50,260 C 50,260 90,245 90,220 L 90,200 C 90,175 50,160 50,160"
+                  className="stroke-pink-200/50 dark:stroke-pink-500/15"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="transparent"
+                />
 
-                {/* Highlights List */}
-                {item.highlights && item.highlights.length > 0 && (
-                  <div className="mt-6 border-t border-slate-200 dark:border-[#262630]/60 pt-4">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
-                      Key Highlights &amp; Accomplishments
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {item.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">
-                          <FiCheckCircle className="w-4 h-4 text-indigo-500 dark:text-indigo-400 mt-0.5 shrink-0" />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Active Highlight Line Segments */}
+                {activeNode === 1 && (
+                  <motion.path
+                    d="M 50,280 L 50,140"
+                    className="stroke-indigo-500/40 dark:stroke-indigo-400/40"
+                    strokeWidth="4"
+                    fill="transparent"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.5 }}
+                  />
                 )}
+                {activeNode === 3 && (
+                  <motion.path
+                    d="M 50,280 L 50,60"
+                    className="stroke-emerald-500/40 dark:stroke-emerald-400/40"
+                    strokeWidth="4"
+                    fill="transparent"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                )}
+
+                {/* Node 1: Internship Node (x=90, y=210) */}
+                <g onClick={() => setActiveNode(2)} className="cursor-pointer group">
+                  <circle cx="90" cy="210" r="16" className="fill-white dark:fill-[#080416] stroke-pink-500/15" strokeWidth="2" />
+                  {activeNode === 2 && (
+                    <motion.circle cx="90" cy="210" r="11" className="fill-pink-500/90" layoutId="desktopGlowCircle" />
+                  )}
+                  <circle cx="90" cy="210" r="5.5" className={activeNode === 2 ? "fill-white" : "fill-slate-300 dark:fill-slate-700 group-hover:fill-pink-500"} />
+                  <text x="115" y="214" className={`font-mono text-[10px] font-bold ${activeNode === 2 ? "fill-pink-600 dark:fill-pink-400" : "fill-slate-400 dark:fill-slate-500"}`}>internship</text>
+                </g>
+
+                {/* Node 2: Full-Time Node (x=50, y=140) */}
+                <g onClick={() => setActiveNode(1)} className="cursor-pointer group">
+                  <circle cx="50" cy="140" r="16" className="fill-white dark:fill-[#080416] stroke-indigo-500/15" strokeWidth="2" />
+                  {activeNode === 1 && (
+                    <motion.circle cx="50" cy="140" r="11" className="fill-indigo-500/90" layoutId="desktopGlowCircle" />
+                  )}
+                  <circle cx="50" cy="140" r="5.5" className={activeNode === 1 ? "fill-white" : "fill-slate-300 dark:fill-slate-700 group-hover:fill-indigo-500"} />
+                  <text x="75" y="144" className={`font-mono text-[10px] font-bold ${activeNode === 1 ? "fill-indigo-600 dark:fill-indigo-400" : "fill-slate-400 dark:fill-slate-500"}`}>main (Sep 2025)</text>
+                </g>
+
+                {/* Node 3: HEAD Node (x=50, y=60) */}
+                <g onClick={() => setActiveNode(3)} className="cursor-pointer group">
+                  <circle cx="50" cy="60" r="16" className="fill-white dark:fill-[#080416] stroke-emerald-500/15" strokeWidth="2" />
+                  {activeNode === 3 && (
+                    <motion.circle cx="50" cy="60" r="11" className="fill-emerald-500/90" layoutId="desktopGlowCircle" />
+                  )}
+                  <circle cx="50" cy="60" r="5.5" className={activeNode === 3 ? "fill-white" : "fill-slate-300 dark:fill-slate-700 group-hover:fill-emerald-500"} />
+                  <text x="75" y="64" className={`font-mono text-[10px] font-bold ${activeNode === 3 ? "fill-emerald-600 dark:fill-emerald-400" : "fill-slate-400 dark:fill-slate-500"}`}>HEAD (Present)</text>
+                </g>
+              </svg>
+            </div>
+
+            <p className="text-[10px] font-medium font-mono text-slate-400 dark:text-slate-500 mt-4 text-center select-none">
+              Click commit nodes to switch viewports
+            </p>
+          </div>
+
+          {/* Right Column: Terminal File Inspector Card */}
+          <div className="lg:col-span-8">
+            <div className="terminal-card flex flex-col w-full min-h-[380px] shadow-2xl relative">
+              
+              {/* Terminal Title Bar */}
+              <div className="terminal-header px-6 py-4 flex items-center justify-between select-none">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dfa023]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]" />
+                </div>
+                
+                <div className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 bg-white/20 dark:bg-[#121218]/40 border border-slate-200/30 dark:border-white/[0.04] px-3.5 py-1.5 rounded-lg shadow-sm">
+                  <FiTerminal className="text-indigo-500 dark:text-indigo-400 font-extrabold" />
+                  <span>imtiaz@softleed-desktop: ~/experience</span>
+                </div>
+                
+                <span className="px-2.5 py-1 rounded bg-indigo-500/10 dark:bg-indigo-500/20 text-[10px] font-bold tracking-wide text-indigo-600 dark:text-indigo-400 border border-indigo-200/30 dark:border-indigo-500/10 uppercase select-none">
+                  {activeMilestone.badgeText}
+                </span>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+
+              {/* Dynamic Content Panel */}
+              <div className="p-6 md:p-8 flex-grow">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeNode}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.3 }}
+                    className="space-y-6"
+                  >
+                    {/* Commit Message log line */}
+                    <div className="font-mono text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-black/30 border border-slate-250/20 dark:border-white/[0.02] p-3 rounded-xl flex items-start gap-2.5 shadow-inner">
+                      <span className="text-indigo-500 font-bold shrink-0">$</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed break-all select-all">{activeMilestone.commit}</span>
+                    </div>
+
+                    {/* Role / Period Header */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-200/40 dark:border-white/[0.03] pb-4">
+                      <div>
+                        <h4 className="text-2xl font-black text-slate-900 dark:text-white leading-tight">
+                          {activeMilestone.role}
+                        </h4>
+                        <p className="text-md font-bold text-indigo-600 dark:text-indigo-400 mt-1">
+                          {activeMilestone.company}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/60 border border-slate-200/60 dark:border-white/[0.04] px-4 py-2 rounded-full w-fit shadow-sm select-none">
+                        <FiCalendar className="text-indigo-500 dark:text-indigo-400" />
+                        <span>{activeMilestone.period}</span>
+                      </div>
+                    </div>
+
+                    {/* Dashboard Layout: Two Columns (Highlights vs Strengths) */}
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
+                      {/* Highlights */}
+                      <div className="md:col-span-7 space-y-4">
+                        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                          {activeMilestone.description}
+                        </p>
+
+                        <div className="space-y-3 pt-2">
+                          <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 select-none">
+                            Key Accomplishments
+                          </h5>
+                          <ul className="space-y-2.5">
+                            {activeMilestone.highlights.map((highlight, idx) => (
+                              <li key={idx} className="flex items-start gap-3 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                                <FiCheckCircle className="w-4 h-4 text-indigo-500 dark:text-indigo-400 mt-0.5 shrink-0" />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Technical Strengths */}
+                      <div className="md:col-span-5 space-y-4 bg-slate-50/50 dark:bg-[#100a28]/25 border border-slate-200/60 dark:border-white/[0.04] p-5 rounded-2xl shadow-sm">
+                        <h5 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-1.5 select-none">
+                          <FiLayers className="text-indigo-500" />
+                          <span>Stack Strength Matrix</span>
+                        </h5>
+
+                        <div className="space-y-4 pt-2">
+                          {activeMilestone.skills.map((skill, idx) => (
+                            <div key={idx} className="space-y-1.5">
+                              <div className="flex items-center justify-between text-[11px] font-bold text-slate-800 dark:text-slate-200">
+                                <span>{skill.name}</span>
+                                <span className="font-mono">{skill.value}%</span>
+                              </div>
+                              <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800/80 rounded-full overflow-hidden select-none">
+                                <motion.div
+                                  className="h-full bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${skill.value}%` }}
+                                  transition={{ duration: 0.8, delay: 0.15 }}
+                                />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
