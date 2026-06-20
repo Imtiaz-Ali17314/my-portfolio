@@ -3,76 +3,29 @@ import * as THREE from "three";
 
 // List of floating code fragments, symbols, and numbers
 const CODE_ELEMENTS = [
-  // Numbers & Variables
-  "0", "1", "x", "y", "i", "j", "k", "n", "m", "a", "b", "c",
-  "true", "false", "null", "undefined", "NaN", "Infinity",
-  
-  // Keywords
-  "function()", "const", "let", "var", "return", "import", "export",
-  "class", "extends", "super", "this", "new", "delete", "void",
-  "typeof", "instanceof", "in", "of", "with", "yield", "await",
-  
-  // Operators
-  "{}", "[]", "()", "<>", "=>", "&&", "||", "===", "==", "!=", "!==",
-  "++", "--", "+=", "-=", "*=", "/=", "%=", "**", "??", "?.",
-  "$#@", "*", "&", "|", "^", "%", "!", "?", "~", ">>", "<<", ">>>",
+  // Keywords & Statements
+  "const", "let", "var", "return", "import", "export",
+  "class", "extends", "super", "function()", "typeof", "instanceof", "await", "async",
   
   // Async & Functional
-  "async", "await", "map", "filter", "reduce", "forEach", "sort",
-  "find", "findIndex", "some", "every", "includes", "push", "pop",
-  "shift", "unshift", "splice", "slice", "concat", "join", "split",
+  "Promise", "fetch", "axios", "setTimeout", "setInterval", "requestAnimationFrame",
   
-  // Promises & APIs
-  "Promise", "fetch", "axios", "async/await", "callback", "event",
-  "eventListener", "setTimeout", "setInterval", "requestAnimationFrame",
+  // Array methods
+  ".map()", ".filter()", ".reduce()", ".forEach()", ".find()", ".includes()",
   
   // DOM & Browser
-  "console.log", "console.error", "console.warn", "console.table",
-  "document", "window", "location", "history", "localStorage",
-  "sessionStorage", "navigator", "screen", "alert", "confirm", "prompt",
+  "console.log", "console.error", "console.warn", "document", "window",
+  "localStorage", "sessionStorage",
   
   // React & JSX
-  "<div />", "<span />", "<p>", "<section>", "<header>", "<footer>",
-  "<main>", "<article>", "<nav>", "<aside>", "<button>", "<input>",
-  "React", "Vue", "Angular", "Svelte", "Next.js", "Nuxt.js",
-  "JSX", "props", "state", "hooks", "useState", "useEffect",
-  "useContext", "useReducer", "useCallback", "useMemo", "useRef",
+  "<div />", "<span />", "<button />", "<input />", "useState", "useEffect",
+  "useContext", "useRef", "useMemo", "useCallback",
   
-  // Backend & APIs
-  "api", "REST", "GraphQL", "WebSocket", "gRPC",
-  "GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS",
-  
-  // Databases
-  "SQL", "NoSQL", "MongoDB", "PostgreSQL", "MySQL", "Redis",
-  "query", "schema", "model", "migration", "seed", "transaction",
+  // APIs & Databases
+  "GraphQL", "WebSocket", "MongoDB", "PostgreSQL", "Redis",
   
   // DevOps & Tools
-  "git commit", "git push", "git pull", "git merge", "git rebase",
-  "npm run dev", "npm install", "npm start", "npm build",
-  "yarn add", "yarn start", "yarn build",
-  "docker", "kubernetes", "AWS", "Azure", "GCP",
-  "CI/CD", "deploy", "build", "test", "debug", "monitor",
-  
-  // Data Structures & Algorithms
-  "array", "object", "string", "number", "boolean", "symbol", "bigint",
-  "stack", "queue", "linkedList", "tree", "graph", "hashMap",
-  "set", "map", "weakSet", "weakMap",
-  "sorting", "searching", "recursion", "dynamic", "greedy",
-  "Big-O", "O(1)", "O(n)", "O(log n)", "O(n^2)",
-  
-  // Design Patterns
-  "singleton", "factory", "observer", "mediator", "decorator",
-  "adapter", "proxy", "strategy", "state", "command",
-  
-  // Testing
-  "test", "spec", "expect", "assert", "mock", "stub", "spy",
-  "Jest", "Mocha", "Chai", "Cypress", "Selenium",
-  
-  // Miscellaneous
-  "TODO", "FIXME", "HACK", "NOTE",
-  "undefined", "null", "NaN", "Infinity",
-  "arguments", "eval", "strict mode", "use strict",
-  "package.json", "tsconfig.json", "webpack", "babel", "vite"
+  "git push", "git commit", "npm run dev", "npm install", "docker", "kubernetes"
 ];
 
 // Helper to get random item
@@ -109,50 +62,6 @@ const CodeWorldBackground = () => {
     coreLight.position.set(0, 0, 0);
     scene.add(coreLight);
 
-    // --- Digital Code Core (replaces bright sun) ---
-    // Outer wireframe sphere — green digital grid
-    const coreGeo = new THREE.SphereGeometry(7.5, 12, 10);
-    const coreMat = new THREE.MeshBasicMaterial({
-      color: 0x10b981,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.45
-    });
-    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-    scene.add(coreMesh);
-
-    // Tiny inner cyan orb at absolute center
-    const innerGeo = new THREE.SphereGeometry(3.2, 16, 16);
-    const innerMat = new THREE.MeshBasicMaterial({
-      color: 0x06b6d4,
-      transparent: true,
-      opacity: 0.28
-    });
-    const innerMesh = new THREE.Mesh(innerGeo, innerMat);
-    scene.add(innerMesh);
-
-    // Gimbal ring 1 — green torus on Y-axis
-    const ring1Geo = new THREE.TorusGeometry(9.5, 0.18, 8, 80);
-    const ring1Mat = new THREE.MeshBasicMaterial({
-      color: 0x10b981,
-      transparent: true,
-      opacity: 0.55
-    });
-    const ring1Mesh = new THREE.Mesh(ring1Geo, ring1Mat);
-    ring1Mesh.rotation.x = Math.PI / 2;
-    scene.add(ring1Mesh);
-
-    // Gimbal ring 2 — cyan torus on X-axis
-    const ring2Geo = new THREE.TorusGeometry(9.5, 0.18, 8, 80);
-    const ring2Mat = new THREE.MeshBasicMaterial({
-      color: 0x06b6d4,
-      transparent: true,
-      opacity: 0.45
-    });
-    const ring2Mesh = new THREE.Mesh(ring2Geo, ring2Mat);
-    ring2Mesh.rotation.y = Math.PI / 2;
-    scene.add(ring2Mesh);
-
     // --- Twinkling Starfield ---
     const starCount = 1000;
     const starGeo = new THREE.BufferGeometry();
@@ -180,83 +89,6 @@ const CodeWorldBackground = () => {
 
     const starField = new THREE.Points(starGeo, starMat);
     scene.add(starField);
-
-    // --- Solar System ---
-    // Emissive Sun
-    const sunGeo = new THREE.SphereGeometry(8.5, 32, 32);
-    const sunMat = new THREE.MeshBasicMaterial({ color: 0x82652F}); // Warm orange sun
-    const sunMesh = new THREE.Mesh(sunGeo, sunMat);
-    scene.add(sunMesh);
-
-    // Subtle Outer Sun Glow Layer
-    const sunGlowGeo = new THREE.SphereGeometry(10.2, 32, 32);
-    const sunGlowMat = new THREE.MeshBasicMaterial({
-      color: 0x82652F,
-      transparent: true,
-      opacity: 0.22,
-      blending: THREE.AdditiveBlending
-    });
-    const sunGlowMesh = new THREE.Mesh(sunGlowGeo, sunGlowMat);
-    scene.add(sunGlowMesh);
-
-    // Planets (Geometries and Materials)
-    const planetGeos = [
-      new THREE.SphereGeometry(1.8, 24, 24), // Inner planet
-      new THREE.SphereGeometry(2.8, 24, 24), // Mid planet
-      new THREE.SphereGeometry(2.3, 24, 24)  // Outer planet
-    ];
-
-    const planetMats = [
-      new THREE.MeshStandardMaterial({
-        color: 0x06b6d4, // Cyan
-        roughness: 0.45,
-        metalness: 0.15,
-        emissive: 0x001824
-      }),
-      new THREE.MeshStandardMaterial({
-        color: 0xd946ef, // Purple
-        roughness: 0.5,
-        metalness: 0.1,
-        emissive: 0x1f0028
-      }),
-      new THREE.MeshStandardMaterial({
-        color: 0x10b981, // Emerald Green
-        roughness: 0.6,
-        metalness: 0.12,
-        emissive: 0x002010
-      })
-    ];
-
-    // Orbit paths
-    const orbitLines = [];
-    const createOrbitLine = (radius) => {
-      const points = [];
-      const segments = 128;
-      for (let i = 0; i <= segments; i++) {
-        const theta = (i / segments) * Math.PI * 2;
-        points.push(new THREE.Vector3(Math.cos(theta) * radius, 0, Math.sin(theta) * radius));
-      }
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      const mat = new THREE.LineBasicMaterial({
-        color: 0x4f46e5, // indigo
-        transparent: true,
-        opacity: 0.18
-      });
-      const line = new THREE.Line(geo, mat);
-      scene.add(line);
-      orbitLines.push({ geo, mat, line });
-    };
-
-    createOrbitLine(45);
-    createOrbitLine(72);
-    createOrbitLine(105);
-
-    const planets = [
-      { mesh: new THREE.Mesh(planetGeos[0], planetMats[0]), radius: 45, speed: 0.0042, angle: Math.random() * Math.PI * 2 },
-      { mesh: new THREE.Mesh(planetGeos[1], planetMats[1]), radius: 72, speed: 0.0028, angle: Math.random() * Math.PI * 2 },
-      { mesh: new THREE.Mesh(planetGeos[2], planetMats[2]), radius: 105, speed: 0.0016, angle: Math.random() * Math.PI * 2 }
-    ];
-    planets.forEach(p => scene.add(p.mesh));
 
     // --- Floating Matrix Code Elements ---
     // Helper to generate canvas texture for text
@@ -340,20 +172,7 @@ const CodeWorldBackground = () => {
     const animate = () => {
       frameId = requestAnimationFrame(animate);
 
-      // Animate Digital Code Core
-      coreMesh.rotation.y += 0.0015;
-      coreMesh.rotation.x += 0.0008;
-      innerMesh.rotation.y -= 0.002;
-      ring1Mesh.rotation.z += 0.004;  // spin green ring
-      ring2Mesh.rotation.x += 0.003;  // spin cyan ring in opposite feel
-
-      // Orbit Planets (Slow peaceful speeds)
-      planets.forEach((p) => {
-        p.angle += p.speed * 0.65; // Slow down
-        p.mesh.position.x = Math.cos(p.angle) * p.radius;
-        p.mesh.position.z = Math.sin(p.angle) * p.radius;
-        p.mesh.rotation.y += 0.008; // self spinning
-      });
+      // (Core and Solar System animation removed)
 
       // Drift Floating Matrix Code
       floatingCodeElements.forEach((p) => {
@@ -406,34 +225,7 @@ const CodeWorldBackground = () => {
       starGeo.dispose();
       starMat.dispose();
 
-      // Dispose digital core elements
-      scene.remove(coreMesh);
-      coreGeo.dispose();
-      coreMat.dispose();
-
-      scene.remove(innerMesh);
-      innerGeo.dispose();
-      innerMat.dispose();
-
-      scene.remove(ring1Mesh);
-      ring1Geo.dispose();
-      ring1Mat.dispose();
-
-      scene.remove(ring2Mesh);
-      ring2Geo.dispose();
-      ring2Mat.dispose();
-
-      planets.forEach((p) => {
-        scene.remove(p.mesh);
-      });
-      planetGeos.forEach((g) => g.dispose());
-      planetMats.forEach((m) => m.dispose());
-
-      orbitLines.forEach((ol) => {
-        scene.remove(ol.line);
-        ol.geo.dispose();
-        ol.mat.dispose();
-      });
+      // (Core and Solar System resources cleanup removed)
 
       floatingCodeElements.forEach((p) => {
         scene.remove(p.sprite);
