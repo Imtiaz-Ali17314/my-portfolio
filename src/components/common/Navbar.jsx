@@ -22,16 +22,20 @@ export default function Navbar() {
 
   const handleNavClick = (e, link) => {
     e.preventDefault();
+    const wasOpen = isOpen;
     setIsOpen(false);
 
     if (link.type === "route") {
       navigate(link.href);
     } else {
       if (location.pathname === "/") {
-        const element = document.querySelector(link.href);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        const delay = wasOpen ? 280 : 0;
+        setTimeout(() => {
+          const element = document.querySelector(link.href);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, delay);
       } else {
         navigate("/", { state: { scrollTo: link.href } });
       }
