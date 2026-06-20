@@ -77,19 +77,33 @@ const ProjectDetails = () => {
           {/* Main Info Column */}
           <div className="lg:col-span-8 space-y-8">
             
-            {/* Title / Description */}
-            <motion.div variants={itemVariants} className="space-y-4">
+            {/* Title / Description Card with High Readability Glassmorphism */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 md:p-8 space-y-4 shadow-sm relative overflow-hidden"
+            >
+              {/* Gradient accent flare */}
+              <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-pink-500/10 rounded-full blur-xl pointer-events-none" />
+              
               {project.category && (
-                <span className="inline-block text-[10px] font-extrabold tracking-[0.2em] uppercase text-indigo-500 dark:text-indigo-400 select-none">
-                  {project.category}
-                </span>
+                <div className="absolute top-3.5 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 dark:bg-indigo-500/20 border border-indigo-500/30 text-indigo-650 dark:text-indigo-300 font-extrabold text-[10px] uppercase tracking-wider select-none shadow-[0_2px_12px_rgba(99,102,241,0.06)]">
+                  {/* Blinking dot indicator */}
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                  </span>
+                  <span className="animate-pulse">{project.category}</span>
+                </div>
               )}
-              <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-[#f0ebff] leading-tight tracking-tight">
-                {project.title}
-              </h1>
-              <p className="text-base md:text-lg text-slate-650 dark:text-[#beafdc] font-medium leading-relaxed">
-                {project.description}
-              </p>
+
+              <div className="relative z-10 space-y-3.5 pt-8">
+                <h1 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-[#f0ebff] leading-tight tracking-tight">
+                  {project.title}
+                </h1>
+                <p className="text-sm md:text-base text-slate-650 dark:text-[#beafdc] font-medium leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
             </motion.div>
 
             {/* Screen Mockup Image with Custom Real Browser Chrome Frame */}
@@ -118,7 +132,7 @@ const ProjectDetails = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover filter brightness-[95%] hover:brightness-100 transition-all duration-[600ms] ease-out hover:scale-[1.01]"
+                  className="w-full h-full object-contain object-center filter brightness-[95%] hover:brightness-100 transition-all duration-[600ms] ease-out hover:scale-[1.01]"
                 />
                 {/* Glowing hover mesh shine */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-pink-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -129,7 +143,7 @@ const ProjectDetails = () => {
             {project.features && project.features.length > 0 && (
               <motion.div
                 variants={itemVariants}
-                className="bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm"
+                className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm"
               >
                 <h2 className="text-xl md:text-2xl font-black text-slate-900 dark:text-[#f0ebff] flex items-center gap-3">
                   <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 shadow-sm shrink-0">
@@ -162,7 +176,7 @@ const ProjectDetails = () => {
             {/* CTA project links card */}
             <motion.div
               variants={itemVariants}
-              className="bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] p-6 space-y-5 shadow-sm"
+              className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 space-y-5 shadow-sm"
             >
               <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 select-none">
                 Resource Links
@@ -199,7 +213,7 @@ const ProjectDetails = () => {
             {project.stack && project.stack.length > 0 && (
               <motion.div
                 variants={itemVariants}
-                className="bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] p-6 space-y-4 shadow-sm"
+                className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 space-y-4 shadow-sm"
               >
                 <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center gap-2 select-none">
                   <FiLayers className="text-indigo-500" />
@@ -210,7 +224,7 @@ const ProjectDetails = () => {
                   {project.stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] font-extrabold px-3 py-1.5 rounded-xl bg-[#78699b]/8 dark:bg-[#78699b]/15 text-slate-700 dark:text-[#beafdc] border border-slate-200/40 dark:border-[#78699b]/25 shadow-sm"
+                      className="text-xs font-bold px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-[#261f5c] text-indigo-700 dark:text-[#e3dbff] border border-indigo-100 dark:border-[#3c3182] shadow-sm transition-all duration-300 hover:bg-indigo-500 dark:hover:bg-indigo-500 hover:text-white dark:hover:text-white hover:border-transparent dark:hover:border-transparent hover:scale-105 active:scale-95 cursor-default"
                     >
                       {tech}
                     </span>
@@ -222,7 +236,7 @@ const ProjectDetails = () => {
             {/* Quick specifications context */}
             <motion.div
               variants={itemVariants}
-              className="bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] p-6 space-y-4 text-xs shadow-sm"
+              className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 space-y-4 text-xs shadow-sm"
             >
               <h4 className="font-extrabold text-slate-700 dark:text-[#f0ebff] flex items-center gap-2 uppercase tracking-wider text-sm select-none">
                 <FiInfo className="text-indigo-500" /> 
