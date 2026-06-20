@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import projects from "../../data/projects";
 import Button from "../common/Button";
-import { FiExternalLink, FiGithub, FiCheck } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiCheck, FiArrowRight } from "react-icons/fi";
 
 const containerVariants = {
   hidden: {},
@@ -46,7 +46,7 @@ const Projects = () => {
       <div className="glow-node w-[400px] h-[400px] bg-cyan-400/5 left-[30%] bottom-[5%] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3 select-none">
@@ -74,16 +74,14 @@ const Projects = () => {
                 key={project.id}
                 variants={itemVariants}
                 onClick={(e) => handleCardClick(project.id, e)}
-                className={`group flex flex-col bg-[#ffffff] dark:bg-[#160f38] rounded-[28px] overflow-hidden border border-slate-200 dark:border-[#2d1e5a] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2.5 hover:scale-[1.005] hover:shadow-[0_20px_50px_rgba(99,102,241,0.06)] dark:hover:shadow-[0_20px_50px_rgba(167,92,255,0.22)] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 cursor-pointer relative z-10 ${
-                  isLarge ? "lg:col-span-2 col-span-1 md:col-span-2 lg:flex-row md:flex-row" : "col-span-1"
-                }`}
+                className={`group flex flex-col bg-[#ffffff] dark:bg-[#160f38] rounded-[28px] overflow-hidden border border-slate-200 dark:border-[#2d1e5a] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2.5 hover:scale-[1.005] hover:shadow-[0_20px_50px_rgba(99,102,241,0.06)] dark:hover:shadow-[0_20px_50px_rgba(167,92,255,0.22)] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 cursor-pointer relative z-10 ${isLarge ? "lg:col-span-2 col-span-1 md:col-span-2 lg:flex-row md:flex-row" : "col-span-1"
+                  }`}
               >
-                
+
                 {/* Image Container with Custom Real Browser Chrome Frame */}
-                <div className={`relative overflow-hidden bg-slate-950 flex flex-col shrink-0 border-b md:border-b-0 ${
-                  isLarge ? "w-full md:w-[45%] md:aspect-auto md:border-r border-slate-200 dark:border-[#2d1e5a]" : "w-full aspect-[16/10] border-slate-200 dark:border-[#2d1e5a]"
-                }`}>
-                  
+                <div className={`relative overflow-hidden bg-slate-950 flex flex-col shrink-0 border-b md:border-b-0 ${isLarge ? "w-full md:w-[45%] md:aspect-auto md:border-r border-slate-200 dark:border-[#2d1e5a]" : "w-full aspect-[16/10] border-slate-200 dark:border-[#2d1e5a]"
+                  }`}>
+
                   {/* Real Browser Chrome Mock Bar */}
                   <div className="h-9 bg-slate-100 dark:bg-[#11092e] border-b border-slate-200/80 dark:border-[#2d1e5a]/80 flex items-center px-4 gap-2 select-none shrink-0 z-20">
                     {/* Dot window controls */}
@@ -108,10 +106,10 @@ const Projects = () => {
                       loading="lazy"
                       className="w-full h-full object-cover transition-all duration-[800ms] ease-out filter brightness-[90%] group-hover:brightness-100 group-hover:scale-105"
                     />
-                    
+
                     {/* Glowing hover mesh shine */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    
+
                     {/* Launch Action Overlay Indicator */}
                     <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                       <span className="text-[10px] font-extrabold text-white tracking-[0.2em] uppercase bg-indigo-650/90 border border-indigo-400/30 px-3.5 py-2 rounded-xl shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
@@ -123,9 +121,8 @@ const Projects = () => {
                 </div>
 
                 {/* Content Area */}
-                <div className={`p-6 flex flex-col justify-between flex-grow ${
-                  isLarge ? "w-full md:w-[55%]" : "w-full"
-                }`}>
+                <div className={`p-6 flex flex-col justify-between flex-grow ${isLarge ? "w-full md:w-[55%]" : "w-full"
+                  }`}>
                   <div className="space-y-4">
                     {/* Category tag */}
                     {project.category && (
@@ -161,7 +158,7 @@ const Projects = () => {
 
                   {/* Badges & Actions Footer */}
                   <div className="mt-6 pt-4 border-t border-slate-150 dark:border-[#2d1e5a]/40 space-y-5">
-                    
+
                     {/* Tech Badges */}
                     {project.stack && project.stack.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 select-none">
@@ -233,14 +230,15 @@ const Projects = () => {
         {/* View All Projects Action Button */}
         <div className="mt-20 text-center">
           <Button
-            variant="outline"
+            variant="primary"
             onClick={() => {
               navigate("/projects");
               window.scrollTo(0, 0);
             }}
-            className="px-9 py-4 border-indigo-500 text-indigo-500 hover:bg-indigo-600 hover:text-white dark:border-indigo-400 dark:text-indigo-400 dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-350 shadow-md font-bold text-sm tracking-wide rounded-xl hover:-translate-y-0.5 active:translate-y-0"
+            className="group px-10 py-4.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-0 rounded-2xl font-extrabold text-sm uppercase tracking-wider transition-all duration-350 shadow-[0_4px_20px_rgba(99,102,241,0.2)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.4)] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 mx-auto"
           >
-            Explore All 29 Projects &rarr;
+            <span>Explore All Projects</span>
+            <FiArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1.5 transition-transform duration-300 ease-out text-white" />
           </Button>
         </div>
       </div>
