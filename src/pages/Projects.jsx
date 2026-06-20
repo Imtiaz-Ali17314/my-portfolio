@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowLeft } from "react-icons/fi";
 import projects from "../data/projects";
 import ProjectCard from "../components/ui/ProjectCard";
 import FilterButton from "../components/ui/FilterButton";
@@ -25,6 +27,7 @@ const cardVariants = {
 };
 
 const Projects = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
@@ -70,6 +73,21 @@ const Projects = () => {
       <div className="glow-node w-[350px] h-[350px] bg-cyan-400/5 left-[40%] bottom-[5%] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10 pt-8">
+        
+        {/* Back to Home CTA Button */}
+        <div className="flex justify-start mb-8 select-none">
+          <button
+            onClick={() => {
+              navigate("/");
+              window.scrollTo(0, 0);
+            }}
+            className="group inline-flex items-center gap-2 px-4 py-2.5 bg-[#ffffff] dark:bg-[#160f38] text-slate-700 dark:text-[#beafdc] border border-slate-200 dark:border-[#2d1e5a] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:text-indigo-650 dark:hover:text-indigo-300 rounded-xl text-xs font-bold transition-all duration-300 hover:-translate-x-0.5 active:translate-x-0 shadow-sm cursor-pointer"
+          >
+            <FiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300 ease-out" />
+            <span>Back to Home</span>
+          </button>
+        </div>
+
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3 select-none">
@@ -84,17 +102,19 @@ const Projects = () => {
         {/* Search Control */}
         <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />
 
-        {/* Filter Selection Chips */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto mb-16 select-none">
-          {categories.map((cat) => (
-            <FilterButton
-              key={cat}
-              active={filter === cat}
-              onClick={() => setFilter(cat)}
-            >
-              {cat}
-            </FilterButton>
-          ))}
+        {/* Filter Selection Chips (Scrollable horizontal row) */}
+        <div className="w-full overflow-x-auto no-scrollbar pb-6 mb-12 select-none">
+          <div className="flex items-center justify-start md:justify-center gap-3 min-w-max px-4">
+            {categories.map((cat) => (
+              <FilterButton
+                key={cat}
+                active={filter === cat}
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </FilterButton>
+            ))}
+          </div>
         </div>
 
         {/* Staggered Grid Content */}

@@ -196,10 +196,10 @@ const Projects = () => {
                             href={project.live}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-indigo-500/10 hover:shadow-indigo-500/20 active:scale-95"
+                            className="group/live inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-[0_4px_12px_rgba(99,102,241,0.2)] hover:shadow-[0_8px_20px_rgba(168,85,247,0.35)] hover:scale-[1.03] active:scale-[0.97]"
                             title="Launch Live Demo"
                           >
-                            <FiExternalLink className="text-[11px]" />
+                            <FiExternalLink className="text-[11px] group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5 transition-transform duration-300" />
                             <span className="text-[10px]">Live Demo</span>
                           </a>
                         )}
@@ -209,10 +209,10 @@ const Projects = () => {
                             href={project.github}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-300 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900/60 dark:hover:bg-slate-800 text-slate-700 dark:text-[#beafdc] border border-slate-200 dark:border-[#2d1e5a]/80 hover:border-indigo-500/30 active:scale-95"
+                            className="group/repo inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-extrabold transition-all duration-300 bg-slate-50 hover:bg-indigo-50 text-slate-700 hover:text-indigo-600 border border-slate-200 hover:border-indigo-500/50 dark:bg-[#0f0a28]/60 dark:hover:bg-indigo-950/40 dark:text-[#beafdc] dark:hover:text-indigo-300 dark:border-[#2d1e5a]/80 dark:hover:border-indigo-500/50 hover:scale-[1.03] active:scale-[0.97] hover:shadow-[0_4px_12px_rgba(99,102,241,0.05)] dark:hover:shadow-[0_4px_12px_rgba(168,85,247,0.15)] shadow-sm"
                             title="View Codebase"
                           >
-                            <FiGithub className="text-[11px]" />
+                            <FiGithub className="text-[11px] group-hover/repo:rotate-12 transition-transform duration-300" />
                             <span className="text-[10px]">Repository</span>
                           </a>
                         )}
