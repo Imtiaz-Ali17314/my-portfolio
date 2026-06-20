@@ -462,3 +462,60 @@ h1, h2, h3, h4, h5, h6 {
   background: #ea4335 !important;
   box-shadow: 0 8px 20px rgba(234, 67, 53, 0.35);
 }
+
+/* ==========================================================================
+   DEVELOPER CONSOLE SYNTAX HIGHLIGHTING & INTERACTIONS
+   ========================================================================== */
+
+.json-syntax {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.json-key {
+  color: #c084fc; /* light purple */
+}
+.dark .json-key {
+  color: #c084fc;
+}
+
+.json-string {
+  color: #34d399; /* emerald */
+}
+.dark .json-string {
+  color: #34d399;
+}
+
+.json-bool {
+  color: #fb7185; /* light rose */
+}
+.dark .json-bool {
+  color: #fb7185;
+}
+
+.json-number {
+  color: #fbbf24; /* amber */
+}
+.dark .json-number {
+  color: #fbbf24;
+}
+
+.json-punctuation {
+  color: #94a3b8; /* slate */
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink-cursor {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+  background-color: #10b981; /* emerald-500 */
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: cursor-blink 1s step-end infinite;
+}
