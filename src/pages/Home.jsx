@@ -12,8 +12,8 @@ const Home = () => {
     <>
       <Hero />
       <About />
-      <Experience />
       <Skills />
+      <Experience />
       <Projects />
       <Journey />
       <Achievements />
