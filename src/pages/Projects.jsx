@@ -79,7 +79,6 @@ const Projects = () => {
           <button
             onClick={() => {
               navigate("/");
-              window.scrollTo(0, 0);
             }}
             className="group inline-flex items-center gap-2 px-4 py-2.5 bg-[#ffffff] dark:bg-[#160f38] text-slate-700 dark:text-[#beafdc] border border-slate-200 dark:border-[#2d1e5a] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:text-indigo-650 dark:hover:text-indigo-300 rounded-xl text-xs font-bold transition-all duration-300 hover:-translate-x-0.5 active:translate-x-0 shadow-sm cursor-pointer"
           >

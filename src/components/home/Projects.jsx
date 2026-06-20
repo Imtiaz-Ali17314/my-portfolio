@@ -35,7 +35,6 @@ const Projects = () => {
       return;
     }
     navigate(`/projects/${projectId}`, { state: { from: "home" } });
-    window.scrollTo(0, 0);
   };
 
   return (
@@ -182,7 +181,7 @@ const Projects = () => {
                     <div className="flex items-center justify-between text-xs pt-1">
                       {/* Nav link with sliding arrow */}
                       <button
-                        onClick={() => { navigate(`/projects/${project.id}`, { state: { from: "home" } }); window.scrollTo(0, 0); }}
+                        onClick={() => { navigate(`/projects/${project.id}`, { state: { from: "home" } }); }}
                         className="font-bold text-indigo-500 hover:text-indigo-650 dark:text-indigo-400 dark:hover:text-indigo-300 group/link flex items-center gap-1 bg-transparent border-0 cursor-pointer"
                       >
                         <span>Workspace</span>
@@ -233,7 +232,6 @@ const Projects = () => {
             variant="primary"
             onClick={() => {
               navigate("/projects");
-              window.scrollTo(0, 0);
             }}
             className="group px-10 py-4.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-0 rounded-2xl font-extrabold text-sm uppercase tracking-wider transition-all duration-350 shadow-[0_4px_20px_rgba(99,102,241,0.2)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.4)] hover:-translate-y-1 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 mx-auto"
           >
