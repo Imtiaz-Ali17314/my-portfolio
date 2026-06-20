@@ -1,7 +1,7 @@
 const achievements = [
   {
     id: 1,
-    title: "29+ Personal Projects Built",
+    title: "30+ Personal Projects Built",
     description:
       "Developed projects ranging from beginner to advanced full stack applications.",
   },

@@ -85,7 +85,7 @@ const Resume = () => {
                 <span>Professional Profile</span>
               </h2>
               <p className="text-sm md:text-base text-slate-650 dark:text-[#beafdc] font-medium leading-relaxed relative z-10">
-                Detail-oriented and results-driven Full Stack Software Engineer currently working at Softleed Company. Experienced in designing, building, and maintaining production-grade web systems using Laravel, React, Vue, and MySQL/PostgreSQL databases. Developed a robust portfolio of 29 personal projects including frontend dashboards, SaaS workflows, and cross-platform desktop utilities.
+                Detail-oriented and results-driven Full Stack Software Engineer currently working at Softleed Company. Experienced in designing, building, and maintaining production-grade web systems using Laravel, React, Vue, and MySQL/PostgreSQL databases. Developed a robust portfolio of 30 personal projects including frontend dashboards, SaaS workflows, and cross-platform desktop utilities.
               </p>
             </motion.div>
 

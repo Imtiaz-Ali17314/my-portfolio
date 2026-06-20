@@ -16,13 +16,13 @@ const MainLayout = () => {
   // Dynamic SEO Page Resolution
   useEffect(() => {
     let title = "Imtiaz Ali | Full Stack Software Engineer";
-    let desc = "Professional developer portfolio of Imtiaz Ali. Full Stack Software Engineer at Softleed Company, showcasing a comprehensive collection of 29+ personal applications.";
+    let desc = "Professional developer portfolio of Imtiaz Ali. Full Stack Software Engineer at Softleed Company, showcasing a comprehensive collection of 30+ personal applications.";
 
     const path = location.pathname;
 
     if (path === "/projects") {
       title = "Projects Showcase | Imtiaz Ali";
-      desc = "Browse through all 29+ web development and desktop projects built by Imtiaz Ali. Filter by React, Vue, Laravel, and Electron.";
+      desc = "Browse through all 30+ web development and desktop projects built by Imtiaz Ali. Filter by React, Vue, Laravel, and Electron.";
     } else if (path === "/resume") {
       title = "Resume & Technical Skills | Imtiaz Ali";
       desc = "Download the official software engineering resume of Imtiaz Ali. Review full-stack development achievements and core qualifications.";

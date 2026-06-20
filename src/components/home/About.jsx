@@ -45,7 +45,7 @@ const StatCounter = ({ value, suffix = "" }) => {
 
 const stats = [
   { value: 1, suffix: "", label: "Year Experience", desc: "At Softleed Company" },
-  { value: 29, suffix: "+", label: "Personal Projects", desc: "Web & Desktop Utilities" },
+  { value: 30, suffix: "+", label: "Personal Projects", desc: "Web & Desktop Utilities" },
 ];
 
 const containerVariants = {
@@ -74,7 +74,7 @@ const LOG_MESSAGES = [
   "establishing WebSockets... connected",
   "building laravue-portal... ready",
   "loading computer-tracker... Electron active",
-  "compiling files... 29 projects verified",
+  "compiling files... 30 projects verified",
   "status check: active & ready"
 ];
 
@@ -245,7 +245,7 @@ const About = () => {
             <div className="flex items-center justify-between w-full">
               <div className="space-y-1">
                 <span className="text-3xl font-extrabold bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">
-                  29+
+                  30+
                 </span>
                 <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100">
                   Personal Projects
