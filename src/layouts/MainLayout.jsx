@@ -5,7 +5,6 @@ import Footer from "../components/common/Footer";
 import ScrollToTopButton from "../components/common/ScrollToTopButton";
 import { useTheme } from "../context/ThemeContext";
 import projects from "../data/projects";
-import MagicFlowerTrail from "../components/ui/MagicFlowerTrail";
 import CodeWorldBackground from "../components/ui/CodeWorldBackground";
 import LightCodeWorldBackground from "../components/ui/LightCodeWorldBackground";
 
@@ -56,9 +55,6 @@ const MainLayout = () => {
     >
       {/* 3D background based on active theme */}
       {theme === "dark" ? <CodeWorldBackground /> : <LightCodeWorldBackground />}
-
-      {/* Magical canvas flower trail — floats above everything */}
-      <MagicFlowerTrail />
 
       <Navbar />
 
