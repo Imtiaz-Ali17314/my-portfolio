@@ -10,6 +10,7 @@ const milestones = [
     description: "Began my coding odyssey as a self-taught developer. Focused heavily on mastering HTML5, CSS3, ES6 JavaScript, responsive layout designs, and programming fundamentals.",
     icon: <FiBookOpen className="w-5 h-5" />,
     color: "from-blue-500 to-indigo-500",
+    hoverColor: "group-hover:from-blue-500 group-hover:to-indigo-500",
     glowColor: "rgba(59, 130, 246, 0.25)",
   },
   {
@@ -19,6 +20,7 @@ const milestones = [
     description: "Expanded my skillset into complex frontend ecosystems. Developed production-quality applications using Bootstrap, Vue.js, React, Tailwind CSS, and global state managers.",
     icon: <FiLayers className="w-5 h-5" />,
     color: "from-indigo-500 to-pink-500",
+    hoverColor: "group-hover:from-indigo-500 group-hover:to-pink-500",
     glowColor: "rgba(168, 85, 247, 0.25)",
   },
   {
@@ -28,6 +30,7 @@ const milestones = [
     description: "Dived deep into backend engineering. Built robust MVC SaaS products with Laravel, integrated SQL databases, built REST APIs, and compiled desktop solutions using Electron.js.",
     icon: <FiActivity className="w-5 h-5" />,
     color: "from-pink-500 to-rose-500",
+    hoverColor: "group-hover:from-pink-500 group-hover:to-rose-500",
     glowColor: "rgba(244, 63, 94, 0.25)",
   },
   {
@@ -37,6 +40,7 @@ const milestones = [
     description: "Currently focus on constructing high-performance, containerized full-stack platforms, integrating AI APIs, testing automation, and writing highly-optimized, scalable systems.",
     icon: <FiCompass className="w-5 h-5" />,
     color: "from-rose-500 to-amber-500",
+    hoverColor: "group-hover:from-rose-500 group-hover:to-amber-500",
     glowColor: "rgba(245, 158, 11, 0.25)",
   },
 ];
@@ -125,7 +129,7 @@ const Journey = () => {
                     </span>
                     
                     <div className="flex items-center gap-3">
-                      <div className={`flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-[#beafdc] shadow-inner border border-slate-200/10 dark:border-white/[0.02] bg-gradient-to-br transition-colors duration-300 group-hover:text-white dark:group-hover:text-white group-hover:bg-gradient-to-br group-hover:${stone.color}`}>
+                      <div className={`flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-[#beafdc] shadow-inner border border-slate-200/10 dark:border-white/[0.02] bg-gradient-to-br transition-colors duration-300 group-hover:text-white dark:group-hover:text-white group-hover:bg-gradient-to-br ${stone.hoverColor}`}>
                         {stone.icon}
                       </div>
                       <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500">
