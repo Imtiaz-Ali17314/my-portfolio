@@ -71,7 +71,7 @@ const Hero = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.15 }}
-          className="lg:col-span-7 terminal-card flex flex-col w-full text-left"
+          className="lg:col-span-7 bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] overflow-hidden flex flex-col w-full text-left hover:shadow-[0_20px_50px_rgba(99,102,241,0.06)] dark:hover:shadow-[0_20px_50px_rgba(167,92,255,0.22)] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 transition-all duration-500"
         >
           {/* Terminal Window Header / Control Bar */}
           <div className="terminal-header px-6 py-4 flex items-center justify-between select-none">
@@ -216,7 +216,7 @@ const Hero = () => {
               <div className="glow-spin-border rounded-3xl" />
 
               {/* Terminal Card inner container */}
-              <div className="terminal-card overflow-hidden w-full flex flex-col bg-slate-950/80 dark:bg-slate-950/90 relative z-10">
+              <div className="overflow-hidden w-full flex flex-col bg-[#ffffff] dark:bg-[#160f38] border border-slate-200 dark:border-[#2d1e5a] rounded-[28px] relative z-10 hover:shadow-[0_20px_50px_rgba(99,102,241,0.06)] dark:hover:shadow-[0_20px_50px_rgba(167,92,255,0.22)] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 transition-all duration-500">
 
                 {/* Terminal Header */}
                 <div className="terminal-header px-5 py-3.5 flex items-center justify-between select-none">
