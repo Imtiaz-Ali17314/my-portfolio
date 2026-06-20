@@ -42,7 +42,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative z-10 w-full border-t border-slate-200 dark:border-[#262630] bg-[#f8fafc] dark:bg-[#0b0b0f] text-slate-700 dark:text-slate-300 transition-colors duration-300">
+    <footer className="relative z-10 w-full border-t border-slate-250 dark:border-[#2d1e5a] bg-white dark:bg-[#160f38] text-slate-700 dark:text-[#beafdc] transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-12">
         
         {/* Top Section */}
