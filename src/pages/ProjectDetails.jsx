@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiExternalLink, FiGithub, FiLayers, FiCheckCircle, FiInfo } from "react-icons/fi";
 import projects from "../data/projects";
@@ -24,6 +24,7 @@ const itemVariants = {
 
 const ProjectDetails = () => {
   const { id } = useParams();
+  const location = useLocation();
   const project = projects.find((p) => p.id === Number(id));
 
   if (!project) {
@@ -35,11 +36,11 @@ const ProjectDetails = () => {
             The project workspace you are looking for does not exist or has been relocated.
           </p>
           <Link
-            to="/projects"
+            to={location.state?.from === "home" ? "/" : "/projects"}
             className="group inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all"
           >
             <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Projects</span>
+            <span>{location.state?.from === "home" ? "Back to Home" : "Back to Projects"}</span>
           </Link>
         </div>
       </div>
@@ -59,11 +60,11 @@ const ProjectDetails = () => {
         {/* Navigation Back Link Button */}
         <div className="flex justify-start mb-8 select-none">
           <Link
-            to="/projects"
+            to={location.state?.from === "home" ? "/" : "/projects"}
             className="group inline-flex items-center gap-2 px-4 py-2.5 bg-[#ffffff] dark:bg-[#160f38] text-slate-700 dark:text-[#beafdc] border border-slate-200 dark:border-[#2d1e5a] hover:border-indigo-500/50 dark:hover:border-indigo-500/50 hover:text-indigo-650 dark:hover:text-indigo-300 rounded-xl text-xs font-bold transition-all duration-300 hover:-translate-x-0.5 active:translate-x-0 shadow-sm"
           >
             <FiArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300 ease-out" />
-            <span>Back to Projects</span>
+            <span>{location.state?.from === "home" ? "Back to Home" : "Back to Projects"}</span>
           </Link>
         </div>
 

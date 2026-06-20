@@ -34,7 +34,7 @@ const Projects = () => {
     if (e.target.tagName.toLowerCase() === "a" || e.target.closest("a") || e.target.tagName.toLowerCase() === "button" || e.target.closest("button")) {
       return;
     }
-    navigate(`/projects/${projectId}`);
+    navigate(`/projects/${projectId}`, { state: { from: "home" } });
     window.scrollTo(0, 0);
   };
 
@@ -182,7 +182,7 @@ const Projects = () => {
                     <div className="flex items-center justify-between text-xs pt-1">
                       {/* Nav link with sliding arrow */}
                       <button
-                        onClick={() => { navigate(`/projects/${project.id}`); window.scrollTo(0, 0); }}
+                        onClick={() => { navigate(`/projects/${project.id}`, { state: { from: "home" } }); window.scrollTo(0, 0); }}
                         className="font-bold text-indigo-500 hover:text-indigo-650 dark:text-indigo-400 dark:hover:text-indigo-300 group/link flex items-center gap-1 bg-transparent border-0 cursor-pointer"
                       >
                         <span>Workspace</span>

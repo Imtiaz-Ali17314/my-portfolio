@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
     ) {
       return;
     }
-    navigate(`/projects/${project.id}`);
+    navigate(`/projects/${project.id}`, { state: { from: "projects" } });
     window.scrollTo(0, 0);
   };
 
@@ -125,7 +125,7 @@ const ProjectCard = ({ project }) => {
             {/* Workspace details link */}
             <button
               onClick={() => {
-                navigate(`/projects/${project.id}`);
+                navigate(`/projects/${project.id}`, { state: { from: "projects" } });
                 window.scrollTo(0, 0);
               }}
               className="font-bold text-indigo-500 hover:text-indigo-650 dark:text-indigo-400 dark:hover:text-indigo-300 group/link flex items-center gap-1 bg-transparent border-0 cursor-pointer"
