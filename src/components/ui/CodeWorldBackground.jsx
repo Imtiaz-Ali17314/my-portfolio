@@ -3,29 +3,47 @@ import * as THREE from "three";
 
 // List of floating code fragments, symbols, and numbers
 const CODE_ELEMENTS = [
-  // Keywords & Statements
+  // Core JS Keywords & Statements
   "const", "let", "var", "return", "import", "export",
   "class", "extends", "super", "function()", "typeof", "instanceof", "await", "async",
+  "try { ... } catch", "throw new Error()", "if (condition)", "for (let i = 0; i < n; i++)",
+  "while (active)", "switch (action.type)", "case 'SUCCESS':",
   
-  // Async & Functional
-  "Promise", "fetch", "axios", "setTimeout", "setInterval", "requestAnimationFrame",
+  // React & Web Frameworks
+  "useState()", "useEffect()", "useContext()", "useRef()", "useMemo()", "useCallback()",
+  "useLayoutEffect()", "useTransition()", "useDeferredValue()",
+  "<div />", "<span />", "<button />", "<input />", "<section />", "<header />", "<footer />",
+  "<Layout />", "<Provider />", "<Routes />", "<Route />", "<Outlet />",
+  "import React from 'react'", "export default Component", "Vite + React", "Framer Motion",
+  "Tailwind CSS", "Three.js WebGL", "Bento Grid Design", "Glassmorphic UI",
   
-  // Array methods
+  // Async & Fetching
+  "Promise", "new Promise()", "fetch()", "axios", "axios.get()", "axios.post()",
+  "setTimeout()", "setInterval()", "requestAnimationFrame()",
+  "Promise.all()", "Promise.resolve()", "Promise.reject()",
+  
+  // Array & Object Methods
   ".map()", ".filter()", ".reduce()", ".forEach()", ".find()", ".includes()",
+  "Object.keys()", "Object.values()", "Object.entries()",
+  "JSON.stringify()", "JSON.parse()", "Math.random()", "Math.floor()",
   
-  // DOM & Browser
-  "console.log", "console.error", "console.warn", "document", "window",
-  "localStorage", "sessionStorage",
+  // DOM & Browser APIs
+  "console.log()", "console.error()", "console.warn()", "document", "window",
+  "localStorage", "sessionStorage", "window.addEventListener()", "document.querySelector()",
   
-  // React & JSX
-  "<div />", "<span />", "<button />", "<input />", "useState", "useEffect",
-  "useContext", "useRef", "useMemo", "useCallback",
+  // Node.js & Express (Backend)
+  "module.exports =", "require('path')", "fs.readFileSync()", "path.join(__dirname, ...)",
+  "app.get()", "app.post()", "app.use()", "next()", "res.status(200)", "res.json()",
+  "process.env.NODE_ENV", "GraphQL", "WebSocket", "MongoDB", "PostgreSQL", "Redis",
   
-  // APIs & Databases
-  "GraphQL", "WebSocket", "MongoDB", "PostgreSQL", "Redis",
+  // Git & CLI commands
+  "git push", "git commit -m '...'", "git pull", "git branch", "git checkout",
+  "git status", "git clone", "git diff", "git merge", "git rebase",
   
-  // DevOps & Tools
-  "git push", "git commit", "npm run dev", "npm install", "docker", "kubernetes"
+  // Configs & Project Files
+  "npm run dev", "npm install", "npm run build", "npm run test", "docker", "kubernetes",
+  "package.json", "tsconfig.json", "eslint.config.js", "vite.config.js",
+  "tailwind.config.js", "postcss.config.js", "README.md", "index.html"
 ];
 
 // Helper to get random item
@@ -117,7 +135,7 @@ const CodeWorldBackground = () => {
     });
 
     const floatingCodeElements = [];
-    const codeCount = 80;
+    const codeCount = 180;
 
     for (let i = 0; i < codeCount; i++) {
       const tex = randomItem(textureCache);
