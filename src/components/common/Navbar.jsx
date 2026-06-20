@@ -33,14 +33,7 @@ export default function Navbar() {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        navigate("/");
-        // wait for page load to scroll
-        setTimeout(() => {
-          const element = document.querySelector(link.href);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 150);
+        navigate("/", { state: { scrollTo: link.href } });
       }
     }
   };

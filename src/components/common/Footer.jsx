@@ -30,13 +30,7 @@ const Footer = () => {
           element.scrollIntoView({ behavior: "smooth" });
         }
       } else {
-        navigate("/");
-        setTimeout(() => {
-          const element = document.querySelector(link.href);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 150);
+        navigate("/", { state: { scrollTo: link.href } });
       }
     }
   };
