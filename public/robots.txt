@@ -12,4 +12,4 @@ Disallow: /src/
 Disallow: /node_modules/
 
 # Sitemap location
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://imtiazali.dev/sitemap.xml
