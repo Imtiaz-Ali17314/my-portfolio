@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiLayers } from "react-icons/fi";
+import { FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiLayers, FiPlay, FiPause } from "react-icons/fi";
 
 const milestones = [
   {
@@ -332,8 +332,14 @@ const Experience = () => {
                   {/* Play/Pause Autoplay Toggle Button */}
                   <button
                     onClick={() => setIsPlaying(!isPlaying)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200/85 dark:border-white/[0.04] text-[9px] font-mono font-bold text-slate-600 dark:text-slate-400 hover:text-indigo-650 dark:hover:text-indigo-400 hover:border-indigo-500/20 transition-all shadow-sm"
-                    title={isPlaying ? "Pause autoplay rotation" : "Start autoplay rotation"}
+                    className={`
+                      flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[9px] font-extrabold uppercase tracking-wider transition-all duration-350 shadow-sm cursor-pointer select-none active:scale-95
+                      ${isPlaying 
+                        ? "bg-emerald-500/10 dark:bg-emerald-500/20 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 hover:border-emerald-500/50 hover:shadow-[0_0_10px_rgba(16,185,129,0.15)] animate-pulse" 
+                        : "bg-amber-500/10 dark:bg-amber-500/20 border-amber-500/30 text-amber-600 dark:text-amber-400 hover:border-amber-500/50 hover:shadow-[0_0_10px_rgba(245,158,11,0.15)]"
+                      }
+                    `}
+                    title={isPlaying ? "Click to Pause Autoplay Rotation" : "Click to Start Autoplay Rotation"}
                   >
                     {isPlaying ? (
                       <>
@@ -341,12 +347,17 @@ const Experience = () => {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                           <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
                         </span>
-                        <span>AUTOPLAY</span>
+                        <FiPause className="w-3 h-3 text-emerald-500" />
+                        <span>Autoplay On</span>
                       </>
                     ) : (
                       <>
-                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500 animate-pulse"></span>
-                        <span>PAUSED</span>
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500"></span>
+                        </span>
+                        <FiPlay className="w-3 h-3 text-amber-500" />
+                        <span>Autoplay Paused</span>
                       </>
                     )}
                   </button>
