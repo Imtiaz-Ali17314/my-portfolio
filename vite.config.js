@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Important for relative paths on ProFreeHost
+  base: './', // Important for relative paths on Netlify
   build: {
     outDir: 'dist',
     rollupOptions: {
@@ -20,7 +20,11 @@ export default defineConfig({
             }
             return 'vendor'
           }
-        }
+        },
+        // 🔥 YEH LINE ADD KAREIN (MIME type issue fix)
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   }
