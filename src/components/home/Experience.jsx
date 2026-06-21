@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiBriefcase, FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiGitCommit, FiLayers } from "react-icons/fi";
+import { FiCalendar, FiCheckCircle, FiTerminal, FiGitBranch, FiLayers } from "react-icons/fi";
 
 const milestones = [
   {
     id: 1, // Node 2
-    role: "Full Stack Engineer",
+    role: "Full Stack Developer",
     company: "Softleed Company",
     period: "Sep 2025 - Present",
-    commit: "git commit -m \"feat: promote to full-time engineer & scale web systems\"",
-    description: "Promoted to a full-time engineering role after demonstrating rapid growth, technical competence, and system architecture capabilities. Driving core frontend and backend features for industrial clients.",
+    commit: "git commit -m \"feat: promote to full-time developer & build web features\"",
+    description: "Promoted to a full-time developer role after a successful internship, demonstrating rapid growth, adaptability, and high coding standards. Contributing to core web features for company clients.",
     highlights: [
-      "Building and maintaining production-grade web applications, interactive portals, and robust backend microservices.",
-      "Developing scalable full-stack features using React, Vue, Laravel, and PostgreSQL/MySQL.",
-      "Crafting premium, responsive user interfaces and optimizing REST API performance.",
-      "Writing clean, modular, and well-tested code in collaborative agile pipelines."
+      "Building and maintaining client-facing web applications, interactive dashboards, and backend APIs.",
+      "Developing full-stack features using React, Vue, Laravel, and SQL databases.",
+      "Crafting premium, responsive user interfaces and optimizing REST API routes.",
+      "Writing clean, modular, and well-tested code in collaborative team workflows."
     ],
     skills: [
-      { name: "Advanced Laravel Systems", value: 95 },
-      { name: "High-Fidelity React/Vue UI", value: 92 },
-      { name: "PostgreSQL & Database Tuning", value: 90 },
-      { name: "RESTful APIs & Microservices", value: 94 }
+      { name: "Laravel Web Apps", value: 86 },
+      { name: "React & Vue UI Components", value: 85 },
+      { name: "SQL Databases & Queries", value: 82 },
+      { name: "RESTful APIs & Integration", value: 84 }
     ],
     themeColor: "from-indigo-500 to-violet-600",
     glowColor: "rgba(99, 102, 241, 0.15)",
@@ -32,7 +32,7 @@ const milestones = [
     company: "Softleed Company",
     period: "Jul 2025 - Aug 2025",
     commit: "git checkout -b internship && git commit -m \"init: full-stack developer internship\"",
-    description: "Completed an intensive 2-month professional internship. Focused on adapting to enterprise coding conventions, setting up development environments, and contributing to core database schemas.",
+    description: "Completed an intensive 2-month professional internship. Focused on adapting to enterprise coding conventions, setting up development environments, and learning framework architectures.",
     highlights: [
       "Gained hands-on experience with MVC frameworks, routing, and database schema designs.",
       "Collaborated with senior engineers on feature implementations and bug fixes.",
@@ -42,7 +42,7 @@ const milestones = [
       { name: "Laravel MVC Architecture", value: 85 },
       { name: "React & Vue Frontends", value: 80 },
       { name: "SQL Database Design", value: 75 },
-      { name: "Git Workflows & Agile", value: 90 }
+      { name: "Git Workflows & Agile", value: 88 }
     ],
     themeColor: "from-pink-500 to-rose-600",
     glowColor: "rgba(244, 63, 94, 0.15)",
@@ -50,21 +50,21 @@ const milestones = [
   },
   {
     id: 3, // Node 3
-    role: "Full Stack Engineer (Continuous Impact)",
+    role: "Automation & Multi-Stack Contributor",
     company: "Softleed Company",
     period: "Ongoing Contributions",
-    commit: "git log --oneline -n 1 // head -> origin/main: active deployment",
-    description: "Consistently delivering technical value by maintaining code standards, participating in peer reviews, and supporting team agility.",
+    commit: "git log --oneline -n 1 // head -> origin/main: active contributor",
+    description: "Consistently delivering technical value by writing automated tests, building clean component structures, and quickly picking up new technologies like Playwright and Electron.js.",
     highlights: [
-      "Actively optimizing database indexing and query layouts for faster dashboard loads.",
-      "Promoting solid coding practices, clean modular architecture, and automated script coverage.",
-      "Participating in technical reviews, providing constructive feedback, and streamlining Git deployments."
+      "Actively writing automated end-to-end regression tests using Playwright to ensure application quality.",
+      "Developing responsive, clean views and database integrations across company projects.",
+      "Adapting rapidly to project-specific requirements, resolving bugs, and contributing to technical tasks."
     ],
     skills: [
-      { name: "System Performance & Speed", value: 95 },
-      { name: "Code Review & Mentorship", value: 88 },
-      { name: "CI/CD & Deployments", value: 85 },
-      { name: "Product Engineering", value: 90 }
+      { name: "QA Automation (Playwright)", value: 74 },
+      { name: "Desktop Apps (Electron.js)", value: 75 },
+      { name: "Multi-Stack Adaptability", value: 86 },
+      { name: "Bug Fixing & Maintenance", value: 84 }
     ],
     themeColor: "from-emerald-500 to-teal-600",
     glowColor: "rgba(16, 185, 129, 0.15)",
@@ -111,12 +111,12 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden bg-transparent">
-      
+
       {/* Background ambient glow */}
       <div className="glow-node w-[450px] h-[450px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        
+
         {/* Title */}
         <div className="text-center mb-16">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3">
@@ -136,7 +136,7 @@ const Experience = () => {
           viewport={{ once: false, amount: 0.08 }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
         >
-          
+
           {/* Left Column: SVG Git branch visualizer */}
           <motion.div
             variants={itemVariants}
@@ -314,7 +314,7 @@ const Experience = () => {
             className="lg:col-span-8"
           >
             <div className="terminal-card flex flex-col w-full min-h-[380px] shadow-2xl relative">
-              
+
               {/* Terminal Title Bar */}
               <div className="terminal-header px-6 py-4 flex items-center justify-between select-none">
                 <div className="flex items-center gap-2">
@@ -322,7 +322,7 @@ const Experience = () => {
                   <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dfa023]" />
                   <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29]" />
                 </div>
-                
+
                 <div className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 bg-white/20 dark:bg-[#121218]/40 border border-slate-200/30 dark:border-white/[0.04] px-3.5 py-1.5 rounded-lg shadow-sm">
                   <FiTerminal className="text-indigo-500 dark:text-indigo-400 font-extrabold" />
                   <span>imtiaz@softleed-desktop: ~/experience</span>
@@ -350,7 +350,7 @@ const Experience = () => {
                       </>
                     )}
                   </button>
-                  
+
                   <span className="px-2.5 py-1 rounded bg-indigo-500/10 dark:bg-indigo-500/20 text-[10px] font-bold tracking-wide text-indigo-600 dark:text-indigo-400 border border-indigo-200/30 dark:border-indigo-500/10 uppercase select-none">
                     {activeMilestone.badgeText}
                   </span>

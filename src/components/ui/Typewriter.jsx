@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const Typewriter = ({ words, typingSpeed = 90, deletingSpeed = 40, delayTime = 1800 }) => {
@@ -42,9 +42,8 @@ const Typewriter = ({ words, typingSpeed = 90, deletingSpeed = 40, delayTime = 1
     <span className="inline-flex items-center">
       <span>{words[wordIdx].substring(0, subIdx)}</span>
       <span
-        className={`inline-block w-[2px] h-[0.9em] bg-indigo-500 dark:bg-indigo-455 ml-1 align-middle ${
-          blink ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-100`}
+        className={`inline-block w-[2px] h-[0.9em] bg-indigo-500 dark:bg-indigo-455 ml-1 align-middle ${blink ? "opacity-100" : "opacity-0"
+          } transition-opacity duration-100`}
       />
     </span>
   );

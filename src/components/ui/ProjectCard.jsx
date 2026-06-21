@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FiExternalLink, FiGithub, FiCheck } from "react-icons/fi";
 

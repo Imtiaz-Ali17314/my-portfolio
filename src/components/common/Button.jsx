@@ -1,5 +1,3 @@
-import React from "react";
-
 const Button = ({
   children,
   variant = "primary",
@@ -28,9 +26,8 @@ const Button = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`${baseStyles} ${
-        variants[variant] || variants.primary
-      } ${className}`}
+      className={`${baseStyles} ${variants[variant] || variants.primary
+        } ${className}`}
       {...props}
     >
       {children}

@@ -1,7 +1,7 @@
 const experience = [
   {
     id: 1,
-    role: "Full Stack Engineer",
+    role: "Full Stack Developer",
     company: "Softleed Company",
     period: "Sep 2025 - Present",
     description:

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
@@ -15,8 +15,8 @@ const MainLayout = () => {
 
   // Dynamic SEO Page Resolution
   useEffect(() => {
-    let title = "Imtiaz Ali | Full Stack Software Engineer";
-    let desc = "Professional developer portfolio of Imtiaz Ali. Full Stack Software Engineer at Softleed Company, showcasing a comprehensive collection of 30+ personal applications.";
+    let title = "Imtiaz Ali | Junior Full Stack Developer";
+    let desc = "Professional developer portfolio of Imtiaz Ali. Junior Full Stack Developer at Softleed Company, showcasing a comprehensive collection of 30+ personal applications.";
     let keywords = "Imtiaz Ali, Full Stack Developer, Software Engineer, Portfolio, Softleed, React, Vue, Laravel, Electron.js, Pakistan, Tailwind CSS, 30 Projects";
     let image = "/images/projects/campaignOs.JPG";
 
@@ -70,7 +70,7 @@ const MainLayout = () => {
     // Update Meta Tags
     setMetaTag("name", "description", desc.slice(0, 160));
     setMetaTag("name", "keywords", keywords);
-    
+
     // OpenGraph
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", desc);

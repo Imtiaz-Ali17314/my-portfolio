@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { FiAward, FiCheckCircle, FiCpu, FiTrendingUp } from "react-icons/fi";
 import achievements from "../../data/achievements";
@@ -85,7 +84,7 @@ const Achievements = () => {
       <div className="glow-node w-[350px] h-[350px] bg-pink-500/5 right-[10%] top-[10%] rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        
+
         {/* Title Block */}
         <div className="text-center mb-20 animate-fade-in">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3 select-none">
@@ -119,7 +118,7 @@ const Achievements = () => {
 
                 <div className="p-6 flex-grow flex flex-col justify-between">
                   {/* Category-themed glowing backdrop on hover */}
-                  <div 
+                  <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-b-3xl"
                     style={{
                       background: `radial-gradient(circle at 10% 15%, ${theme.glow} 0%, transparent 60%)`

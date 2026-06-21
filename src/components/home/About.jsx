@@ -1,52 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FiCheckCircle, FiStar, FiFileText, FiTerminal } from "react-icons/fi";
-
-const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    const target = parseInt(value, 10);
-    if (isNaN(target)) {
-      setCount(value);
-      return;
-    }
-
-    let start = 0;
-    const duration = 1500; // 1.5s
-    const startTime = performance.now();
-
-    const animate = (now) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing: easeOutQuad
-      const easeProgress = progress * (2 - progress);
-      const current = Math.floor(easeProgress * target);
-      
-      setCount(current);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCount(target);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isInView, value]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-};
-
-const stats = [
-  { value: 1, suffix: "", label: "Year Experience", desc: "At Softleed Company" },
-  { value: 30, suffix: "+", label: "Personal Projects", desc: "Web & Desktop Utilities" },
-];
+import { FiCheckCircle, FiStar, FiFileText } from "react-icons/fi";
 
 const containerVariants = {
   hidden: {},
@@ -80,7 +34,7 @@ const LOG_MESSAGES = [
 
 const ConsoleLogger = () => {
   const [logs, setLogs] = useState([]);
-  
+
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -93,7 +47,7 @@ const ConsoleLogger = () => {
       });
       index = (index + 1) % LOG_MESSAGES.length;
     }, 2200);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -149,12 +103,12 @@ const ProgressCircle = () => {
 const About = () => {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden bg-transparent">
-      
+
       {/* Background glow */}
       <div className="glow-node w-[350px] h-[350px] bg-indigo-500/5 left-[15%] bottom-[5%] rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        
+
         {/* Title */}
         <div className="text-center mb-16">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500 dark:text-indigo-400 mb-3">
@@ -186,27 +140,27 @@ const About = () => {
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dfa023] shadow-sm" />
                 <span className="w-3 h-3 rounded-full bg-[#27c93f] border border-[#1aab29] shadow-sm" />
               </div>
-              
+
               <div className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 bg-white/20 dark:bg-[#121218]/40 border border-slate-200/30 dark:border-white/[0.04] px-3.5 py-1.5 rounded-lg shadow-sm">
                 <span className="text-indigo-500 dark:text-indigo-400 font-extrabold">&gt;_</span>
                 <span>profile.md</span>
               </div>
-              
+
               <div className="w-[54px] lg:block hidden" />
             </div>
 
             {/* Narrative Content */}
             <div className="p-6 sm:p-8 flex flex-col justify-center flex-grow space-y-4 md:space-y-5">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
-                Building production-grade web systems and modern responsive client experiences.
+                Building clean web applications and responsive client-side user experiences.
               </h3>
-              
+
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                I am a Junior Full Stack Developer with professional experience developing web systems and client interfaces. Currently working at Softleed Company, I design, maintain, and scale responsive features across frontend frameworks, backend microservices, and databases.
+                I am a Junior Full Stack Developer with professional experience building web features and client interfaces. Currently working at Softleed Company, I implement, maintain, and update responsive features across frontend frameworks, backend code, and relational databases.
               </p>
 
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                My core engineering focus is on writing clean, modular, and performant code, designing secure REST APIs, and building high-fidelity client utilities.
+                My core development focus is on writing clean, modular code, building solid REST APIs, and collaborating with team members on client needs.
               </p>
             </div>
           </motion.div>
@@ -225,10 +179,10 @@ const About = () => {
                   Experience
                 </h4>
               </div>
-              
+
               <ProgressCircle />
             </div>
-            
+
             <div className="border-t border-slate-200/40 dark:border-white/[0.04] pt-3 mt-4">
               <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">At Softleed Company</span>
               <p className="text-xs text-slate-700 dark:text-slate-300 mt-1.5 leading-relaxed font-medium">
@@ -251,12 +205,12 @@ const About = () => {
                   Personal Projects
                 </h4>
               </div>
-              
+
               <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 text-xl shadow-sm border border-indigo-200/60 dark:border-indigo-500/20 shrink-0">
                 <FiFileText className="w-5 h-5" />
               </div>
             </div>
-            
+
             <div className="mt-4">
               <ConsoleLogger />
             </div>
@@ -271,7 +225,7 @@ const About = () => {
               <FiCheckCircle className="text-indigo-500 dark:text-indigo-400" />
               <span>Core Development Standards</span>
             </h4>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
               {[
                 { text: "Responsive Web Design", color: "hover:border-cyan-500/50 hover:bg-cyan-500/[0.04] hover:text-cyan-600 dark:hover:text-cyan-400" },

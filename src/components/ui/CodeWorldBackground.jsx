@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 // List of floating code fragments, symbols, and numbers
@@ -8,7 +8,7 @@ const CODE_ELEMENTS = [
   "class", "extends", "super", "function()", "typeof", "instanceof", "await", "async",
   "try { ... } catch", "throw new Error()", "if (condition)", "for (let i = 0; i < n; i++)",
   "while (active)", "switch (action.type)", "case 'SUCCESS':",
-  
+
   // React & Web Frameworks
   "useState()", "useEffect()", "useContext()", "useRef()", "useMemo()", "useCallback()",
   "useLayoutEffect()", "useTransition()", "useDeferredValue()",
@@ -16,30 +16,30 @@ const CODE_ELEMENTS = [
   "<Layout />", "<Provider />", "<Routes />", "<Route />", "<Outlet />",
   "import React from 'react'", "export default Component", "Vite + React", "Framer Motion",
   "Tailwind CSS", "Three.js WebGL", "Bento Grid Design", "Glassmorphic UI",
-  
+
   // Async & Fetching
   "Promise", "new Promise()", "fetch()", "axios", "axios.get()", "axios.post()",
   "setTimeout()", "setInterval()", "requestAnimationFrame()",
   "Promise.all()", "Promise.resolve()", "Promise.reject()",
-  
+
   // Array & Object Methods
   ".map()", ".filter()", ".reduce()", ".forEach()", ".find()", ".includes()",
   "Object.keys()", "Object.values()", "Object.entries()",
   "JSON.stringify()", "JSON.parse()", "Math.random()", "Math.floor()",
-  
+
   // DOM & Browser APIs
   "console.log()", "console.error()", "console.warn()", "document", "window",
   "localStorage", "sessionStorage", "window.addEventListener()", "document.querySelector()",
-  
+
   // Node.js & Express (Backend)
   "module.exports =", "require('path')", "fs.readFileSync()", "path.join(__dirname, ...)",
   "app.get()", "app.post()", "app.use()", "next()", "res.status(200)", "res.json()",
   "process.env.NODE_ENV", "GraphQL", "WebSocket", "MongoDB", "PostgreSQL", "Redis",
-  
+
   // Git & CLI commands
   "git push", "git commit -m '...'", "git pull", "git branch", "git checkout",
   "git status", "git clone", "git diff", "git merge", "git rebase",
-  
+
   // Configs & Project Files
   "npm run dev", "npm install", "npm run build", "npm run test", "docker", "kubernetes",
   "package.json", "tsconfig.json", "eslint.config.js", "vite.config.js",
@@ -95,7 +95,7 @@ const CodeWorldBackground = () => {
     }
 
     starGeo.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
-    
+
     // Custom material to allow twinkling via opacity oscillation
     const starMat = new THREE.PointsMaterial({
       color: 0xffffff,

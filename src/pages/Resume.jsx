@@ -1,17 +1,15 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FiBriefcase, 
-  FiCalendar, 
-  FiDownload, 
-  FiCheckCircle, 
-  FiLayers, 
+import {
+  FiBriefcase,
+  FiCalendar,
+  FiDownload,
+  FiCheckCircle,
+  FiLayers,
   FiFileText,
   FiExternalLink
 } from "react-icons/fi";
 import skills from "../data/skills";
 import experience from "../data/experience";
-import Button from "../components/common/Button";
 
 const containerVariants = {
   hidden: {},
@@ -34,13 +32,13 @@ const itemVariants = {
 const Resume = () => {
   return (
     <div className="min-h-screen bg-transparent py-12 pt-28 px-4 md:px-8 relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Glow Blur Nodes */}
       <div className="glow-node w-[400px] h-[400px] bg-indigo-500/5 left-[-100px] top-[20%] rounded-full blur-[100px] pointer-events-none" />
       <div className="glow-node w-[400px] h-[400px] bg-pink-500/5 right-[-100px] bottom-[10%] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 pb-8 border-b border-slate-200 dark:border-[#2d1e5a]">
           <div>
@@ -72,10 +70,10 @@ const Resume = () => {
           animate="visible"
           className="grid lg:grid-cols-12 gap-10"
         >
-          
+
           {/* Left: Timeline & Summary */}
           <div className="lg:col-span-7 space-y-10">
-            
+
             {/* Professional Summary */}
             <motion.div variants={itemVariants} className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 md:p-8 space-y-4 shadow-sm relative overflow-hidden">
               {/* Gradient accent flare */}
@@ -85,7 +83,7 @@ const Resume = () => {
                 <span>Professional Profile</span>
               </h2>
               <p className="text-sm md:text-base text-slate-650 dark:text-[#beafdc] font-medium leading-relaxed relative z-10">
-                Detail-oriented and results-driven Full Stack Software Engineer currently working at Softleed Company. Experienced in designing, building, and maintaining production-grade web systems using Laravel, React, Vue, and MySQL/PostgreSQL databases. Developed a robust portfolio of 30 personal projects including frontend dashboards, SaaS workflows, and cross-platform desktop utilities.
+                Detail-oriented and results-driven Junior Full Stack Developer currently working at Softleed Company. Experienced in building, maintaining, and updating web applications using Laravel, React, Vue, and relational databases. Developed a diverse portfolio of 30 personal projects including frontend interfaces, web workflows, and desktop utility applications.
               </p>
             </motion.div>
 
@@ -99,7 +97,7 @@ const Resume = () => {
               <div className="relative border-l-2 border-slate-200 dark:border-[#2d1e5a]/80 ml-4 space-y-8">
                 {experience.map((item) => (
                   <div key={item.id} className="relative pl-8 group">
-                    
+
                     {/* Timeline Dot */}
                     <div className="absolute -left-[9px] top-4 z-20 flex h-4 w-4 items-center justify-center select-none">
                       <span className="animate-ping absolute inline-flex h-3.5 w-3.5 rounded-full bg-indigo-500 opacity-40"></span>
@@ -109,7 +107,7 @@ const Resume = () => {
                     <div className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl p-6 rounded-[28px] space-y-3 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm relative overflow-hidden group/exp-card">
                       {/* Gradient accent flare */}
                       <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 rounded-full blur-xl pointer-events-none" />
-                      
+
                       {/* Title Bar */}
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 relative z-10">
                         <div>
@@ -158,7 +156,7 @@ const Resume = () => {
 
           {/* Right: Skills Bento Grid & Document Preview */}
           <div className="lg:col-span-5 space-y-8">
-            
+
             {/* Technical Skills Bento Grid */}
             <motion.div variants={itemVariants} className="bg-[#ffffff]/90 dark:bg-[#160f38]/90 border border-slate-200 dark:border-[#2d1e5a] backdrop-blur-xl rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm relative overflow-hidden">
               {/* Gradient accent flare */}
@@ -174,7 +172,7 @@ const Resume = () => {
                     <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 select-none">
                       {skill.category}
                     </h3>
-                    
+
                     {/* Tags container */}
                     <div className="flex flex-wrap gap-1.5">
                       {skill.items.map((item, idx) => (

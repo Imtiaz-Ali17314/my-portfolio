@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -38,10 +37,10 @@ const Footer = () => {
   return (
     <footer className="relative z-10 w-full border-t border-slate-250 dark:border-[#2d1e5a] bg-white dark:bg-[#160f38] text-slate-700 dark:text-[#beafdc] transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        
+
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          
+
           {/* Brand */}
           <div className="space-y-4">
             <h2 className="text-xl font-bold tracking-wide text-slate-900 dark:text-white flex items-center gap-1">
@@ -51,7 +50,7 @@ const Footer = () => {
               <span className="text-slate-700 dark:text-slate-300 font-extrabold font-mono text-base">&lt;dev/&gt;</span>
             </h2>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              Full Stack Web Developer dedicated to writing clean, scalable code 
+              Full Stack Web Developer dedicated to writing clean, scalable code
               and crafting digital products that combine beautiful UX with high performance.
             </p>
           </div>
