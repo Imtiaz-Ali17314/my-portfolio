@@ -1,7 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FiSend, FiMail, FiUser, FiMessageSquare, FiAlertTriangle, FiCheckCircle, FiMapPin, FiGithub, FiLinkedin } from "react-icons/fi";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -65,9 +65,19 @@ const Contact = () => {
 
       setSuccess(true);
       setFormData({ name: "", email: "", message: "" });
+
+      // Auto-hide success banner after 5 seconds
+      setTimeout(() => {
+        setSuccess(false);
+      }, 5000);
     } catch (err) {
       console.error("Email send failed:", err);
       setError("Failed to send message. Please contact me directly at imtiazali80102@gmail.com.");
+
+      // Auto-hide error banner after 6 seconds
+      setTimeout(() => {
+        setError("");
+      }, 6000);
     } finally {
       setLoading(false);
     }
@@ -271,18 +281,32 @@ const Contact = () => {
               {/* Feedback Alert Feedbacks & Send Action */}
               <div className="mt-8 pt-4 border-t border-slate-150 dark:border-[#2d1e5a]/40 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 relative z-10 shrink-0">
                 <div className="flex-grow text-xs font-bold">
-                  {success && (
-                    <div className="text-emerald-500 flex items-center gap-1.5 animate-pulse">
-                      <FiCheckCircle className="shrink-0 text-base" />
-                      <span>Message sent successfully!</span>
-                    </div>
-                  )}
-                  {error && (
-                    <div className="text-rose-500 flex items-center gap-1.5 leading-snug">
-                      <FiAlertTriangle className="shrink-0 text-base" />
-                      <span>{error}</span>
-                    </div>
-                  )}
+                  <AnimatePresence mode="wait">
+                    {success && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 px-4 py-2.5 rounded-xl flex items-center gap-2.5 shadow-sm inline-flex"
+                      >
+                        <FiCheckCircle className="shrink-0 text-base text-emerald-500" />
+                        <span>Message sent successfully!</span>
+                      </motion.div>
+                    )}
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="bg-rose-500/10 dark:bg-rose-500/20 border border-rose-500/30 text-rose-600 dark:text-rose-400 px-4 py-2.5 rounded-xl flex items-center gap-2.5 shadow-sm inline-flex"
+                      >
+                        <FiAlertTriangle className="shrink-0 text-base text-rose-500" />
+                        <span>{error}</span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Send Button */}
