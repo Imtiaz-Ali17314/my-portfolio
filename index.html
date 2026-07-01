@@ -3,40 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary SEO Metadata -->
+
+    <!-- Primary SEO -->
     <title>Imtiaz Ali | Junior Full Stack Developer</title>
-    <meta name="description" content="Professional developer portfolio of Imtiaz Ali. Showcasing 30+ personal projects and 6+ client applications built using React, Vue, Laravel, Tailwind CSS, and Electron.js." />
-    <meta name="keywords" content="Imtiaz Ali, Full Stack Developer, Software Engineer, Portfolio, React, Vue, Laravel, Electron.js, Pakistan, Tailwind CSS" />
+
+    <meta
+      name="description"
+      content="Professional portfolio of Imtiaz Ali, a Junior Full Stack Developer. Explore 30+ personal projects and 6+ real-world client applications built with Laravel, Vue.js, React.js, Node.js, Tailwind CSS, and Electron.js."
+    />
+
+    <meta
+      name="keywords"
+      content="Imtiaz Ali, Full Stack Developer, Junior Full Stack Developer, Software Engineer, Laravel, Vue.js, React.js, Node.js, Electron.js, Tailwind CSS, Portfolio, Pakistan"
+    />
+
     <meta name="author" content="Imtiaz Ali" />
+    <meta name="robots" content="index, follow" />
+
     <link rel="canonical" href="https://imtiazali.dev/" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Imtiaz Ali Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
     <meta property="og:url" content="https://imtiazali.dev/" />
-    <meta property="og:title" content="Imtiaz Ali | Junior Full Stack Developer" />
-    <meta property="og:description" content="Explore real-world full-stack web applications, responsive custom UIs, and interactive developer sandboxes." />
-    <meta property="og:image" content="https://imtiazali.dev/images/projects/campaignOs.JPG" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://imtiazali.dev/" />
-    <meta property="twitter:title" content="Imtiaz Ali | Junior Full Stack Developer" />
-    <meta property="twitter:description" content="Explore real-world full-stack web applications, responsive custom UIs, and interactive developer sandboxes." />
-    <meta property="twitter:image" content="https://imtiazali.dev/images/projects/campaignOs.JPG" />
+    <meta
+      property="og:title"
+      content="Imtiaz Ali | Junior Full Stack Developer"
+    />
 
-    <!-- Google Fonts Connectivity -->
+    <meta
+      property="og:description"
+      content="Explore 30+ personal projects and 6+ real-world client applications built with Laravel, Vue.js, React.js, Node.js, Tailwind CSS, and Electron.js."
+    />
+
+    <meta
+      property="og:image"
+      content="https://imtiazali.dev/images/about/portfolio.png"
+    />
+
+    <meta
+      property="og:image:secure_url"
+      content="https://imtiazali.dev/images/about/portfolio.png"
+    />
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Imtiaz Ali - Junior Full Stack Developer Portfolio"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta
+      name="twitter:title"
+      content="Imtiaz Ali | Junior Full Stack Developer"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Explore 30+ personal projects and 6+ real-world client applications built with Laravel, Vue.js, React.js, Node.js, Tailwind CSS, and Electron.js."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://imtiazali.dev/images/about/portfolio.png"
+    />
+
+    <meta name="twitter:creator" content="@imtiazali" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Instant Pre-render Theme Resolution (Eliminates Flash) -->
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Prevent Theme Flash -->
     <script>
-      (function() {
+      (function () {
         try {
           const theme = localStorage.getItem("theme");
-          if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+
+          if (
+            theme === "dark" ||
+            (!theme &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
             document.documentElement.classList.add("dark");
           } else {
             document.documentElement.classList.remove("dark");
@@ -45,8 +115,10 @@
       })();
     </script>
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
